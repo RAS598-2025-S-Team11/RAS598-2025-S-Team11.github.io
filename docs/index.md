@@ -1,8 +1,10 @@
 ---
-title: Project Details
+title: Project Intelligent TurtleBot4 
 tags:
 - Robotics
 - AI
+- Object Detection
+- Speech Recognition
 ---
 
 ## Team Information
@@ -19,6 +21,9 @@ tags:
 ---
 ## Project Plan
 
+> Research Question: 
+> How can a mobile robot effectively combine vision, speech, and autonomous navigation to create a responsive and interactive system in real-world environments?
+
 **Concept:** 
 
 This project explores how TurtleBot4 can intelligently interact with its surroundings through vision-based object detection and speech-based communication. Using **TurtleBot 4 with Create 3 and Raspberry Pi**, our aim is to integrate:  
@@ -29,9 +34,6 @@ This project explores how TurtleBot4 can intelligently interact with its surroun
 - **Dynamic responses** based on detected objects, enabling context-aware robotic actions.  
 - **Fallback mechanisms** for handling hardware/software limitations and ensuring system robustness.  
 
-> Research Question: 
-> How can a mobile robot effectively combine vision, speech, and autonomous navigation to create a responsive and interactive system in real-world environments?
-
 ---
 ## Sensor Integration
 
@@ -39,7 +41,7 @@ This project explores how TurtleBot4 can intelligently interact with its surroun
 
 ![TurtleBotsFacing](https://github.com/user-attachments/assets/dfe928cf-b7cf-4cf4-82e4-b80c5853edfc)
 
-> Check Sensors Table for more Information
+> Check *Sensors Table* for more Information
 
 - **Depth Camera (OAK-D/RealSense)**: Object detection and distance estimation.
 - **LiDAR**: SLAM-based navigation and obstacle detection.
