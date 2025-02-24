@@ -1,7 +1,6 @@
 ---
-title: Object Detection Page 
+title: Speech Recognition Page 
 ---
 
-Example: YOLOv8 implementation
+![download](https://github.com/user-attachments/assets/322549a8-430d-4813-ba16-4358e8d69257)
 
-![1_HctUSTC6_-OSWmCtTwmdeQ](https://github.com/user-attachments/assets/33f51c79-4182-433f-97ee-b8286003cb4a)
