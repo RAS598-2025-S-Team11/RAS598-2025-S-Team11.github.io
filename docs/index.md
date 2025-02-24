@@ -1,5 +1,5 @@
 ---
-title: Intelligent TurtleBot for Real-Time Object Recognition, Voice Interaction and Safe Navigation
+title: Project Details
 tags:
 - Robotics
 - AI
