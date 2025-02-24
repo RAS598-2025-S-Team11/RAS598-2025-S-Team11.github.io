@@ -39,7 +39,7 @@ sequenceDiagram
   Robot->>User: Acknowledges Completion
 ```
 
-## State Transitions -> Navigation
+## State Transitions in Navigation
 
 ```mermaid
 stateDiagram-v2
