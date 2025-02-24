@@ -169,16 +169,16 @@ gantt
     title Project Timeline (Weeks 7-16)
     dateFormat  YYYY-MM-DD
     section Planning
-    Finalizing Scope :done, milestone1, 2025-02-24, 2d
+    Finalizing Scope :active, milestone1, 2025-02-24, 7d
     section Implementation
-    ROS2 Setup :active, milestone2, 2025-03-03, 3d
-    Object Detection :milestone3, 2025-03-10, 5d
-    Speech Recognition :milestone4, 2025-03-17, 5d
-    Navigation Testing :milestone5, 2025-03-24, 4d
-    Integration & Debugging :milestone6, 2025-03-31, 7d
+    ROS2 Setup :active, milestone2, 2025-03-03, 7d
+    Object Detection :milestone3, 2025-03-10, 7d
+    Speech Recognition :milestone4, 2025-03-17, 7d
+    Navigation Testing :milestone5, 2025-03-24, 7d
+    Integrate & Debug :milestone6, 2025-03-31, 7d
     section Testing & Deployment
-    Real-World Testing :milestone7, 2025-04-07, 4d
-    Final Prep :milestone8, 2025-04-14, 6d
-    Documentation & Review :milestone9, 2025-04-21, 3d
-    Final Demonstration :milestone10, 2025-04-28, 1d
+    Real-World Testing :milestone7, 2025-04-07, 7d
+    Final Prep :milestone8, 2025-04-14, 7d
+    Document & Review :milestone9, 2025-04-21, 7d
+    Final Demonstration :milestone10, 2025-04-28, 6d
 ```
