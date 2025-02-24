@@ -55,9 +55,6 @@ stateDiagram-v2
     Navigate --> [*]
 ```
 
-
-
----
 ## Gantt Chart Representation 
 ```mermaid
 gantt
