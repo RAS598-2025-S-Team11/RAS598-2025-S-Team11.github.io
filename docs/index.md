@@ -163,7 +163,7 @@ This project will:
 | **Week 16** | **Apr 28, 2025**  | 🚀 **Final Demonstration & Project Submission** 🎯  | 🚀 Upcoming |
 
 ---
-## 📊 Gantt Chart Representation 
+## Gantt Chart Representation 
 ```mermaid
 gantt
     title Project Timeline (Weeks 7-16)
@@ -181,4 +181,6 @@ gantt
     Final Prep :milestone8, 2025-04-14, 6d
     Documentation & Review :milestone9, 2025-04-21, 3d
     Final Demonstration :milestone10, 2025-04-28, 1d
+```
+
 
