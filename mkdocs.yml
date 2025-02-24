@@ -10,8 +10,8 @@ theme:
     accent: indigo
   font:
     text: Roboto
-  logo: static/logo.svg
-  favicon: static/logo.png
+  logo: static/logo1.svg
+  favicon: static/logo1.png
 
   features:
     - navigation.tabs
