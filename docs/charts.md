@@ -2,7 +2,7 @@
 title: Project Workflow Chart
 ---
 
-## Workflow Overview
+## Overview of Workflow 
 
 ```mermaid
 graph TD
@@ -39,7 +39,7 @@ sequenceDiagram
   Robot->>User: Acknowledges Completion
 ```
 
-## State Transitions in Navigation
+## State Transitions -> Navigation
 
 ```mermaid
 stateDiagram-v2
