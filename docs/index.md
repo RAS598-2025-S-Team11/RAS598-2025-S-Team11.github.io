@@ -147,17 +147,38 @@ This project will:
 - **Resource Needs**: Hardware support, mentorship on TurtleBot4 Hardware integration with ROS2.
 
 ---
-## Weekly Milestones & Gantt Chart (Weeks 7-16)
+# Weekly Milestones (Weeks 7-16)
 
-| **Week** | **Milestone** |
-|----------|--------------|
-| **24-02-25**  | Finalizing project scope, confirming sensor availability. |
-| **27-02-25**  | Setting up ROS2 communication between Raspberry Pi and host machine. |
-| **03-03-25**  | Implementing object detection pipeline. |
-| **03-03-25** | Developing speech recognition module. |
-| **11-03-25** | Testing navigation with LiDAR and obstacle avoidance. |
-| **15-03-25** | Integrating all modules for unified control. |
-| **18-03-25** | Conducting real-world tests and debugging issues. |
-| **21-03-25** | Preparing final demonstration setup. |
-| **27-03-25** | Final testing, documentation, and advisor review. |
-| **28-03-25** | Demonstration and final project submission. |
+| **Week**  | **Date**        | **Milestone**                                              | **Status**   |
+|-----------|----------------|------------------------------------------------------------|--------------|
+| **Week 7**  | **Feb 24, 2025**  | Finalizing project scope, confirming sensor availability.  | 🔄 In Progress |
+| **Week 8**  | **Mar 3, 2025**   | Setting up ROS2 communication between Raspberry Pi and host machine.  | ⏳ Pending |
+| **Week 9**  | **Mar 10, 2025**  | Implementing object detection pipeline.  | ⏳ Pending |
+| **Week 10** | **Mar 17, 2025**  | Developing speech recognition module.  | ⏳ Pending |
+| **Week 11** | **Mar 24, 2025**  | Testing navigation with LiDAR and obstacle avoidance.  | ⏳ Pending |
+| **Week 12** | **Mar 31, 2025**  | Integrating all modules for unified control.  | ⏳ Pending |
+| **Week 13** | **Apr 7, 2025**   | Conducting real-world tests and debugging issues.  | ⏳ Pending |
+| **Week 14** | **Apr 14, 2025**  | Preparing final demonstration setup.  | ⏳ Pending |
+| **Week 15** | **Apr 21, 2025**  | Final testing, documentation, and advisor review.  | ⏳ Pending |
+| **Week 16** | **Apr 28, 2025**  | 🚀 **Final Demonstration & Project Submission** 🎯  | 🚀 Upcoming |
+
+---
+## 📊 Gantt Chart Representation 
+```mermaid
+gantt
+    title Project Timeline (Weeks 7-16)
+    dateFormat  YYYY-MM-DD
+    section Planning
+    Finalizing Scope :done, milestone1, 2025-02-24, 2d
+    section Implementation
+    ROS2 Setup :active, milestone2, 2025-03-03, 3d
+    Object Detection :milestone3, 2025-03-10, 5d
+    Speech Recognition :milestone4, 2025-03-17, 5d
+    Navigation Testing :milestone5, 2025-03-24, 4d
+    Integration & Debugging :milestone6, 2025-03-31, 7d
+    section Testing & Deployment
+    Real-World Testing :milestone7, 2025-04-07, 4d
+    Final Prep :milestone8, 2025-04-14, 6d
+    Documentation & Review :milestone9, 2025-04-21, 3d
+    Final Demonstration :milestone10, 2025-04-28, 1d
+
