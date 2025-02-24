@@ -160,7 +160,7 @@ This project will:
 | **Week 13** | **Apr 7, 2025**   | Conducting real-world tests and debugging issues.  | ⏳ Pending |
 | **Week 14** | **Apr 14, 2025**  | Preparing final demonstration setup.  | ⏳ Pending |
 | **Week 15** | **Apr 21, 2025**  | Final testing, documentation, and advisor review.  | ⏳ Pending |
-| **Week 16** | **Apr 28, 2025**  | 🚀 **Final Demonstration & Project Submission** 🎯  | 🚀 Upcoming |
+| **Week 16** | **Apr 28, 2025**  | 🚀 **Final Demonstration & Project Submission** 🎯  | 🚀 Upcoming  |
 
 ---
 ## Gantt Chart Representation 
