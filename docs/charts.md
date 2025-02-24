@@ -1,41 +1,55 @@
 ---
-title: Charts
+title: Project Workflow Chart
 ---
 
+## Workflow Overview
 
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
+```mermaid
+graph TD
+  A[Start] --> B[Sensor Data Acquisition]
+  B --> C[Process Data]
+  C --> D{Decision-Making}
+  D -->|Object Detected| E[Trigger Response]
+  D -->|No Object| F[Continue Scanning]
+  E --> G[Voice Feedback]
+  E --> H[Navigation Adjustment]
+  H --> I[Obstacle Avoidance]
+  I --> D
+  G --> J[End]
+  F --> B
 ```
 
-``` mermaid
+## System Interaction Flow
+
+```mermaid
 sequenceDiagram
   autonumber
-  Alice->>John: Hello John, how are you?
-  loop Healthcheck
-      John->>John: Fight against hypochondria
+  User->>Robot: Provide Voice Command
+  Robot->>Sensor Module: Capture Audio
+  Sensor Module->>Processor: Process Speech
+  Processor->>Decision Engine: Identify Intent
+  Decision Engine-->>Robot: Execute Action
+  alt Object Detected
+      Robot->>User: Provides Object Information
+  else No Object Found
+      Robot->>User: Requests Clarification
   end
-  Note right of John: Rational thoughts!
-  John-->>Alice: Great!
-  John->>Bob: How about you?
-  Bob-->>John: Jolly good!
+  Robot-->>Navigation Module: Adjust Path
+  Navigation Module->>Robot: Confirm Path Update
+  Robot->>User: Acknowledges Completion
 ```
 
+## State Transitions in Navigation
 
-``` mermaid
+```mermaid
 stateDiagram-v2
-  state fork_state <<fork>>
-    [*] --> fork_state
-    fork_state --> State2
-    fork_state --> State3
+  state scan_state <<fork>>
+    [*] --> scan_state
+    scan_state --> Object_Detected
+    scan_state --> No_Object
 
-    state join_state <<join>>
-    State2 --> join_state
-    State3 --> join_state
-    join_state --> State4
-    State4 --> [*]
-```
+    state decision_state <<join>>
+    Object_Detected --> decision_state
+    No_Object --> decision_state
+    decision_state --> Navigate
+    Navigate --> [*]
