@@ -16,7 +16,7 @@ tags:
 - **University:** Arizona State University
 - **Class:** RAS 598 Experimentation and Deployment of Robots
 - **Professor:** Dr. Dan Aukes
-- **Email:** anushka.satav@asu.edu
+- **Email:** anushka.satav@asu.edu, akonda5@asu.edu, schhab18@asu.edu
 
 ---
 ## Project Plan
