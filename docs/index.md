@@ -35,6 +35,25 @@ This project explores how TurtleBot4 can intelligently interact with its surroun
 - **Fallback mechanisms** for handling hardware/software limitations and ensuring system robustness.  
 
 ---
+## GUI - Mockup Update (31/03/2025)
+
+**1. Using Inkscape**
+
+![turtlebot4-team-project](https://github.com/user-attachments/assets/f803b082-9fb9-483c-b1d5-c42e3c938883)
+
+**2. Proposed GUI For Control**
+
+![team-assignment-03-gui](https://github.com/user-attachments/assets/641e4521-9a4e-4248-9bda-127ad392c9cd)
+
+**3. Proposed GUI For Navigation**
+![task-2](https://github.com/user-attachments/assets/0ae545f4-2bab-45d4-878f-b5a7143b01e1)
+
+---
+## Test 01
+
+Youtube Video Link: https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp
+
+---
 ## Sensor Integration
 
 **Utilization of Sensor Data**
