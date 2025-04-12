@@ -70,6 +70,21 @@ graph TD
   F --> G
   G --> H --> I --> K --> M
   G --> J --> L --> M
+
+  classDef sensors fill:#d0f0ef,stroke:#0097a7,color:#000
+  classDef perception fill:#e8eaf6,stroke:#5c6bc0,color:#000
+  classDef decision fill:#ffe0e6,stroke:#d81b60,color:#000
+  classDef control fill:#fff9c4,stroke:#fbc02d,color:#000
+  classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
+  classDef startend fill:#eeeeee,stroke:#757575,color:#000
+
+  class A,M startend
+  class B sensors
+  class C,D1,D2,E,F perception
+  class G decision
+  class H,I,K control
+  class J,L gui
+
 ```
 ---
 
