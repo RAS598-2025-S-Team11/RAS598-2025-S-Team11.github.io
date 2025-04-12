@@ -1,11 +1,13 @@
 ## Project Visual Overview
 
-| Section              | Chart Title                                | Description                                                                 |
-|----------------------|---------------------------------------------|-----------------------------------------------------------------------------|
-| **Timeline**        | Gantt Chart                                 | Shows weekly project phases from planning to deployment.                    |
-| **Workflow**        | Project Workflow Chart                      | Displays the full robot pipeline from sensor data to GUI feedback.          |
-| **System Control**  | System Architecture + ROS2 Nodes & Topics  | Visualizes ROS2 nodes and topics, including collision avoidance logic.      |
-| **Future Work**     | Cobot Arm Integration Flow                  | Outlines the proposed pick-and-place functionality using a mounted arm.     |
+| Section              | Chart Title                                 | Description                                                                 |
+|----------------------|----------------------------------------------|-----------------------------------------------------------------------------|
+| **Timeline**         | Gantt Chart                                  | Shows weekly project phases from planning to deployment.                    |
+| **Workflow**         | Project Workflow Chart                       | Displays the full robot pipeline from sensor data to GUI feedback.          |
+| **System Control**   | System Architecture + ROS2 Nodes & Topics   | Visualizes ROS2 nodes and topics, including collision avoidance logic.      |
+| **Autonomy Layers**  | High-Level vs Low-Level Control Flow         | Separates voice-guided task selection from low-level obstacle avoidance with aligned ROS2 nodes and data flow. |
+| **Future Work**      | Cobot Arm Integration Flow                   | Outlines the proposed pick-and-place functionality using a mounted arm.     |
+
 
 
 ## Gantt Chart – Project Timeline Overview
