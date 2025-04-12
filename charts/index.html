@@ -29,7 +29,7 @@
 
     
       
-        <title>Project Workflow Chart - Intelligent TurtleBot - Voice Guided Navigation and Object Detection</title>
+        <title>Charts - Intelligent TurtleBot - Voice Guided Navigation and Object Detection</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview-of-workflow" class="md-skip">
+        <a href="#project-visual-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Project Workflow Chart
+              Charts
             
           </span>
         </div>
@@ -226,7 +226,7 @@
   
     
   
-  Project Workflow Chart
+  Charts
 
       </a>
     </li>
@@ -427,7 +427,7 @@
           
   
   <span class="md-ellipsis">
-    Project Workflow Chart
+    Charts
   </span>
   
 
@@ -438,7 +438,7 @@
         
   
   <span class="md-ellipsis">
-    Project Workflow Chart
+    Charts
   </span>
   
 
@@ -458,29 +458,164 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview-of-workflow" class="md-nav__link">
-    Overview of Workflow
+  <a href="#project-visual-overview" class="md-nav__link">
+    Project Visual Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-interaction-flow" class="md-nav__link">
-    System Interaction Flow
+  <a href="#gantt-chart-project-timeline-overview" class="md-nav__link">
+    Gantt Chart – Project Timeline Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-transitions-in-navigation" class="md-nav__link">
-    State Transitions in Navigation
+  <a href="#main-project-pipeline" class="md-nav__link">
+    Main Project Pipeline
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gantt-chart-representation" class="md-nav__link">
-    Gantt Chart Representation
+  <a href="#graph-td-astartbrturtlebot4-powered-on-bsensor-layerbroak-d-camera-imu-lidar-mic-csensor-databrpreprocessing-d1yolov8brobject-detection-d2voice-commandbrrecognition-edetected-object-info-fintent-or-goal-command-gdecision-making-node-hros2-navigation-stack-imovement-commandsbrvia-cmd_vel-jgui-updatebrobject-and-nav-info-kactuator-responsebrturtlebot-moves-luser-feedbackbrgui-visualization-mend-a-b-c-c-d1-e-c-d2-f-e-g-f-g-g-h-i-k-m-g-j-l-m" class="md-nav__link">
+    graph TD
+  A["Start:&lt;br/&gt;TurtleBot4 Powered On"]
+  B["Sensor Layer:&lt;br/&gt;Oak-D Camera, IMU, LiDAR, Mic"]
+  C["Sensor Data&lt;br/&gt;Preprocessing"]
+  D1["YOLOv8&lt;br/&gt;Object Detection"]
+  D2["Voice Command&lt;br/&gt;Recognition"]
+  E["Detected Object Info"]
+  F["Intent or Goal Command"]
+  G["Decision-Making Node"]
+  H["ROS2 Navigation Stack"]
+  I["Movement Commands&lt;br/&gt;via /cmd_vel"]
+  J["GUI Update:&lt;br/&gt;Object and Nav Info"]
+  K["Actuator Response:&lt;br/&gt;TurtleBot Moves"]
+  L["User Feedback:&lt;br/&gt;GUI Visualization"]
+  M["End"]
+
+  A --&gt; B --&gt; C
+  C --&gt; D1 --&gt; E
+  C --&gt; D2 --&gt; F
+  E --&gt; G
+  F --&gt; G
+  G --&gt; H --&gt; I --&gt; K --&gt; M
+  G --&gt; J --&gt; L --&gt; M
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-control-and-autonomy-flow" class="md-nav__link">
+    System Control and Autonomy Flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-td-top-level-flow-aturtlebot4-booted-bsensor-data-collection-a-b-sensor-layer-subgraph-sensor_layer-ros2-sensor-layer-n1node-oakd_camera_node-t1rpi_13oakdpreviewimage_raw-n2node-voice_input_node-t2voice_input-end-processing-layer-subgraph-processing_layer-ros2-perception-command-parsing-n3node-yolov8_processor-t3yolov8_detections-n4node-voice_command_parser-t4voice_cmd-end-autonomy-layer-subgraph-autonomy_layer-ros2-autonomy-control-n5node-decision_maker_node-n6node-collision_avoidance_node-n7node-navigation_controller-t5action_cmd-t6cmd_vel-n5-t5-n5-n6-n7-t6-end-flow-between-subgraphs-b-sensor_layer-processing_layer-autonomy_layer-cturtlebot4-output-autonomy_layer-c" class="md-nav__link">
+    graph TD
+
+  %% Top-Level Flow
+  A[TurtleBot4 Booted]
+  B[Sensor Data Collection]
+
+  A --&gt; B
+
+  %% Sensor Layer
+  subgraph Sensor_Layer [ROS2: Sensor Layer]
+    N1[Node: oakd_camera_node] --&gt; T1[/rpi_13/oakd/preview/image_raw/]
+    N2[Node: voice_input_node] --&gt; T2[/voice_input/]
+  end
+
+  %% Processing Layer
+  subgraph Processing_Layer [ROS2: Perception &amp; Command Parsing]
+    N3[Node: yolov8_processor] --&gt; T3[/yolov8_detections/]
+    N4[Node: voice_command_parser] --&gt; T4[/voice_cmd/]
+  end
+
+  %% Autonomy Layer
+  subgraph Autonomy_Layer [ROS2: Autonomy &amp; Control]
+    N5[Node: decision_maker_node]
+    N6[Node: collision_avoidance_node]
+    N7[Node: navigation_controller]
+    T5[/action_cmd/]
+    T6[/cmd_vel/]
+    N5 --&gt; T5
+    N5 --&gt; N6 --&gt; N7 --&gt; T6
+  end
+
+  %% Flow between subgraphs
+  B --&gt; Sensor_Layer --&gt; Processing_Layer --&gt; Autonomy_Layer
+  C[Turtlebot4 Output]
+  Autonomy_Layer --&gt; C
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hybrid-ros2-system-architecture" class="md-nav__link">
+    Hybrid ROS2 System Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-td-sensors-subgraph-sensors-sensor-inputs-camoak-d-camera-micmicrophone-lidarir-lidar-sensors-end-perception-layer-subgraph-perception-perception-nodes-yolonode-yolov8_processor-voice_rawnode-voice_input_node-yolo_outyolov8_detections-voice_invoice_input-cam-yolo-yolo_out-mic-voice_raw-voice_in-end-high-level-autonomy-subgraph-high_auto-high-level-autonomy-voice_parsernode-voice_command_parser-voice_cmdvoice_cmd-decidenode-decision_maker_node-act_cmdaction_cmd-voice_in-voice_parser-voice_cmd-yolo_out-decide-voice_cmd-decide-act_cmd-end-low-level-autonomy-subgraph-low_auto-low-level-control-coll_avoidnode-collision_avoidance_node-nav_ctrlnode-navigation_controller-cmd_velcmd_vel-lidar-coll_avoid-act_cmd-coll_avoid-nav_ctrl-cmd_vel-end-actuation-cmd_vel-tbotturtlebot-movement-block-to-block-flow-sensors-perception-high_auto-low_auto-tbot" class="md-nav__link">
+    graph TD
+
+  %% Sensors
+  subgraph SENSORS [Sensor Inputs]
+    CAM[Oak-D Camera]
+    MIC[Microphone]
+    LIDAR[IR / LiDAR Sensors]
+  end
+
+  %% Perception Layer
+  subgraph PERCEPTION [Perception Nodes]
+    YOLO[Node: yolov8_processor]
+    VOICE_RAW[Node: voice_input_node]
+    YOLO_OUT[/yolov8_detections/]
+    VOICE_IN[/voice_input/]
+    CAM --&gt; YOLO --&gt; YOLO_OUT
+    MIC --&gt; VOICE_RAW --&gt; VOICE_IN
+  end
+
+  %% High-Level Autonomy
+  subgraph HIGH_AUTO [High-Level Autonomy]
+    VOICE_PARSER[Node: voice_command_parser]
+    VOICE_CMD[/voice_cmd/]
+    DECIDE[Node: decision_maker_node]
+    ACT_CMD[/action_cmd/]
+    VOICE_IN --&gt; VOICE_PARSER --&gt; VOICE_CMD
+    YOLO_OUT --&gt; DECIDE
+    VOICE_CMD --&gt; DECIDE --&gt; ACT_CMD
+  end
+
+  %% Low-Level Autonomy
+  subgraph LOW_AUTO [Low-Level Control]
+    COLL_AVOID[Node: collision_avoidance_node]
+    NAV_CTRL[Node: navigation_controller]
+    CMD_VEL[/cmd_vel/]
+    LIDAR --&gt; COLL_AVOID
+    ACT_CMD --&gt; COLL_AVOID --&gt; NAV_CTRL --&gt; CMD_VEL
+  end
+
+  %% Actuation
+  CMD_VEL --&gt; TBOT[TurtleBot Movement]
+
+  %% Block-to-block flow
+  SENSORS --&gt; PERCEPTION --&gt; HIGH_AUTO --&gt; LOW_AUTO --&gt; TBOT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-work-concept-turtlebot4-with-mounted-cobot-arm" class="md-nav__link">
+    Future Work Concept: TurtleBot4 with Mounted Cobot Arm
   </a>
   
 </li>
@@ -678,29 +813,164 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview-of-workflow" class="md-nav__link">
-    Overview of Workflow
+  <a href="#project-visual-overview" class="md-nav__link">
+    Project Visual Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-interaction-flow" class="md-nav__link">
-    System Interaction Flow
+  <a href="#gantt-chart-project-timeline-overview" class="md-nav__link">
+    Gantt Chart – Project Timeline Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-transitions-in-navigation" class="md-nav__link">
-    State Transitions in Navigation
+  <a href="#main-project-pipeline" class="md-nav__link">
+    Main Project Pipeline
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gantt-chart-representation" class="md-nav__link">
-    Gantt Chart Representation
+  <a href="#graph-td-astartbrturtlebot4-powered-on-bsensor-layerbroak-d-camera-imu-lidar-mic-csensor-databrpreprocessing-d1yolov8brobject-detection-d2voice-commandbrrecognition-edetected-object-info-fintent-or-goal-command-gdecision-making-node-hros2-navigation-stack-imovement-commandsbrvia-cmd_vel-jgui-updatebrobject-and-nav-info-kactuator-responsebrturtlebot-moves-luser-feedbackbrgui-visualization-mend-a-b-c-c-d1-e-c-d2-f-e-g-f-g-g-h-i-k-m-g-j-l-m" class="md-nav__link">
+    graph TD
+  A["Start:&lt;br/&gt;TurtleBot4 Powered On"]
+  B["Sensor Layer:&lt;br/&gt;Oak-D Camera, IMU, LiDAR, Mic"]
+  C["Sensor Data&lt;br/&gt;Preprocessing"]
+  D1["YOLOv8&lt;br/&gt;Object Detection"]
+  D2["Voice Command&lt;br/&gt;Recognition"]
+  E["Detected Object Info"]
+  F["Intent or Goal Command"]
+  G["Decision-Making Node"]
+  H["ROS2 Navigation Stack"]
+  I["Movement Commands&lt;br/&gt;via /cmd_vel"]
+  J["GUI Update:&lt;br/&gt;Object and Nav Info"]
+  K["Actuator Response:&lt;br/&gt;TurtleBot Moves"]
+  L["User Feedback:&lt;br/&gt;GUI Visualization"]
+  M["End"]
+
+  A --&gt; B --&gt; C
+  C --&gt; D1 --&gt; E
+  C --&gt; D2 --&gt; F
+  E --&gt; G
+  F --&gt; G
+  G --&gt; H --&gt; I --&gt; K --&gt; M
+  G --&gt; J --&gt; L --&gt; M
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-control-and-autonomy-flow" class="md-nav__link">
+    System Control and Autonomy Flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-td-top-level-flow-aturtlebot4-booted-bsensor-data-collection-a-b-sensor-layer-subgraph-sensor_layer-ros2-sensor-layer-n1node-oakd_camera_node-t1rpi_13oakdpreviewimage_raw-n2node-voice_input_node-t2voice_input-end-processing-layer-subgraph-processing_layer-ros2-perception-command-parsing-n3node-yolov8_processor-t3yolov8_detections-n4node-voice_command_parser-t4voice_cmd-end-autonomy-layer-subgraph-autonomy_layer-ros2-autonomy-control-n5node-decision_maker_node-n6node-collision_avoidance_node-n7node-navigation_controller-t5action_cmd-t6cmd_vel-n5-t5-n5-n6-n7-t6-end-flow-between-subgraphs-b-sensor_layer-processing_layer-autonomy_layer-cturtlebot4-output-autonomy_layer-c" class="md-nav__link">
+    graph TD
+
+  %% Top-Level Flow
+  A[TurtleBot4 Booted]
+  B[Sensor Data Collection]
+
+  A --&gt; B
+
+  %% Sensor Layer
+  subgraph Sensor_Layer [ROS2: Sensor Layer]
+    N1[Node: oakd_camera_node] --&gt; T1[/rpi_13/oakd/preview/image_raw/]
+    N2[Node: voice_input_node] --&gt; T2[/voice_input/]
+  end
+
+  %% Processing Layer
+  subgraph Processing_Layer [ROS2: Perception &amp; Command Parsing]
+    N3[Node: yolov8_processor] --&gt; T3[/yolov8_detections/]
+    N4[Node: voice_command_parser] --&gt; T4[/voice_cmd/]
+  end
+
+  %% Autonomy Layer
+  subgraph Autonomy_Layer [ROS2: Autonomy &amp; Control]
+    N5[Node: decision_maker_node]
+    N6[Node: collision_avoidance_node]
+    N7[Node: navigation_controller]
+    T5[/action_cmd/]
+    T6[/cmd_vel/]
+    N5 --&gt; T5
+    N5 --&gt; N6 --&gt; N7 --&gt; T6
+  end
+
+  %% Flow between subgraphs
+  B --&gt; Sensor_Layer --&gt; Processing_Layer --&gt; Autonomy_Layer
+  C[Turtlebot4 Output]
+  Autonomy_Layer --&gt; C
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hybrid-ros2-system-architecture" class="md-nav__link">
+    Hybrid ROS2 System Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-td-sensors-subgraph-sensors-sensor-inputs-camoak-d-camera-micmicrophone-lidarir-lidar-sensors-end-perception-layer-subgraph-perception-perception-nodes-yolonode-yolov8_processor-voice_rawnode-voice_input_node-yolo_outyolov8_detections-voice_invoice_input-cam-yolo-yolo_out-mic-voice_raw-voice_in-end-high-level-autonomy-subgraph-high_auto-high-level-autonomy-voice_parsernode-voice_command_parser-voice_cmdvoice_cmd-decidenode-decision_maker_node-act_cmdaction_cmd-voice_in-voice_parser-voice_cmd-yolo_out-decide-voice_cmd-decide-act_cmd-end-low-level-autonomy-subgraph-low_auto-low-level-control-coll_avoidnode-collision_avoidance_node-nav_ctrlnode-navigation_controller-cmd_velcmd_vel-lidar-coll_avoid-act_cmd-coll_avoid-nav_ctrl-cmd_vel-end-actuation-cmd_vel-tbotturtlebot-movement-block-to-block-flow-sensors-perception-high_auto-low_auto-tbot" class="md-nav__link">
+    graph TD
+
+  %% Sensors
+  subgraph SENSORS [Sensor Inputs]
+    CAM[Oak-D Camera]
+    MIC[Microphone]
+    LIDAR[IR / LiDAR Sensors]
+  end
+
+  %% Perception Layer
+  subgraph PERCEPTION [Perception Nodes]
+    YOLO[Node: yolov8_processor]
+    VOICE_RAW[Node: voice_input_node]
+    YOLO_OUT[/yolov8_detections/]
+    VOICE_IN[/voice_input/]
+    CAM --&gt; YOLO --&gt; YOLO_OUT
+    MIC --&gt; VOICE_RAW --&gt; VOICE_IN
+  end
+
+  %% High-Level Autonomy
+  subgraph HIGH_AUTO [High-Level Autonomy]
+    VOICE_PARSER[Node: voice_command_parser]
+    VOICE_CMD[/voice_cmd/]
+    DECIDE[Node: decision_maker_node]
+    ACT_CMD[/action_cmd/]
+    VOICE_IN --&gt; VOICE_PARSER --&gt; VOICE_CMD
+    YOLO_OUT --&gt; DECIDE
+    VOICE_CMD --&gt; DECIDE --&gt; ACT_CMD
+  end
+
+  %% Low-Level Autonomy
+  subgraph LOW_AUTO [Low-Level Control]
+    COLL_AVOID[Node: collision_avoidance_node]
+    NAV_CTRL[Node: navigation_controller]
+    CMD_VEL[/cmd_vel/]
+    LIDAR --&gt; COLL_AVOID
+    ACT_CMD --&gt; COLL_AVOID --&gt; NAV_CTRL --&gt; CMD_VEL
+  end
+
+  %% Actuation
+  CMD_VEL --&gt; TBOT[TurtleBot Movement]
+
+  %% Block-to-block flow
+  SENSORS --&gt; PERCEPTION --&gt; HIGH_AUTO --&gt; LOW_AUTO --&gt; TBOT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-work-concept-turtlebot4-with-mounted-cobot-arm" class="md-nav__link">
+    Future Work Concept: TurtleBot4 with Mounted Cobot Arm
   </a>
   
 </li>
@@ -728,67 +998,236 @@
   
 
 
-  <h1>Project Workflow Chart</h1>
+  <h1>Charts</h1>
 
-<h2 id="overview-of-workflow">Overview of Workflow</h2>
-<pre class="mermaid"><code>graph TD
-  A[Start] --&gt; B[Sensor Data Acquisition]
-  B --&gt; C[Process Data]
-  C --&gt; D{Decision-Making}
-  D --&gt;|Object Detected| E[Trigger Response]
-  D --&gt;|No Object| F[Continue Scanning]
-  E --&gt; G[Voice Feedback]
-  E --&gt; H[Navigation Adjustment]
-  H --&gt; I[Obstacle Avoidance]
-  I --&gt; D
-  G --&gt; J[End]
-  F --&gt; B</code></pre>
-<h2 id="system-interaction-flow">System Interaction Flow</h2>
-<pre class="mermaid"><code>sequenceDiagram
-  autonumber
-  User-&gt;&gt;Robot: Provide Voice Command
-  Robot-&gt;&gt;Sensor Module: Capture Audio
-  Sensor Module-&gt;&gt;Processor: Process Speech
-  Processor-&gt;&gt;Decision Engine: Identify Intent
-  Decision Engine--&gt;&gt;Robot: Execute Action
-  alt Object Detected
-      Robot-&gt;&gt;User: Provides Object Information
-  else No Object Found
-      Robot-&gt;&gt;User: Requests Clarification
-  end
-  Robot--&gt;&gt;Navigation Module: Adjust Path
-  Navigation Module-&gt;&gt;Robot: Confirm Path Update
-  Robot-&gt;&gt;User: Acknowledges Completion</code></pre>
-<h2 id="state-transitions-in-navigation">State Transitions in Navigation</h2>
-<pre class="mermaid"><code>stateDiagram-v2
-  state scan_state &lt;&lt;fork&gt;&gt;
-    [*] --&gt; scan_state
-    scan_state --&gt; Object_Detected
-    scan_state --&gt; No_Object
-
-    state decision_state &lt;&lt;join&gt;&gt;
-    Object_Detected --&gt; decision_state
-    No_Object --&gt; decision_state
-    decision_state --&gt; Navigate
-    Navigate --&gt; [*]</code></pre>
-<h2 id="gantt-chart-representation">Gantt Chart Representation</h2>
-<pre class="mermaid"><code>gantt
-    title Project Timeline (Weeks 7-16)
+<h2 id="project-visual-overview">Project Visual Overview</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Chart Title</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Timeline</strong></td>
+<td>Gantt Chart</td>
+<td>Shows weekly project phases from planning to deployment.</td>
+</tr>
+<tr>
+<td><strong>Workflow</strong></td>
+<td>Project Workflow Chart</td>
+<td>Displays the full robot pipeline from sensor data to GUI feedback.</td>
+</tr>
+<tr>
+<td><strong>System Control</strong></td>
+<td>System Architecture + ROS2 Nodes &amp; Topics</td>
+<td>Visualizes ROS2 nodes and topics, including collision avoidance logic.</td>
+</tr>
+<tr>
+<td><strong>Future Work</strong></td>
+<td>Cobot Arm Integration Flow</td>
+<td>Outlines the proposed pick-and-place functionality using a mounted arm.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gantt-chart-project-timeline-overview">Gantt Chart – Project Timeline Overview</h2>
+<pre class="mermaid"><code>%%{ init: {
+  "theme": "default",
+  "themeVariables": {
+    "taskTextColor": "#ffffff",
+    "taskBorderColor": "#666666",
+    "taskFill": "#444444",
+    "fontSize": "14px",
+    "gridColor": "#999999"
+  },
+  "gantt": {
+    "barHeight": 30,
+    "barGap": 5
+  }
+} }%%
+gantt
+    title Project Timeline (Weeks 7–16)
     dateFormat  YYYY-MM-DD
+    axisFormat  %b %d
+
     section Planning
-    Finalizing Scope :active, milestone1, 2025-02-24, 7d
+    Finalize Scope            :milestone1, 2025-02-24, 7d
+
     section Implementation
-    ROS2 Setup :active, milestone2, 2025-03-03, 7d
-    Object Detection :milestone3, 2025-03-10, 7d
-    Speech Recognition :milestone4, 2025-03-17, 7d
-    Navigation Testing :milestone5, 2025-03-24, 7d
-    Integrate &amp; Debug :milestone6, 2025-03-31, 7d
+    ROS2 Setup                :milestone2, 2025-03-03, 7d
+    GUI Development           :milestone3, 2025-03-10, 7d
+    YOLOv8 + Oak-D            :milestone4, 2025-03-17, 7d
+    Voice Command             :milestone5, 2025-03-24, 7d
+    ROS2 Integration          :milestone6, 2025-03-31, 10d
+
     section Testing &amp; Deployment
-    Real-World Testing :milestone7, 2025-04-07, 7d
-    Final Prep :milestone8, 2025-04-14, 7d
-    Document &amp; Review :milestone9, 2025-04-21, 7d
-    Final Demonstration :milestone10, 2025-04-28, 6d
+    TurtleBot Testing         :milestone7, 2025-04-10, 7d
+    Final Debug               :milestone8, 2025-04-17, 5d
+    Docs &amp; Video              :milestone9, 2025-04-22, 5d
+    Final Demo                :milestone10, 2025-04-28, 6d
 </code></pre>
+<h2 id="main-project-pipeline">Main Project Pipeline</h2>
+<ul>
+<li>The flowchart below represents the overall working of our Intelligent TurtleBot4 system. </li>
+<li>It starts with sensor data collection from the Oak-D camera, IMU, LiDAR, and microphone. </li>
+<li>
+<p>The data is then preprocessed and sent to two parallel modules: YOLOv8 for object detection and voice recognition for interpreting commands.</p>
+</li>
+<li>
+<p>Outputs from both modules are fed into a decision-making node that determines the robot's next action. </p>
+</li>
+<li>The chosen action is executed via the ROS2 navigation stack and published as movement commands. </li>
+<li>Simultaneously, the GUI updates with relevant feedback, allowing users to visualize object info and robot behavior in real time.</li>
+</ul>
+<h2 id="graph-td-astartbrturtlebot4-powered-on-bsensor-layerbroak-d-camera-imu-lidar-mic-csensor-databrpreprocessing-d1yolov8brobject-detection-d2voice-commandbrrecognition-edetected-object-info-fintent-or-goal-command-gdecision-making-node-hros2-navigation-stack-imovement-commandsbrvia-cmd_vel-jgui-updatebrobject-and-nav-info-kactuator-responsebrturtlebot-moves-luser-feedbackbrgui-visualization-mend-a-b-c-c-d1-e-c-d2-f-e-g-f-g-g-h-i-k-m-g-j-l-m"><pre class="mermaid"><code>graph TD
+  A["Start:&lt;br/&gt;TurtleBot4 Powered On"]
+  B["Sensor Layer:&lt;br/&gt;Oak-D Camera, IMU, LiDAR, Mic"]
+  C["Sensor Data&lt;br/&gt;Preprocessing"]
+  D1["YOLOv8&lt;br/&gt;Object Detection"]
+  D2["Voice Command&lt;br/&gt;Recognition"]
+  E["Detected Object Info"]
+  F["Intent or Goal Command"]
+  G["Decision-Making Node"]
+  H["ROS2 Navigation Stack"]
+  I["Movement Commands&lt;br/&gt;via /cmd_vel"]
+  J["GUI Update:&lt;br/&gt;Object and Nav Info"]
+  K["Actuator Response:&lt;br/&gt;TurtleBot Moves"]
+  L["User Feedback:&lt;br/&gt;GUI Visualization"]
+  M["End"]
+
+  A --&gt; B --&gt; C
+  C --&gt; D1 --&gt; E
+  C --&gt; D2 --&gt; F
+  E --&gt; G
+  F --&gt; G
+  G --&gt; H --&gt; I --&gt; K --&gt; M
+  G --&gt; J --&gt; L --&gt; M</code></pre></h2>
+<h2 id="system-control-and-autonomy-flow">System Control and Autonomy Flow</h2>
+<ul>
+<li>The diagram below presents the complete decision and control loop of our TurtleBot4 system.</li>
+<li>From user voice inputs and real-time camera feeds, data is collected, processed, and passed through an autonomy layer to issue movement commands.</li>
+<li>Each subsystem (sensor, processing, autonomy) is driven by dedicated ROS2 nodes communicating through standard topics.</li>
+</ul>
+<h2 id="graph-td-top-level-flow-aturtlebot4-booted-bsensor-data-collection-a-b-sensor-layer-subgraph-sensor_layer-ros2-sensor-layer-n1node-oakd_camera_node-t1rpi_13oakdpreviewimage_raw-n2node-voice_input_node-t2voice_input-end-processing-layer-subgraph-processing_layer-ros2-perception-command-parsing-n3node-yolov8_processor-t3yolov8_detections-n4node-voice_command_parser-t4voice_cmd-end-autonomy-layer-subgraph-autonomy_layer-ros2-autonomy-control-n5node-decision_maker_node-n6node-collision_avoidance_node-n7node-navigation_controller-t5action_cmd-t6cmd_vel-n5-t5-n5-n6-n7-t6-end-flow-between-subgraphs-b-sensor_layer-processing_layer-autonomy_layer-cturtlebot4-output-autonomy_layer-c"><pre class="mermaid"><code>graph TD
+
+  %% Top-Level Flow
+  A[TurtleBot4 Booted]
+  B[Sensor Data Collection]
+
+  A --&gt; B
+
+  %% Sensor Layer
+  subgraph Sensor_Layer [ROS2: Sensor Layer]
+    N1[Node: oakd_camera_node] --&gt; T1[/rpi_13/oakd/preview/image_raw/]
+    N2[Node: voice_input_node] --&gt; T2[/voice_input/]
+  end
+
+  %% Processing Layer
+  subgraph Processing_Layer [ROS2: Perception &amp; Command Parsing]
+    N3[Node: yolov8_processor] --&gt; T3[/yolov8_detections/]
+    N4[Node: voice_command_parser] --&gt; T4[/voice_cmd/]
+  end
+
+  %% Autonomy Layer
+  subgraph Autonomy_Layer [ROS2: Autonomy &amp; Control]
+    N5[Node: decision_maker_node]
+    N6[Node: collision_avoidance_node]
+    N7[Node: navigation_controller]
+    T5[/action_cmd/]
+    T6[/cmd_vel/]
+    N5 --&gt; T5
+    N5 --&gt; N6 --&gt; N7 --&gt; T6
+  end
+
+  %% Flow between subgraphs
+  B --&gt; Sensor_Layer --&gt; Processing_Layer --&gt; Autonomy_Layer
+  C[Turtlebot4 Output]
+  Autonomy_Layer --&gt; C
+</code></pre></h2>
+<h2 id="hybrid-ros2-system-architecture">Hybrid ROS2 System Architecture</h2>
+<ul>
+<li>This diagram separates high-level autonomy (top row) from low-level motion control (bottom row), with clearly labeled ROS2 nodes and topic communication.</li>
+<li>It maintains modular blocks for perception, decision-making, and actuation while improving visual alignment and clarity.</li>
+</ul>
+<h2 id="graph-td-sensors-subgraph-sensors-sensor-inputs-camoak-d-camera-micmicrophone-lidarir-lidar-sensors-end-perception-layer-subgraph-perception-perception-nodes-yolonode-yolov8_processor-voice_rawnode-voice_input_node-yolo_outyolov8_detections-voice_invoice_input-cam-yolo-yolo_out-mic-voice_raw-voice_in-end-high-level-autonomy-subgraph-high_auto-high-level-autonomy-voice_parsernode-voice_command_parser-voice_cmdvoice_cmd-decidenode-decision_maker_node-act_cmdaction_cmd-voice_in-voice_parser-voice_cmd-yolo_out-decide-voice_cmd-decide-act_cmd-end-low-level-autonomy-subgraph-low_auto-low-level-control-coll_avoidnode-collision_avoidance_node-nav_ctrlnode-navigation_controller-cmd_velcmd_vel-lidar-coll_avoid-act_cmd-coll_avoid-nav_ctrl-cmd_vel-end-actuation-cmd_vel-tbotturtlebot-movement-block-to-block-flow-sensors-perception-high_auto-low_auto-tbot"><pre class="mermaid"><code>graph TD
+
+  %% Sensors
+  subgraph SENSORS [Sensor Inputs]
+    CAM[Oak-D Camera]
+    MIC[Microphone]
+    LIDAR[IR / LiDAR Sensors]
+  end
+
+  %% Perception Layer
+  subgraph PERCEPTION [Perception Nodes]
+    YOLO[Node: yolov8_processor]
+    VOICE_RAW[Node: voice_input_node]
+    YOLO_OUT[/yolov8_detections/]
+    VOICE_IN[/voice_input/]
+    CAM --&gt; YOLO --&gt; YOLO_OUT
+    MIC --&gt; VOICE_RAW --&gt; VOICE_IN
+  end
+
+  %% High-Level Autonomy
+  subgraph HIGH_AUTO [High-Level Autonomy]
+    VOICE_PARSER[Node: voice_command_parser]
+    VOICE_CMD[/voice_cmd/]
+    DECIDE[Node: decision_maker_node]
+    ACT_CMD[/action_cmd/]
+    VOICE_IN --&gt; VOICE_PARSER --&gt; VOICE_CMD
+    YOLO_OUT --&gt; DECIDE
+    VOICE_CMD --&gt; DECIDE --&gt; ACT_CMD
+  end
+
+  %% Low-Level Autonomy
+  subgraph LOW_AUTO [Low-Level Control]
+    COLL_AVOID[Node: collision_avoidance_node]
+    NAV_CTRL[Node: navigation_controller]
+    CMD_VEL[/cmd_vel/]
+    LIDAR --&gt; COLL_AVOID
+    ACT_CMD --&gt; COLL_AVOID --&gt; NAV_CTRL --&gt; CMD_VEL
+  end
+
+  %% Actuation
+  CMD_VEL --&gt; TBOT[TurtleBot Movement]
+
+  %% Block-to-block flow
+  SENSORS --&gt; PERCEPTION --&gt; HIGH_AUTO --&gt; LOW_AUTO --&gt; TBOT</code></pre></h2>
+<h2 id="future-work-concept-turtlebot4-with-mounted-cobot-arm">Future Work Concept: TurtleBot4 with Mounted Cobot Arm</h2>
+<p>This future work visual outlines the integration of a robotic arm on TurtleBot4. 
+The system uses object detection and coordinates from the perception pipeline to compute inverse kinematics and execute pick-and-place actions via a dedicated ROS2 control node.</p>
+<p>Goals to Capture Visually:
+- Addition of a robotic arm mounted on TurtleBot4
+- Use of ROS2 for communication with the arm
+- Performing pick-and-place tasks
+- Integration with existing perception (e.g., YOLOv8 object detection for picking targets)</p>
+<pre class="mermaid"><code>graph TD
+
+  %% Object Detection &amp; Localization
+  V1["Object Detection&lt;br/&gt;using YOLOv8"]
+  V2["Target Object&lt;br/&gt;Coordinates"]
+
+  %% Motion Planning
+  M1["Inverse Kinematics&lt;br/&gt;&amp; Arm Planning"]
+
+  %% Platform Base
+  P2["TurtleBot4 Base Platform"]
+  P1["Mounted Cobot Arm&lt;br/&gt;on Platform"]
+
+  %% ROS2 Control
+  N1["ROS2 Arm&lt;br/&gt;Control Node"]
+
+  %% Execution
+  E1["Pick and Place&lt;br/&gt;Execution"]
+  E2["Object&lt;br/&gt;Grasped and Placed"]
+
+  %% Connections
+  V1 --&gt; V2 --&gt; M1 --&gt; N1
+  P1 --&gt; P2 --&gt; N1
+  N1 --&gt; E1 --&gt; E2</code></pre>
+<hr />
 
 
 
