@@ -26,20 +26,190 @@ tags:
 
 **Concept:** 
 
-This project explores how TurtleBot4 can intelligently interact with its surroundings through vision-based object detection and speech-based communication. Using **TurtleBot 4 with Create 3 and Raspberry Pi**, our aim is to integrate:  
+This project explores how TurtleBot4 can intelligently interact with its surroundings through vision-based object detection and voice-guided navigation. Using TurtleBot 4 with Create 3 and Raspberry Pi, our aim is to integrate and demonstrate the following capabilities:
 
-- **Real-time object detection** using **YOLOv8** for recognizing and categorizing objects in the environment.  
-- **Voice command interaction** for user control, allowing spoken instructions to guide the robot's behavior.  
-- **Autonomous navigation** with obstacle avoidance, ensuring safe and efficient movement in dynamic spaces.  
-- **Dynamic responses** based on detected objects, enabling context-aware robotic actions.  
-- **Fallback mechanisms** for handling hardware/software limitations and ensuring system robustness.  
+- Real-time object detection using YOLOv8, recognizing and categorizing environmental objects with live camera input.
+- Voice command interaction, allowing users to issue spoken instructions that influence robot behavior through a natural interface.
+- Autonomous navigation with obstacle avoidance using the ROS2 navigation stack, enabling safe and efficient mobility.
+- Decision-making based on perception, where voice commands and visual detections combine to guide task execution.
+- Fallback mechanisms to ensure robustness and handle unexpected failures in hardware or software modules.
+---
+
+This updated scope aligns directly with our project deliverables — voice-guided, vision-aware autonomous robot control — and leaves room for seamless extension into manipulation and complex task planning.
 
 ---
-## GUI - Mockup Update (31/03/2025)
+## Project Workflow
+
+The system operates by capturing data from multiple sensors, interpreting user commands, and performing autonomous navigation and feedback. The diagram below outlines the overall data and control flow of the TurtleBot4 system.
+
+```mermaid
+%%{ init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "14px",
+    "primaryColor": "#ffffff",
+    "edgeLabelBackground": "#ffffff"
+  }
+}}%%
+graph TD
+  A["Start:<br/>TurtleBot4 Powered On"]
+  B["Sensor Layer:<br/>Oak-D Camera, IMU, LiDAR, Mic"]
+  C["Sensor Data<br/>Preprocessing"]
+  D1["YOLOv8<br/>Object Detection"]
+  D2["Voice Command<br/>Recognition"]
+  E["Detected Object Info"]
+  F["Intent or Goal Command"]
+  G["Decision-Making Node"]
+  H["ROS2 Navigation Stack"]
+  I["Movement Commands<br/>via /cmd_vel"]
+  J["GUI Update:<br/>Object and Nav Info"]
+  K["Actuator Response:<br/>TurtleBot Moves"]
+  L["User Feedback:<br/>GUI Visualization"]
+  M["End"]
+
+  %% Flow
+  A --> B
+  B --> C
+  C --> D1
+  C --> D2
+  D1 --> E
+  D2 --> F
+  E --> G
+  F --> G
+  G --> H
+  H --> I
+  I --> K
+  K --> M
+  G --> J
+  J --> L
+  L --> M
+
+  %% Styling groups
+  classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
+  classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
+  classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
+  classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
+  classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
+  classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
+
+  %% Assign node classes
+  class A,M startend
+  class B sensing
+  class C,D1,D2,E,F processing
+  class G decision
+  class H,I,K navctrl
+  class J,L gui
+
+```
+---
+## Project Discussions
+### 1. Sensor Fusion and Autonomous Decision-Making
+
+The TurtleBot4 system leverages multiple data sources — including vision, audio, and LiDAR — to perform real-time perception and intelligent control. 
+These data streams are handled through modular ROS2 nodes that contribute to both high-level autonomy and low-level motion control.
+
+### 2. Sensor Inputs
+
+- **Oak-D Camera** provides real-time RGB images for visual perception.
+- **Microphone** captures user voice commands as audio input.
+- **LiDAR and IR sensors** are used for obstacle detection and collision avoidance.
+
+These sensors operate concurrently and feed their outputs into dedicated ROS2 nodes.
+
+### 3. Perception and Processing Nodes
+
+- `yolov8_processor`: Subscribes to image streams (`/rpi_13/oakd/preview/image_raw`) and outputs detected object data to `/yolov8_detections`.
+- `voice_input_node`: Processes raw audio and converts it into structured voice data (`/voice_input`).
+- `voice_command_parser`: Transforms audio into semantic commands (e.g., "move forward") and publishes them to `/voice_cmd`.
+
+This layered perception setup allows the robot to understand both its **physical environment** and **human intent** simultaneously.
+
+### 3.1 High-Level Autonomy
+
+The core decision-making logic resides in the `decision_maker_node`, which:
+
+- Consumes outputs from both `/yolov8_detections` and `/voice_cmd`
+- Prioritizes user commands or detected objects to determine the appropriate action
+- Publishes resulting commands to `/action_cmd`
+
+### 3.2 Low-Level Motion Control
+
+Low-level execution is handled by the following:
+
+- `collision_avoidance_node`: Merges `/action_cmd` with real-time sensor data (e.g., LiDAR) to determine safe trajectories
+- `navigation_controller`: Translates the motion plan into velocity commands published to `/cmd_vel`
+
+These nodes form a closed-loop controller that ensures both **goal-directed behavior** and **safety**.
+
+---
+## 3.3 Control Architecture in ROS2
+
+The following flowchart summarizes the control pipeline, organized by data type and decision layer:
+
+```mermaid
+graph TD
+
+  subgraph "Sensor Inputs"
+    CAM[Oak-D Camera]
+    MIC[Microphone]
+    LIDAR[IR / LiDAR Sensors]
+  end
+
+  subgraph "Perception Nodes"
+    YOLO_NODE[Node: yolov8_processor]
+    VOICE_NODE[Node: voice_input_node]
+    DETECTIONS[/yolov8_detections/]
+    VOICE_RAW[/voice_input/]
+    CAM --> YOLO_NODE --> DETECTIONS
+    MIC --> VOICE_NODE --> VOICE_RAW
+  end
+
+  subgraph "High-Level Autonomy"
+    VOICE_PARSER[Node: voice_command_parser]
+    VOICE_CMD[/voice_cmd/]
+    DECISION[Node: decision_maker_node]
+    ACT_CMD[/action_cmd/]
+    VOICE_RAW --> VOICE_PARSER --> VOICE_CMD
+    DETECTIONS --> DECISION
+    VOICE_CMD --> DECISION --> ACT_CMD
+  end
+
+  subgraph "Low-Level Control"
+    COLLISION[Node: collision_avoidance_node]
+    NAV[Node: navigation_controller]
+    CMD[/cmd_vel/]
+    LIDAR --> COLLISION
+    ACT_CMD --> COLLISION --> NAV --> CMD
+  end
+
+  CMD --> MOVE[TurtleBot Movement]
+```
+### 4. ROS2 and GUI
+
+#### GUI Integration
+
+The graphical user interface (GUI) plays a key role in closing the feedback loop between perception, autonomy, and user interaction. It provides real-time insights into the robot's internal state and sensory understanding.
+
+The GUI displays:
+
+- Real-time video feed with overlaid object detections from the onboard Oak-D camera
+- Voice command recognition status and interpreted instructions
+- Navigation and movement feedback, including direction, velocity, and planned path
+- Sensor data such as LiDAR scans, IMU readings, and obstacle detections
+
+The GUI is integrated with ROS2 and subscribes to the following key topics:
+
+- `/yolov8_detections` – Visual object detection results
+- `/voice_cmd` – Parsed user voice commands
+- `/cmd_vel` – Velocity commands issued to the robot
+- `/rpi_13/hazard_detection` – Safety and obstacle data
+- `/rpi_13/imu` – Orientation and motion readings
+
+This interface allows users to monitor system behavior in real-time, verify decision-making logic, and better understand the robot's perception and action in dynamic environments.
 
 **1. Using Inkscape**
 
-![turtlebot4-team-project](https://github.com/user-attachments/assets/f803b082-9fb9-483c-b1d5-c42e3c938883)
+![image](https://github.com/user-attachments/assets/069d103c-103e-4c88-a693-fd7bdd21b459)
 
 **2. Proposed GUI For Control**
 
@@ -49,9 +219,25 @@ This project explores how TurtleBot4 can intelligently interact with its surroun
 ![task-2](https://github.com/user-attachments/assets/0ae545f4-2bab-45d4-878f-b5a7143b01e1)
 
 ---
-## Test 01
+## Demonstration Videos
 
-Youtube Video Link: https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp
+### Test 01: Object Detection + GUI Overlay
+
+[![Watch on YouTube](https://img.youtube.com/vi/hz7PwtZZgPg/0.jpg)](https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp)
+
+*Real-time object detection using YOLOv8 with GUI overlay showing detected objects and confidence scores.*
+
+---
+
+### Test 02: Voice Command Navigation *(Coming Soon)*
+
+_A short demo showcasing voice-command-based control of TurtleBot4 in a dynamic environment._
+
+---
+
+### Test 03: Full Autonomy Simulation *(Planned)*
+
+_A future test combining voice input, object detection, and autonomous navigation on real hardware._
 
 ---
 ## Sensor Integration
@@ -147,6 +333,24 @@ This project will:
 - Provide students hands-on experience with ROS2, AI, and embedded systems.
 - Potentially contribute to assistive robotics research.
 ---
+
+---
+
+### Future Scope:
+
+In future iterations, the system can be extended with:
+
+- Robotic arm integration mounted on TurtleBot4 for executing pick-and-place actions based on detected objects.
+- Task-oriented planning using semantic understanding of scenes (e.g., pick red object and place it near the wall).
+
+![image](https://github.com/user-attachments/assets/320d1ff7-a982-4fe4-ac4c-eabfbe49d17d)
+
+![image](https://github.com/user-attachments/assets/d01f286a-b695-4d40-ac33-74acaa0e303e)
+
+
+Here is the generated image of a cobot mounted on a TurtleBot4 using CHATGPT 4o
+
+
 
 
 ## References *(Subject to change)*:
