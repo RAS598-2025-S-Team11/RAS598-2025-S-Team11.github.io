@@ -1038,41 +1038,26 @@
 </tbody>
 </table>
 <h2 id="gantt-chart-project-timeline-overview">Gantt Chart – Project Timeline Overview</h2>
-<pre class="mermaid"><code>%%{ init: {
-  "theme": "default",
-  "themeVariables": {
-    "taskTextColor": "#ffffff",
-    "taskBorderColor": "#666666",
-    "taskFill": "#444444",
-    "fontSize": "14px",
-    "gridColor": "#999999"
-  },
-  "gantt": {
-    "barHeight": 30,
-    "barGap": 5
-  }
-} }%%
-gantt
+<pre class="mermaid"><code>gantt
     title Project Timeline (Weeks 7–16)
     dateFormat  YYYY-MM-DD
     axisFormat  %b %d
 
     section Planning
-    Finalize Scope            :milestone1, 2025-02-24, 7d
+    Finalize Scope            :active,milestone1, 2025-02-24, 7d
 
     section Implementation
-    ROS2 Setup                :milestone2, 2025-03-03, 7d
-    GUI Development           :milestone3, 2025-03-10, 7d
-    YOLOv8 + Oak-D            :milestone4, 2025-03-17, 7d
-    Voice Command             :milestone5, 2025-03-24, 7d
-    ROS2 Integration          :milestone6, 2025-03-31, 10d
+    ROS2 Setup                :active,milestone2, 2025-03-03, 7d
+    GUI Development           :active,milestone3, 2025-03-10, 7d
+    YOLOv8 + Oak-D            :active,milestone4, 2025-03-17, 7d
+    Voice Command             :crit,milestone5, 2025-03-24, 7d
+    ROS2 Integration          :crit,milestone6, 2025-03-31, 10d
 
     section Testing &amp; Deployment
-    TurtleBot Testing         :milestone7, 2025-04-10, 7d
+    TurtleBot Testing         :crit,milestone7, 2025-04-10, 7d
     Final Debug               :milestone8, 2025-04-17, 5d
     Docs &amp; Video              :milestone9, 2025-04-22, 5d
-    Final Demo                :milestone10, 2025-04-28, 6d
-</code></pre>
+    Final Demo                :milestone10, 2025-04-28, 6d</code></pre>
 <h2 id="main-project-pipeline">Main Project Pipeline</h2>
 <ul>
 <li>The flowchart below represents the overall working of our Intelligent TurtleBot4 system. </li>
