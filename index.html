@@ -451,16 +451,187 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gui-mockup-update-31032025" class="md-nav__link">
-    GUI - Mockup Update (31/03/2025)
+  <a href="#project-workflow" class="md-nav__link">
+    Project Workflow
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-01" class="md-nav__link">
-    Test 01
+  <a href="#init-theme-default-themevariables-fontsize-14px-primarycolor-ffffff-edgelabelbackground-ffffff-graph-td-astartbrturtlebot4-powered-on-bsensor-layerbroak-d-camera-imu-lidar-mic-csensor-databrpreprocessing-d1yolov8brobject-detection-d2voice-commandbrrecognition-edetected-object-info-fintent-or-goal-command-gdecision-making-node-hros2-navigation-stack-imovement-commandsbrvia-cmd_vel-jgui-updatebrobject-and-nav-info-kactuator-responsebrturtlebot-moves-luser-feedbackbrgui-visualization-mend-flow-a-b-b-c-c-d1-c-d2-d1-e-d2-f-e-g-f-g-g-h-h-i-i-k-k-m-g-j-j-l-l-m-styling-groups-classdef-startend-fillf6e3f3strokec27ba0color000-classdef-sensing-filld0f0efstroke5bbdbbcolor000-classdef-processing-fille8eaf6stroke7986cbcolor000-classdef-decision-fillfce4ecstrokeec407acolor000-classdef-navctrl-fille0f7fastroke00838fcolor000-classdef-gui-fillede7f6stroke7e57c2color000-assign-node-classes-class-am-startend-class-b-sensing-class-cd1d2ef-processing-class-g-decision-class-hik-navctrl-class-jl-gui" class="md-nav__link">
+    %%{ init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "14px",
+    "primaryColor": "#ffffff",
+    "edgeLabelBackground": "#ffffff"
+  }
+}}%%
+graph TD
+  A["Start:&lt;br/&gt;TurtleBot4 Powered On"]
+  B["Sensor Layer:&lt;br/&gt;Oak-D Camera, IMU, LiDAR, Mic"]
+  C["Sensor Data&lt;br/&gt;Preprocessing"]
+  D1["YOLOv8&lt;br/&gt;Object Detection"]
+  D2["Voice Command&lt;br/&gt;Recognition"]
+  E["Detected Object Info"]
+  F["Intent or Goal Command"]
+  G["Decision-Making Node"]
+  H["ROS2 Navigation Stack"]
+  I["Movement Commands&lt;br/&gt;via /cmd_vel"]
+  J["GUI Update:&lt;br/&gt;Object and Nav Info"]
+  K["Actuator Response:&lt;br/&gt;TurtleBot Moves"]
+  L["User Feedback:&lt;br/&gt;GUI Visualization"]
+  M["End"]
+
+  %% Flow
+  A --&gt; B
+  B --&gt; C
+  C --&gt; D1
+  C --&gt; D2
+  D1 --&gt; E
+  D2 --&gt; F
+  E --&gt; G
+  F --&gt; G
+  G --&gt; H
+  H --&gt; I
+  I --&gt; K
+  K --&gt; M
+  G --&gt; J
+  J --&gt; L
+  L --&gt; M
+
+  %% Styling groups
+  classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
+  classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
+  classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
+  classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
+  classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
+  classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
+
+  %% Assign node classes
+  class A,M startend
+  class B sensing
+  class C,D1,D2,E,F processing
+  class G decision
+  class H,I,K navctrl
+  class J,L gui
+
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-discussions" class="md-nav__link">
+    Project Discussions
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Discussions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sensor-fusion-and-autonomous-decision-making" class="md-nav__link">
+    1. Sensor Fusion and Autonomous Decision-Making
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sensor-inputs" class="md-nav__link">
+    2. Sensor Inputs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-perception-and-processing-nodes" class="md-nav__link">
+    3. Perception and Processing Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-high-level-autonomy" class="md-nav__link">
+    3.1 High-Level Autonomy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-low-level-motion-control" class="md-nav__link">
+    3.2 Low-Level Motion Control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-control-architecture-in-ros2" class="md-nav__link">
+    3.3 Control Architecture in ROS2
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Control Architecture in ROS2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-ros2-and-gui" class="md-nav__link">
+    4. ROS2 and GUI
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ROS2 and GUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gui-integration" class="md-nav__link">
+    GUI Integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demonstration-videos" class="md-nav__link">
+    Demonstration Videos
+  </a>
+  
+    <nav class="md-nav" aria-label="Demonstration Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-01-object-detection-gui-overlay" class="md-nav__link">
+    Test 01: Object Detection + GUI Overlay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-02-voice-command-navigation-coming-soon" class="md-nav__link">
+    Test 02: Voice Command Navigation (Coming Soon)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-03-full-autonomy-simulation-planned" class="md-nav__link">
+    Test 03: Full Autonomy Simulation (Planned)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -543,6 +714,19 @@
   <a href="#impact" class="md-nav__link">
     Impact
   </a>
+  
+    <nav class="md-nav" aria-label="Impact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#future-scope" class="md-nav__link">
+    Future Scope:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -819,16 +1003,187 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gui-mockup-update-31032025" class="md-nav__link">
-    GUI - Mockup Update (31/03/2025)
+  <a href="#project-workflow" class="md-nav__link">
+    Project Workflow
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-01" class="md-nav__link">
-    Test 01
+  <a href="#init-theme-default-themevariables-fontsize-14px-primarycolor-ffffff-edgelabelbackground-ffffff-graph-td-astartbrturtlebot4-powered-on-bsensor-layerbroak-d-camera-imu-lidar-mic-csensor-databrpreprocessing-d1yolov8brobject-detection-d2voice-commandbrrecognition-edetected-object-info-fintent-or-goal-command-gdecision-making-node-hros2-navigation-stack-imovement-commandsbrvia-cmd_vel-jgui-updatebrobject-and-nav-info-kactuator-responsebrturtlebot-moves-luser-feedbackbrgui-visualization-mend-flow-a-b-b-c-c-d1-c-d2-d1-e-d2-f-e-g-f-g-g-h-h-i-i-k-k-m-g-j-j-l-l-m-styling-groups-classdef-startend-fillf6e3f3strokec27ba0color000-classdef-sensing-filld0f0efstroke5bbdbbcolor000-classdef-processing-fille8eaf6stroke7986cbcolor000-classdef-decision-fillfce4ecstrokeec407acolor000-classdef-navctrl-fille0f7fastroke00838fcolor000-classdef-gui-fillede7f6stroke7e57c2color000-assign-node-classes-class-am-startend-class-b-sensing-class-cd1d2ef-processing-class-g-decision-class-hik-navctrl-class-jl-gui" class="md-nav__link">
+    %%{ init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "14px",
+    "primaryColor": "#ffffff",
+    "edgeLabelBackground": "#ffffff"
+  }
+}}%%
+graph TD
+  A["Start:&lt;br/&gt;TurtleBot4 Powered On"]
+  B["Sensor Layer:&lt;br/&gt;Oak-D Camera, IMU, LiDAR, Mic"]
+  C["Sensor Data&lt;br/&gt;Preprocessing"]
+  D1["YOLOv8&lt;br/&gt;Object Detection"]
+  D2["Voice Command&lt;br/&gt;Recognition"]
+  E["Detected Object Info"]
+  F["Intent or Goal Command"]
+  G["Decision-Making Node"]
+  H["ROS2 Navigation Stack"]
+  I["Movement Commands&lt;br/&gt;via /cmd_vel"]
+  J["GUI Update:&lt;br/&gt;Object and Nav Info"]
+  K["Actuator Response:&lt;br/&gt;TurtleBot Moves"]
+  L["User Feedback:&lt;br/&gt;GUI Visualization"]
+  M["End"]
+
+  %% Flow
+  A --&gt; B
+  B --&gt; C
+  C --&gt; D1
+  C --&gt; D2
+  D1 --&gt; E
+  D2 --&gt; F
+  E --&gt; G
+  F --&gt; G
+  G --&gt; H
+  H --&gt; I
+  I --&gt; K
+  K --&gt; M
+  G --&gt; J
+  J --&gt; L
+  L --&gt; M
+
+  %% Styling groups
+  classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
+  classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
+  classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
+  classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
+  classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
+  classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
+
+  %% Assign node classes
+  class A,M startend
+  class B sensing
+  class C,D1,D2,E,F processing
+  class G decision
+  class H,I,K navctrl
+  class J,L gui
+
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-discussions" class="md-nav__link">
+    Project Discussions
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Discussions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sensor-fusion-and-autonomous-decision-making" class="md-nav__link">
+    1. Sensor Fusion and Autonomous Decision-Making
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sensor-inputs" class="md-nav__link">
+    2. Sensor Inputs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-perception-and-processing-nodes" class="md-nav__link">
+    3. Perception and Processing Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-high-level-autonomy" class="md-nav__link">
+    3.1 High-Level Autonomy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-low-level-motion-control" class="md-nav__link">
+    3.2 Low-Level Motion Control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-control-architecture-in-ros2" class="md-nav__link">
+    3.3 Control Architecture in ROS2
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Control Architecture in ROS2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-ros2-and-gui" class="md-nav__link">
+    4. ROS2 and GUI
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ROS2 and GUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gui-integration" class="md-nav__link">
+    GUI Integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demonstration-videos" class="md-nav__link">
+    Demonstration Videos
+  </a>
+  
+    <nav class="md-nav" aria-label="Demonstration Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-01-object-detection-gui-overlay" class="md-nav__link">
+    Test 01: Object Detection + GUI Overlay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-02-voice-command-navigation-coming-soon" class="md-nav__link">
+    Test 02: Voice Command Navigation (Coming Soon)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-03-full-autonomy-simulation-planned" class="md-nav__link">
+    Test 03: Full Autonomy Simulation (Planned)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -911,6 +1266,19 @@
   <a href="#impact" class="md-nav__link">
     Impact
   </a>
+  
+    <nav class="md-nav" aria-label="Impact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#future-scope" class="md-nav__link">
+    Future Scope:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1002,25 +1370,183 @@
 How can a mobile robot effectively combine vision, speech, and autonomous navigation to create a responsive and interactive system in real-world environments?</p>
 </blockquote>
 <p><strong>Concept:</strong> </p>
-<p>This project explores how TurtleBot4 can intelligently interact with its surroundings through vision-based object detection and speech-based communication. Using <strong>TurtleBot 4 with Create 3 and Raspberry Pi</strong>, our aim is to integrate:  </p>
+<p>This project explores how TurtleBot4 can intelligently interact with its surroundings through vision-based object detection and voice-guided navigation. Using TurtleBot 4 with Create 3 and Raspberry Pi, our aim is to integrate and demonstrate the following capabilities:</p>
 <ul>
-<li><strong>Real-time object detection</strong> using <strong>YOLOv8</strong> for recognizing and categorizing objects in the environment.  </li>
-<li><strong>Voice command interaction</strong> for user control, allowing spoken instructions to guide the robot's behavior.  </li>
-<li><strong>Autonomous navigation</strong> with obstacle avoidance, ensuring safe and efficient movement in dynamic spaces.  </li>
-<li><strong>Dynamic responses</strong> based on detected objects, enabling context-aware robotic actions.  </li>
-<li><strong>Fallback mechanisms</strong> for handling hardware/software limitations and ensuring system robustness.  </li>
+<li>Real-time object detection using YOLOv8, recognizing and categorizing environmental objects with live camera input.</li>
+<li>Voice command interaction, allowing users to issue spoken instructions that influence robot behavior through a natural interface.</li>
+<li>Autonomous navigation with obstacle avoidance using the ROS2 navigation stack, enabling safe and efficient mobility.</li>
+<li>Decision-making based on perception, where voice commands and visual detections combine to guide task execution.</li>
+<li>Fallback mechanisms to ensure robustness and handle unexpected failures in hardware or software modules.</li>
 </ul>
 <hr />
-<h2 id="gui-mockup-update-31032025">GUI - Mockup Update (31/03/2025)</h2>
+<p>This updated scope aligns directly with our project deliverables — voice-guided, vision-aware autonomous robot control — and leaves room for seamless extension into manipulation and complex task planning.</p>
+<hr />
+<h2 id="project-workflow">Project Workflow</h2>
+<p>The system operates by capturing data from multiple sensors, interpreting user commands, and performing autonomous navigation and feedback. The diagram below outlines the overall data and control flow of the TurtleBot4 system.</p>
+<h2 id="init-theme-default-themevariables-fontsize-14px-primarycolor-ffffff-edgelabelbackground-ffffff-graph-td-astartbrturtlebot4-powered-on-bsensor-layerbroak-d-camera-imu-lidar-mic-csensor-databrpreprocessing-d1yolov8brobject-detection-d2voice-commandbrrecognition-edetected-object-info-fintent-or-goal-command-gdecision-making-node-hros2-navigation-stack-imovement-commandsbrvia-cmd_vel-jgui-updatebrobject-and-nav-info-kactuator-responsebrturtlebot-moves-luser-feedbackbrgui-visualization-mend-flow-a-b-b-c-c-d1-c-d2-d1-e-d2-f-e-g-f-g-g-h-h-i-i-k-k-m-g-j-j-l-l-m-styling-groups-classdef-startend-fillf6e3f3strokec27ba0color000-classdef-sensing-filld0f0efstroke5bbdbbcolor000-classdef-processing-fille8eaf6stroke7986cbcolor000-classdef-decision-fillfce4ecstrokeec407acolor000-classdef-navctrl-fille0f7fastroke00838fcolor000-classdef-gui-fillede7f6stroke7e57c2color000-assign-node-classes-class-am-startend-class-b-sensing-class-cd1d2ef-processing-class-g-decision-class-hik-navctrl-class-jl-gui"><pre class="mermaid"><code>%%{ init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "14px",
+    "primaryColor": "#ffffff",
+    "edgeLabelBackground": "#ffffff"
+  }
+}}%%
+graph TD
+  A["Start:&lt;br/&gt;TurtleBot4 Powered On"]
+  B["Sensor Layer:&lt;br/&gt;Oak-D Camera, IMU, LiDAR, Mic"]
+  C["Sensor Data&lt;br/&gt;Preprocessing"]
+  D1["YOLOv8&lt;br/&gt;Object Detection"]
+  D2["Voice Command&lt;br/&gt;Recognition"]
+  E["Detected Object Info"]
+  F["Intent or Goal Command"]
+  G["Decision-Making Node"]
+  H["ROS2 Navigation Stack"]
+  I["Movement Commands&lt;br/&gt;via /cmd_vel"]
+  J["GUI Update:&lt;br/&gt;Object and Nav Info"]
+  K["Actuator Response:&lt;br/&gt;TurtleBot Moves"]
+  L["User Feedback:&lt;br/&gt;GUI Visualization"]
+  M["End"]
+
+  %% Flow
+  A --&gt; B
+  B --&gt; C
+  C --&gt; D1
+  C --&gt; D2
+  D1 --&gt; E
+  D2 --&gt; F
+  E --&gt; G
+  F --&gt; G
+  G --&gt; H
+  H --&gt; I
+  I --&gt; K
+  K --&gt; M
+  G --&gt; J
+  J --&gt; L
+  L --&gt; M
+
+  %% Styling groups
+  classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
+  classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
+  classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
+  classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
+  classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
+  classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
+
+  %% Assign node classes
+  class A,M startend
+  class B sensing
+  class C,D1,D2,E,F processing
+  class G decision
+  class H,I,K navctrl
+  class J,L gui
+</code></pre></h2>
+<h2 id="project-discussions">Project Discussions</h2>
+<h3 id="1-sensor-fusion-and-autonomous-decision-making">1. Sensor Fusion and Autonomous Decision-Making</h3>
+<p>The TurtleBot4 system leverages multiple data sources — including vision, audio, and LiDAR — to perform real-time perception and intelligent control. 
+These data streams are handled through modular ROS2 nodes that contribute to both high-level autonomy and low-level motion control.</p>
+<h3 id="2-sensor-inputs">2. Sensor Inputs</h3>
+<ul>
+<li><strong>Oak-D Camera</strong> provides real-time RGB images for visual perception.</li>
+<li><strong>Microphone</strong> captures user voice commands as audio input.</li>
+<li><strong>LiDAR and IR sensors</strong> are used for obstacle detection and collision avoidance.</li>
+</ul>
+<p>These sensors operate concurrently and feed their outputs into dedicated ROS2 nodes.</p>
+<h3 id="3-perception-and-processing-nodes">3. Perception and Processing Nodes</h3>
+<ul>
+<li><code>yolov8_processor</code>: Subscribes to image streams (<code>/rpi_13/oakd/preview/image_raw</code>) and outputs detected object data to <code>/yolov8_detections</code>.</li>
+<li><code>voice_input_node</code>: Processes raw audio and converts it into structured voice data (<code>/voice_input</code>).</li>
+<li><code>voice_command_parser</code>: Transforms audio into semantic commands (e.g., "move forward") and publishes them to <code>/voice_cmd</code>.</li>
+</ul>
+<p>This layered perception setup allows the robot to understand both its <strong>physical environment</strong> and <strong>human intent</strong> simultaneously.</p>
+<h3 id="31-high-level-autonomy">3.1 High-Level Autonomy</h3>
+<p>The core decision-making logic resides in the <code>decision_maker_node</code>, which:</p>
+<ul>
+<li>Consumes outputs from both <code>/yolov8_detections</code> and <code>/voice_cmd</code></li>
+<li>Prioritizes user commands or detected objects to determine the appropriate action</li>
+<li>Publishes resulting commands to <code>/action_cmd</code></li>
+</ul>
+<h3 id="32-low-level-motion-control">3.2 Low-Level Motion Control</h3>
+<p>Low-level execution is handled by the following:</p>
+<ul>
+<li><code>collision_avoidance_node</code>: Merges <code>/action_cmd</code> with real-time sensor data (e.g., LiDAR) to determine safe trajectories</li>
+<li><code>navigation_controller</code>: Translates the motion plan into velocity commands published to <code>/cmd_vel</code></li>
+</ul>
+<p>These nodes form a closed-loop controller that ensures both <strong>goal-directed behavior</strong> and <strong>safety</strong>.</p>
+<hr />
+<h2 id="33-control-architecture-in-ros2">3.3 Control Architecture in ROS2</h2>
+<p>The following flowchart summarizes the control pipeline, organized by data type and decision layer:</p>
+<pre class="mermaid"><code>graph TD
+
+  subgraph "Sensor Inputs"
+    CAM[Oak-D Camera]
+    MIC[Microphone]
+    LIDAR[IR / LiDAR Sensors]
+  end
+
+  subgraph "Perception Nodes"
+    YOLO_NODE[Node: yolov8_processor]
+    VOICE_NODE[Node: voice_input_node]
+    DETECTIONS[/yolov8_detections/]
+    VOICE_RAW[/voice_input/]
+    CAM --&gt; YOLO_NODE --&gt; DETECTIONS
+    MIC --&gt; VOICE_NODE --&gt; VOICE_RAW
+  end
+
+  subgraph "High-Level Autonomy"
+    VOICE_PARSER[Node: voice_command_parser]
+    VOICE_CMD[/voice_cmd/]
+    DECISION[Node: decision_maker_node]
+    ACT_CMD[/action_cmd/]
+    VOICE_RAW --&gt; VOICE_PARSER --&gt; VOICE_CMD
+    DETECTIONS --&gt; DECISION
+    VOICE_CMD --&gt; DECISION --&gt; ACT_CMD
+  end
+
+  subgraph "Low-Level Control"
+    COLLISION[Node: collision_avoidance_node]
+    NAV[Node: navigation_controller]
+    CMD[/cmd_vel/]
+    LIDAR --&gt; COLLISION
+    ACT_CMD --&gt; COLLISION --&gt; NAV --&gt; CMD
+  end
+
+  CMD --&gt; MOVE[TurtleBot Movement]</code></pre>
+<h3 id="4-ros2-and-gui">4. ROS2 and GUI</h3>
+<h4 id="gui-integration">GUI Integration</h4>
+<p>The graphical user interface (GUI) plays a key role in closing the feedback loop between perception, autonomy, and user interaction. It provides real-time insights into the robot's internal state and sensory understanding.</p>
+<p>The GUI displays:</p>
+<ul>
+<li>Real-time video feed with overlaid object detections from the onboard Oak-D camera</li>
+<li>Voice command recognition status and interpreted instructions</li>
+<li>Navigation and movement feedback, including direction, velocity, and planned path</li>
+<li>Sensor data such as LiDAR scans, IMU readings, and obstacle detections</li>
+</ul>
+<p>The GUI is integrated with ROS2 and subscribes to the following key topics:</p>
+<ul>
+<li><code>/yolov8_detections</code> – Visual object detection results</li>
+<li><code>/voice_cmd</code> – Parsed user voice commands</li>
+<li><code>/cmd_vel</code> – Velocity commands issued to the robot</li>
+<li><code>/rpi_13/hazard_detection</code> – Safety and obstacle data</li>
+<li><code>/rpi_13/imu</code> – Orientation and motion readings</li>
+</ul>
+<p>This interface allows users to monitor system behavior in real-time, verify decision-making logic, and better understand the robot's perception and action in dynamic environments.</p>
 <p><strong>1. Using Inkscape</strong></p>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/f803b082-9fb9-483c-b1d5-c42e3c938883" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="turtlebot4-team-project" src="https://github.com/user-attachments/assets/f803b082-9fb9-483c-b1d5-c42e3c938883" /></a></p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/069d103c-103e-4c88-a693-fd7bdd21b459" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/069d103c-103e-4c88-a693-fd7bdd21b459" /></a></p>
 <p><strong>2. Proposed GUI For Control</strong></p>
 <p><a class="glightbox" href="https://github.com/user-attachments/assets/641e4521-9a4e-4248-9bda-127ad392c9cd" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="team-assignment-03-gui" src="https://github.com/user-attachments/assets/641e4521-9a4e-4248-9bda-127ad392c9cd" /></a></p>
 <p><strong>3. Proposed GUI For Navigation</strong>
 <a class="glightbox" href="https://github.com/user-attachments/assets/0ae545f4-2bab-45d4-878f-b5a7143b01e1" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="task-2" src="https://github.com/user-attachments/assets/0ae545f4-2bab-45d4-878f-b5a7143b01e1" /></a></p>
 <hr />
-<h2 id="test-01">Test 01</h2>
-<p>Youtube Video Link: https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp</p>
+<h2 id="demonstration-videos">Demonstration Videos</h2>
+<h3 id="test-01-object-detection-gui-overlay">Test 01: Object Detection + GUI Overlay</h3>
+<p><a href="https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp"><img alt="Watch on YouTube" src="https://img.youtube.com/vi/hz7PwtZZgPg/0.jpg" /></a></p>
+<p><em>Real-time object detection using YOLOv8 with GUI overlay showing detected objects and confidence scores.</em></p>
+<hr />
+<h3 id="test-02-voice-command-navigation-coming-soon">Test 02: Voice Command Navigation <em>(Coming Soon)</em></h3>
+<p><em>A short demo showcasing voice-command-based control of TurtleBot4 in a dynamic environment.</em></p>
+<hr />
+<h3 id="test-03-full-autonomy-simulation-planned">Test 03: Full Autonomy Simulation <em>(Planned)</em></h3>
+<p><em>A future test combining voice input, object detection, and autonomous navigation on real hardware.</em></p>
 <hr />
 <h2 id="sensor-integration">Sensor Integration</h2>
 <p><strong>Utilization of Sensor Data</strong></p>
@@ -1105,6 +1631,16 @@ How can a mobile robot effectively combine vision, speech, and autonomous naviga
 <li>Potentially contribute to assistive robotics research.</li>
 </ul>
 <hr />
+<hr />
+<h3 id="future-scope">Future Scope:</h3>
+<p>In future iterations, the system can be extended with:</p>
+<ul>
+<li>Robotic arm integration mounted on TurtleBot4 for executing pick-and-place actions based on detected objects.</li>
+<li>Task-oriented planning using semantic understanding of scenes (e.g., pick red object and place it near the wall).</li>
+</ul>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/320d1ff7-a982-4fe4-ac4c-eabfbe49d17d" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/320d1ff7-a982-4fe4-ac4c-eabfbe49d17d" /></a></p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/d01f286a-b695-4d40-ac33-74acaa0e303e" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/d01f286a-b695-4d40-ac33-74acaa0e303e" /></a></p>
+<p>Here is the generated image of a cobot mounted on a TurtleBot4 using CHATGPT 4o</p>
 <h2 id="references-subject-to-change">References <em>(Subject to change)</em>:</h2>
 <ol>
 <li>Deep Learning model options: https://yolov8.com/</li>
