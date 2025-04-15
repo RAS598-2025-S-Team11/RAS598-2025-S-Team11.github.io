@@ -166,6 +166,19 @@ ROS2 topics connected to the GUI include:
 - `/rpi_13/hazard_detection` – Safety monitoring
 - `/rpi_13/imu` – IMU motion feedback
 
+
+**RQT GRAPH:**
+
+1. From Dummy nodes (expected rqt_graph):
+
+![makework rqt graph](https://github.com/user-attachments/assets/fd1ee4ba-7d3d-4987-896c-d40baefa6a27)
+
+
+2. From Turtlebot4:
+
+![image](https://github.com/user-attachments/assets/2f484299-d936-41f0-8480-b5e1496f93e2)
+
+
 ---
 
 #### 4.2 GUI Layout & Design Concepts
@@ -195,6 +208,24 @@ The GUI aggregates multiple sensor streams into a unified dashboard. Key visuali
   
 - **Sensor Diagnostics:**  
   Live data from LiDAR, IMU, and hazard modules.
+
+
+**1. IMU DATA:**
+
+Original IMU Data:
+
+![image](https://github.com/user-attachments/assets/0b3160d8-b6fb-46ce-9f74-085f5a49419b)
+
+
+Filtered IMU Data:
+
+![image](https://github.com/user-attachments/assets/176c0b4c-ee08-4132-b1fc-aaa206293898)
+
+
+**GUI Updating IMU Data Live:**
+
+![image](https://github.com/user-attachments/assets/5a09ffd2-6c63-479f-8ddd-0c981670fbdd)
+
 
 ---
 
