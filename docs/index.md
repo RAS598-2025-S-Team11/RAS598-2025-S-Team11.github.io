@@ -227,6 +227,14 @@ Filtered IMU Data:
 ![image](https://github.com/user-attachments/assets/5a09ffd2-6c63-479f-8ddd-0c981670fbdd)
 
 
+
+**2. LiDAR DATA:**
+
+**GUI Updating LiDAR Data Live:**
+
+![image](https://github.com/user-attachments/assets/49d59df4-4b1b-4485-b2af-c70fdb0190fc)
+
+
 ---
 
 #### 4.4 GUI Demonstration Video
