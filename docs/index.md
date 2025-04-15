@@ -189,8 +189,30 @@ ROS2 topics connected to the GUI include:
 **Proposed Interactive GUI for ROS2 Integration**  
 ![Proposed GUI](https://github.com/user-attachments/assets/fb130357-8975-4d73-b05b-b7d9f37f7a61)
 
-These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging.
+**Test 1: GUI Working on Real-time Data**
+- Faced issue with camera (not fixed)
+- IMU
+- LiDAR
 
+1. **GUI Updating IMU Data Live:**
+
+![image](https://github.com/user-attachments/assets/5a09ffd2-6c63-479f-8ddd-0c981670fbdd)
+
+
+![image](https://github.com/user-attachments/assets/20241dbd-f663-4a4e-963f-6c308b342856)
+
+
+2. **GUI Updating LiDAR Data Live:**
+
+![image](https://github.com/user-attachments/assets/8817fbee-827c-46fa-b769-e9405fe655cd)
+
+
+**3. GUI Updating Camera Data Live:**
+
+![Proposed GUI](https://github.com/user-attachments/assets/fb130357-8975-4d73-b05b-b7d9f37f7a61)
+
+
+_These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging._
 ---
 
 #### 4.3 Live Sensor Visualization in GUI
@@ -220,19 +242,6 @@ Original IMU Data:
 Filtered IMU Data:
 
 ![image](https://github.com/user-attachments/assets/176c0b4c-ee08-4132-b1fc-aaa206293898)
-
-
-**GUI Updating IMU Data Live:**
-
-![image](https://github.com/user-attachments/assets/5a09ffd2-6c63-479f-8ddd-0c981670fbdd)
-
-
-
-**2. LiDAR DATA:**
-
-**GUI Updating LiDAR Data Live:**
-
-![image](https://github.com/user-attachments/assets/49d59df4-4b1b-4485-b2af-c70fdb0190fc)
 
 
 ---
