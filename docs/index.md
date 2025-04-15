@@ -209,7 +209,7 @@ ROS2 topics connected to the GUI include:
 
 **3. GUI Updating Camera Data Live:**
 
-![Proposed GUI](https://github.com/user-attachments/assets/fb130357-8975-4d73-b05b-b7d9f37f7a61)
+![image](https://github.com/user-attachments/assets/4229b093-28a9-4c88-97a1-31220b4adaf5)
 
 
 _These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging._
