@@ -7,6 +7,31 @@ tags:
 - Speech Recognition
 ---
 
+
+```mermaid
+flowchart LR
+    A[Start Mission: Boustrophedon Survey] --> B[Capture Camera Feed]
+    B --> C{Is Trash Detected?}
+    C -- "No" --> B
+    C -- "Yes" --> D{Is Confidence > 50 Percent?}
+    D -- "No" --> B
+    D -- "Yes" --> E{Is Trash Within Camera Range?}
+    E -- "No" --> B
+    E -- "Yes" --> F[Localize Trash Relative to Boat]
+    F --> G[Compute Distance to Trash]
+    G --> H{Is Distance < 25 Percent of Line Spacing?}
+    H -- "No" --> B
+    H -- "Yes" --> I[Detour to Trash Location]
+    I --> J[Collect Trash via Rear Net]
+    J --> K[Return to Survey Pattern]
+    K --> B
+    B --> L{Is Survey Complete?}
+    L -- "No" --> B
+    L -- "Yes" --> M[End Mission and Store Data]
+
+```
+
+
 ## Team Information
 
 - **Project Name:** Intelligent TurtleBot: Deep Learning-Based Object Detection and Voice-Guided Navigation
