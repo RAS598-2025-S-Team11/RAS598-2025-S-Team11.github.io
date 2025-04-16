@@ -1352,26 +1352,6 @@ graph TD
   
 
 
-<pre class="mermaid"><code>flowchart LR
-    A[Start Mission: Boustrophedon Survey] --&gt; B[Capture Camera Feed]
-    B --&gt; C{Is Trash Detected?}
-    C -- "No" --&gt; B
-    C -- "Yes" --&gt; D{Is Confidence &gt; 50 Percent?}
-    D -- "No" --&gt; B
-    D -- "Yes" --&gt; E{Is Trash Within Camera Range?}
-    E -- "No" --&gt; B
-    E -- "Yes" --&gt; F[Localize Trash Relative to Boat]
-    F --&gt; G[Compute Distance to Trash]
-    G --&gt; H{Is Distance &lt; 25 Percent of Line Spacing?}
-    H -- "No" --&gt; B
-    H -- "Yes" --&gt; I[Detour to Trash Location]
-    I --&gt; J[Collect Trash via Rear Net]
-    J --&gt; K[Return to Survey Pattern]
-    K --&gt; B
-    B --&gt; L{Is Survey Complete?}
-    L -- "No" --&gt; B
-    L -- "Yes" --&gt; M[End Mission and Store Data]
-</code></pre>
 <h2 id="team-information">Team Information</h2>
 <ul>
 <li><strong>Project Name:</strong> Intelligent TurtleBot: Deep Learning-Based Object Detection and Voice-Guided Navigation</li>
