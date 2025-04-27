@@ -178,6 +178,9 @@ ROS2 topics connected to the GUI include:
 
 ![image](https://github.com/user-attachments/assets/2f484299-d936-41f0-8480-b5e1496f93e2)
 
+**Final RQT-GRAPH:**
+![rqt_graph_1_test](https://github.com/user-attachments/assets/2d02a218-08bb-422e-9ec4-ca9f4a42d8d0)
+
 
 ---
 
@@ -257,13 +260,18 @@ Filtered IMU Data:
 
 #### _Additional Demonstration Videos_
 
-**Test 02: Voice Command Navigation *(Coming Soon)***
+**Test 02: Controlling the Cobot Robotic Arm**
 
-[![Watch on YouTube](https://img.youtube.com/vi/hz7PwtZZgPg/4.jpg)](https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp)  
+[![Watch on YouTube](https://img.youtube.com/vi/DwuBvafB8k8/0.jpg)](https://youtube.com/shorts/DwuBvafB8k8?si=TU1XXYiRUYbrtGBi)  
 
 _A short demo showcasing voice-command-based control of TurtleBot4 in a dynamic environment._
 
+
 **Test 03: Full Autonomy Simulation *(Planned)***
+
+[![Watch on YouTube](https://img.youtube.com/vi/DwuBvafB8k8/0.jpg)](https://youtube.com/shorts/DwuBvafB8k8?si=TU1XXYiRUYbrtGBi) 
+
+**Test 04: Full Autonomy Simulation *(Planned)***
 
 [![Watch on YouTube](https://img.youtube.com/vi/hz7PwtZZgPg/55.jpg)](https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp)  
 
