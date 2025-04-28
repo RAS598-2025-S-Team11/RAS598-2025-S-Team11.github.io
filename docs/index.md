@@ -259,9 +259,9 @@ The GUI aggregates multiple sensor streams into a unified dashboard. Key visuali
 _A short demo showcasing voice-command-based control of TurtleBot4 in a dynamic environment._
 
 
-**Test 03: Full Autonomy Simulation *(Planned)***
+**Test 03: Full Autonomy Simulation *(Without GUI)***
 
-[![Watch on YouTube](https://img.youtube.com/vi/DwuBvafB8k8/0.jpg)](https://youtube.com/shorts/DwuBvafB8k8?si=TU1XXYiRUYbrtGBi) 
+[![Watch on YouTube](https://img.youtube.com/vi/DtQAx4mQFKQ/0.jpg)](https://youtu.be/DtQAx4mQFKQ) 
 
 **Test 04: Full Autonomy Simulation *(Planned)***
 
