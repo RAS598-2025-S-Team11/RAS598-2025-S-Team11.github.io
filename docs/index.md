@@ -430,6 +430,9 @@ In future iterations, the system can be extended with:
 
 Here is the generated image of a cobot mounted on a TurtleBot4 using CHATGPT 4o
 
+**FINAL GUI :**
+
+![FINALGUIGUIGUI](https://github.com/user-attachments/assets/06ada5be-e975-4c3e-a406-8e9aff208034)
 
 
 
