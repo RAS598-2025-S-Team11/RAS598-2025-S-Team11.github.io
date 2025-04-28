@@ -173,14 +173,13 @@ ROS2 topics connected to the GUI include:
 
 ![makework rqt graph](https://github.com/user-attachments/assets/fd1ee4ba-7d3d-4987-896c-d40baefa6a27)
 
-
-2. From Turtlebot4:
-
-![image](https://github.com/user-attachments/assets/2f484299-d936-41f0-8480-b5e1496f93e2)
-
 **Final RQT-GRAPH:**
 ![rqt_graph_1_test](https://github.com/user-attachments/assets/2d02a218-08bb-422e-9ec4-ca9f4a42d8d0)
 
+
+**FINAL RQT GRAPH WITH GUI**
+
+![finalrqt](https://github.com/user-attachments/assets/6290fe27-37ce-4cea-ada2-2565fd77b094)
 
 ---
 
@@ -199,20 +198,16 @@ ROS2 topics connected to the GUI include:
 
 1. **GUI Updating IMU Data Live:**
 
-![image](https://github.com/user-attachments/assets/5a09ffd2-6c63-479f-8ddd-0c981670fbdd)
-
-
-![image](https://github.com/user-attachments/assets/20241dbd-f663-4a4e-963f-6c308b342856)
-
+![image](https://github.com/user-attachments/assets/b1b43848-33e1-435c-b1bd-480aac67d069)
 
 2. **GUI Updating LiDAR Data Live:**
 
-![image](https://github.com/user-attachments/assets/8817fbee-827c-46fa-b769-e9405fe655cd)
+![image](https://github.com/user-attachments/assets/cebbeee1-7b54-4118-8094-66bc6d0dcb0c)
 
 
 **3. GUI Updating Camera Data Live:**
 
-![image](https://github.com/user-attachments/assets/4229b093-28a9-4c88-97a1-31220b4adaf5)
+![image](https://github.com/user-attachments/assets/07bd7b57-199c-46f4-9020-029c12635dd9)
 
 
 _These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging._
@@ -235,17 +230,14 @@ The GUI aggregates multiple sensor streams into a unified dashboard. Key visuali
   Live data from LiDAR, IMU, and hazard modules.
 
 
-**1. IMU DATA:**
+**GUI With Live Sensor Data**
 
-Original IMU Data:
-
-![image](https://github.com/user-attachments/assets/0b3160d8-b6fb-46ce-9f74-085f5a49419b)
+![MYU FINAL GUI](https://github.com/user-attachments/assets/8a287965-9850-4afe-82e7-7ecfd774a1b3)
 
 
-Filtered IMU Data:
+**GUI WITH ACTUAL DATA:**
 
-![image](https://github.com/user-attachments/assets/176c0b4c-ee08-4132-b1fc-aaa206293898)
-
+![FINALLLLLLLGUI](https://github.com/user-attachments/assets/3e7af140-66c6-4675-96dc-92d3f298474b)
 
 ---
 
@@ -467,13 +459,13 @@ Here is the generated image of a cobot mounted on a TurtleBot4 using CHATGPT 4o
 | **Week 7** | Feb 24, 2025     | Finalizing project scope and hardware/sensor availability.              | ✅ Completed       |
 | **Week 8** | Mar 3, 2025      | ROS2 environment setup, VM configuration, TurtleBot4 base initialization. | ✅ Completed     |
 | **Week 9** | Mar 10, 2025     | Object detection with YOLOv8 using Oak-D camera.                        | ✅ Completed       |
-| **Week 10**| Mar 17, 2025     | Voice command parsing, audio processing and integration.                | 🔄 In Progress     |
+| **Week 10**| Mar 17, 2025     | Voice command parsing, audio processing and integration.                |  ✅ Completed     |
 | **Week 11**| Mar 24, 2025     | GUI development and voice-based system control.                         | ✅ Completed       |
 | **Week 12**| Mar 31, 2025     | ROS2 node integration and layered autonomy testing.                     | ✅ Completed       |
-| **Week 13**| Apr 7, 2025      | TurtleBot testing with full pipeline and live demos.                    | 🔄 In Progress     |
+| **Week 13**| Apr 7, 2025      | TurtleBot testing with full pipeline and live demos.                    |  ✅ Completed     |
 | **Week 14**| Apr 14, 2025     | Final debugging, fallback strategies, and performance evaluation.       | 🔄 In Progress     |
-| **Week 15**| Apr 21, 2025     | Documentation, GUI improvements, and final video preparation.           | ⏳ Upcoming        |
-| **Week 16**| Apr 28, 2025     | 🚀 **Final Demonstration & Submission**                                 | 🎯 Upcoming        |
+| **Week 15**| Apr 21, 2025     | Documentation, GUI improvements, and final video preparation.           | 🔄 In Progress        |
+| **Week 16**| Apr 28, 2025     | 🚀 **Final Demonstration & Submission**                                 | 🔄 In Progress        |
 
 ---
 ## Gantt Chart Representation 
