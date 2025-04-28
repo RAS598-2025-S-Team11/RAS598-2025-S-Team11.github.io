@@ -1497,12 +1497,10 @@ These data streams are handled through modular ROS2 nodes that contribute to bot
 <li>From Dummy nodes (expected rqt_graph):</li>
 </ol>
 <p><a class="glightbox" href="https://github.com/user-attachments/assets/fd1ee4ba-7d3d-4987-896c-d40baefa6a27" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="makework rqt graph" src="https://github.com/user-attachments/assets/fd1ee4ba-7d3d-4987-896c-d40baefa6a27" /></a></p>
-<ol>
-<li>From Turtlebot4:</li>
-</ol>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/2f484299-d936-41f0-8480-b5e1496f93e2" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/2f484299-d936-41f0-8480-b5e1496f93e2" /></a></p>
 <p><strong>Final RQT-GRAPH:</strong>
 <a class="glightbox" href="https://github.com/user-attachments/assets/2d02a218-08bb-422e-9ec4-ca9f4a42d8d0" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="rqt_graph_1_test" src="https://github.com/user-attachments/assets/2d02a218-08bb-422e-9ec4-ca9f4a42d8d0" /></a></p>
+<p><strong>FINAL RQT GRAPH WITH GUI</strong></p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/6290fe27-37ce-4cea-ada2-2565fd77b094" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="finalrqt" src="https://github.com/user-attachments/assets/6290fe27-37ce-4cea-ada2-2565fd77b094" /></a></p>
 <hr />
 <h4 id="42-gui-layout-design-concepts">4.2 GUI Layout &amp; Design Concepts</h4>
 <p><strong>Initial Mockup using Inkscape</strong><br />
@@ -1516,14 +1514,13 @@ These data streams are handled through modular ROS2 nodes that contribute to bot
 <ol>
 <li><strong>GUI Updating IMU Data Live:</strong></li>
 </ol>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/5a09ffd2-6c63-479f-8ddd-0c981670fbdd" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/5a09ffd2-6c63-479f-8ddd-0c981670fbdd" /></a></p>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/20241dbd-f663-4a4e-963f-6c308b342856" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/20241dbd-f663-4a4e-963f-6c308b342856" /></a></p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/b1b43848-33e1-435c-b1bd-480aac67d069" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/b1b43848-33e1-435c-b1bd-480aac67d069" /></a></p>
 <ol>
 <li><strong>GUI Updating LiDAR Data Live:</strong></li>
 </ol>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/8817fbee-827c-46fa-b769-e9405fe655cd" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/8817fbee-827c-46fa-b769-e9405fe655cd" /></a></p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/cebbeee1-7b54-4118-8094-66bc6d0dcb0c" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/cebbeee1-7b54-4118-8094-66bc6d0dcb0c" /></a></p>
 <p><strong>3. GUI Updating Camera Data Live:</strong></p>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/4229b093-28a9-4c88-97a1-31220b4adaf5" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/4229b093-28a9-4c88-97a1-31220b4adaf5" /></a></p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/07bd7b57-199c-46f4-9020-029c12635dd9" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/07bd7b57-199c-46f4-9020-029c12635dd9" /></a></p>
 <h2 id="these-gui-designs-aim-to-present-important-real-time-system-data-in-an-intuitive-and-user-friendly-format-enabling-both-operator-awareness-and-effective-debugging"><em>These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging.</em></h2>
 <h4 id="43-live-sensor-visualization-in-gui">4.3 Live Sensor Visualization in GUI</h4>
 <p>The GUI aggregates multiple sensor streams into a unified dashboard. Key visualized components:</p>
@@ -1545,11 +1542,10 @@ These data streams are handled through modular ROS2 nodes that contribute to bot
   Live data from LiDAR, IMU, and hazard modules.</p>
 </li>
 </ul>
-<p><strong>1. IMU DATA:</strong></p>
-<p>Original IMU Data:</p>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/0b3160d8-b6fb-46ce-9f74-085f5a49419b" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/0b3160d8-b6fb-46ce-9f74-085f5a49419b" /></a></p>
-<p>Filtered IMU Data:</p>
-<p><a class="glightbox" href="https://github.com/user-attachments/assets/176c0b4c-ee08-4132-b1fc-aaa206293898" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/176c0b4c-ee08-4132-b1fc-aaa206293898" /></a></p>
+<p><strong>GUI With Live Sensor Data</strong></p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/8a287965-9850-4afe-82e7-7ecfd774a1b3" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="MYU FINAL GUI" src="https://github.com/user-attachments/assets/8a287965-9850-4afe-82e7-7ecfd774a1b3" /></a></p>
+<p><strong>GUI WITH ACTUAL DATA:</strong></p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/3e7af140-66c6-4675-96dc-92d3f298474b" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="FINALLLLLLLGUI" src="https://github.com/user-attachments/assets/3e7af140-66c6-4675-96dc-92d3f298474b" /></a></p>
 <hr />
 <h4 id="44-gui-demonstration-video">4.4 GUI Demonstration Video</h4>
 <p><strong>Test 01: Object Detection + GUI Overlay</strong></p>
@@ -1755,7 +1751,7 @@ graph TD
 <td><strong>Week 10</strong></td>
 <td>Mar 17, 2025</td>
 <td>Voice command parsing, audio processing and integration.</td>
-<td>🔄 In Progress</td>
+<td>✅ Completed</td>
 </tr>
 <tr>
 <td><strong>Week 11</strong></td>
@@ -1773,7 +1769,7 @@ graph TD
 <td><strong>Week 13</strong></td>
 <td>Apr 7, 2025</td>
 <td>TurtleBot testing with full pipeline and live demos.</td>
-<td>🔄 In Progress</td>
+<td>✅ Completed</td>
 </tr>
 <tr>
 <td><strong>Week 14</strong></td>
@@ -1785,13 +1781,13 @@ graph TD
 <td><strong>Week 15</strong></td>
 <td>Apr 21, 2025</td>
 <td>Documentation, GUI improvements, and final video preparation.</td>
-<td>⏳ Upcoming</td>
+<td>🔄 In Progress</td>
 </tr>
 <tr>
 <td><strong>Week 16</strong></td>
 <td>Apr 28, 2025</td>
 <td>🚀 <strong>Final Demonstration &amp; Submission</strong></td>
-<td>🎯 Upcoming</td>
+<td>🔄 In Progress</td>
 </tr>
 </tbody>
 </table>
