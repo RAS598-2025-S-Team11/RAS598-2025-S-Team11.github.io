@@ -122,6 +122,15 @@ These sensors operate concurrently and feed their outputs into dedicated ROS2 no
 - `voice_input_node`: Processes raw audio and converts it into structured voice data (`/voice_input`).
 - `voice_command_parser`: Transforms audio into semantic commands (e.g., "move forward") and publishes them to `/voice_cmd`.
 
+**Voice Control :**
+- Whisper.cpp is a C/C++ implementation of OpenAI's Whisper, an automatic speech recognition (ASR) model, designed for efficient and accessible speech-to-text functionality. 
+- It's a lightweight alternative to the original Whisper model, making it suitable for resource-constrained environments and applications where speed and simplicity are prioritized. 
+
+**Object Detection :**
+- YOLOv8 is a real-time object detection and segmentation model that uses a deep neural network to process images and identify objects within them.
+- It's known for its speed and accuracy, making it suitable for a wide range of applications, including surveillance, autonomous vehicles, and more.
+- YOLOv8's anchor-free architecture simplifies training and enhances the model's performance across various datasets. 
+
 This layered perception setup allows the robot to understand both its **physical environment** and **human intent** simultaneously.
 
 #### 3.1 High-Level Autonomy
