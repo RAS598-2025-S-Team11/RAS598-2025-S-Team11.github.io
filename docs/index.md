@@ -263,7 +263,14 @@ _A short demo showcasing voice-command-based control of TurtleBot4 in a dynamic 
 
 [![Watch on YouTube](https://img.youtube.com/vi/DtQAx4mQFKQ/0.jpg)](https://youtu.be/DtQAx4mQFKQ) 
 
-**Test 04: Full Autonomy Simulation *(Planned)***
+
+**Test 04: Live Demonstration Test 2 *(With GUI)***
+
+[![Live Demostration Take 2](https://img.youtube.com/vi/EEqiLhgY0YM/0.jpg)](https://youtu.be/EEqiLhgY0YM) 
+
+
+
+**Test 04: Turtlebot4 Autonomy with MyCobot *(Mobile Manipulator)***
 
 [![Watch on YouTube](https://img.youtube.com/vi/hz7PwtZZgPg/55.jpg)](https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp)  
 
