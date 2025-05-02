@@ -44,51 +44,51 @@ The system operates by capturing data from multiple sensors, interpreting user c
 
 ```mermaid
 
-graph TD
-  A["Start:<br/>TurtleBot4 Powered On"]
-  B["Sensor Layer:<br/>Oak-D Camera, IMU, LiDAR, Mic"]
-  C["Sensor Data<br/>Preprocessing"]
-  D1["YOLOv8<br/>Object Detection"]
-  D2["Voice Command<br/>Recognition"]
-  E["Detected Object Info"]
-  F["Intent or Goal Command"]
-  G["Decision-Making Node"]
-  H["ROS2 Navigation Stack"]
-  I["Movement Commands<br/>via /cmd_vel"]
-  J["GUI Update:<br/>Object and Nav Info"]
-  K["Actuator Response:<br/>TurtleBot Moves"]
-  L["User Feedback:<br/>GUI Visualization"]
-  M["End"]
-
-  A --> B
-  B --> C
-  C --> D1
-  C --> D2
-  D1 --> E
-  D2 --> F
-  E --> G
-  F --> G
-  G --> H
-  H --> I
-  I --> K
-  K --> M
-  G --> J
-  J --> L
-  L --> M
-
-  classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
-  classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
-  classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
-  classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
-  classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
-  classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
-
-  class A,M startend
-  class B sensing
-  class C,D1,D2,E,F processing
-  class G decision
-  class H,I,K navctrl
-  class J,L gui
+    graph TD
+      A["Start:<br/>TurtleBot4 Powered On"]
+      B["Sensor Layer:<br/>Oak-D Camera, IMU, LiDAR, Mic"]
+      C["Sensor Data<br/>Preprocessing"]
+      D1["YOLOv8<br/>Object Detection"]
+      D2["Voice Command<br/>Recognition"]
+      E["Detected Object Info"]
+      F["Intent or Goal Command"]
+      G["Decision-Making Node"]
+      H["ROS2 Navigation Stack"]
+      I["Movement Commands<br/>via /cmd_vel"]
+      J["GUI Update:<br/>Object and Nav Info"]
+      K["Actuator Response:<br/>TurtleBot Moves"]
+      L["User Feedback:<br/>GUI Visualization"]
+      M["End"]
+    
+      A --> B
+      B --> C
+      C --> D1
+      C --> D2
+      D1 --> E
+      D2 --> F
+      E --> G
+      F --> G
+      G --> H
+      H --> I
+      I --> K
+      K --> M
+      G --> J
+      J --> L
+      L --> M
+    
+      classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
+      classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
+      classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
+      classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
+      classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
+      classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
+    
+      class A,M startend
+      class B sensing
+      class C,D1,D2,E,F processing
+      class G decision
+      class H,I,K navctrl
+      class J,L gui
 
 ```
 ---
