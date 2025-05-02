@@ -43,14 +43,7 @@ This updated scope aligns directly with our project deliverables — voice-guide
 The system operates by capturing data from multiple sensors, interpreting user commands, and performing autonomous navigation and feedback. The diagram below outlines the overall data and control flow of the TurtleBot4 system.
 
 ```mermaid
-%%{ init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "14px",
-    "primaryColor": "#ffffff",
-    "edgeLabelBackground": "#ffffff"
-  }
-}}%%
+
 graph TD
   A["Start:<br/>TurtleBot4 Powered On"]
   B["Sensor Layer:<br/>Oak-D Camera, IMU, LiDAR, Mic"]
@@ -67,7 +60,6 @@ graph TD
   L["User Feedback:<br/>GUI Visualization"]
   M["End"]
 
-  %% Flow
   A --> B
   B --> C
   C --> D1
@@ -84,7 +76,6 @@ graph TD
   J --> L
   L --> M
 
-  %% Styling groups
   classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
   classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
   classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
@@ -92,7 +83,6 @@ graph TD
   classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
   classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
 
-  %% Assign node classes
   class A,M startend
   class B sensing
   class C,D1,D2,E,F processing
