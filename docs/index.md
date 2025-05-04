@@ -18,6 +18,19 @@ tags:
 - **Professor:** Dr. Dan Aukes
 - **Email:** anushka.satav@asu.edu, akonda5@asu.edu, schhab18@asu.edu
 - **Project Description:** Our project, Intelligent Voice-Controlled Mobile Manipulator, transforms a TurtleBot4 and MyCobot robotic arm into an intelligent, multi-modal robot. Using ROS 2, the system integrates live camera feeds, YOLOv8-based object detection, LiDAR-based obstacle mapping, and real-time IMU tracking. Voice commands guide the robot’s navigation and future manipulation tasks, creating a powerful platform for autonomous interaction. The mobile base handles navigation and perception, while the soon-to-be-mounted MyCobot arm will enable object manipulation, making it a fully integrated intelligent robotic system.
+
+---
+## 🌟 Innovation Showcase at Arizona State University | Spring 2025 🌟
+
+Watch on YouTube:
+
+[![Watch on YouTube](https://img.youtube.com/vi/K1KcAVdhhBg/0.jpg)](https://youtu.be/K1KcAVdhhBg)  
+
+We presented "Intelligent Voice-Guided Mobile Manipulator: Real-Time Object Detection and Autonomous Navigation Using TurtleBot4 and MyCobot Robot Arm" at the Innovation Showcase hosted at ASU - The Polytechnic School! 
+This was our final project for the course RAS 598: Experimentation and Deployment of Robots, led by Professor Dan Aukes.
+
+💡Our project featured a live demo and poster presentation of an autonomous, voice-guided robot that combines real-time speech interaction, object detection, and navigation — built on TurtleBot4 and enhanced with a MyCobot arm. 
+
 ---
 ## Project Plan
 
