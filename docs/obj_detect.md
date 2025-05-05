@@ -13,9 +13,6 @@ The detection results are displayed live on our custom GUI, and the recognized l
 
 ---
 
-Some Object Dection Results:
+**Some Object Detection Results:**
 
-![image](https://github.com/user-attachments/assets/a072299d-599e-44fd-83af-57bc3d5076bb)
-
-![image](https://github.com/user-attachments/assets/4d4f89b8-6199-4877-95b8-57b85510e366)
-
+![image](https://github.com/user-attachments/assets/f05f12c7-88be-4af7-a611-a3d10040c339)
