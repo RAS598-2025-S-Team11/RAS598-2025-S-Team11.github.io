@@ -25,14 +25,14 @@ gantt
     ROS2 Setup                :active,milestone2, 2025-03-03, 7d
     GUI Development           :active,milestone3, 2025-03-10, 7d
     YOLOv8 + Oak-D            :active,milestone4, 2025-03-17, 7d
-    Voice Command             :crit,milestone5, 2025-03-24, 7d
-    ROS2 Integration          :crit,milestone6, 2025-03-31, 10d
+    Voice Command             :active,milestone5, 2025-03-24, 7d
+    ROS2 Integration          :active,milestone6, 2025-03-31, 10d
 
     section Testing & Deployment
-    TurtleBot Testing         :crit,milestone7, 2025-04-10, 7d
-    Final Debug               :milestone8, 2025-04-17, 5d
-    Docs & Video              :milestone9, 2025-04-22, 5d
-    Final Demo                :milestone10, 2025-04-28, 6d
+    TurtleBot Testing         :active,milestone7, 2025-04-10, 7d
+    Final Debug               :active,milestone8, 2025-04-17, 5d
+    Docs & Video              :active,milestone9, 2025-04-22, 5d
+    Final Demo                :active,milestone10, 2025-04-28, 6d
 ```
 
 ## Main Project Pipeline 
