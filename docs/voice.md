@@ -25,3 +25,19 @@ This node runs periodically and enables seamless integration of voice control in
 
 - Subscribed: None
 - Published: `/voice_text` (std_msgs/msg/String)
+
+### ROS 2 Topic Flow 🧭 
+
+```mermaid
+graph TD
+  mic_listener_node[mic_listener_node]
+  voice_text[/voice_text/]
+  command_parser_node[command_parser_node]
+  voice_cmd[/voice_command/]
+  movement_controller_node[movement_controller_node]
+
+  mic_listener_node --> voice_text
+  voice_text --> command_parser_node
+  command_parser_node --> voice_cmd
+  voice_cmd --> movement_controller_node
+```
