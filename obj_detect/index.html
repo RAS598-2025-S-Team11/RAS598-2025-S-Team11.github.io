@@ -92,6 +92,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#object-detection-with-yolov8" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -490,6 +495,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Object Detection Page
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -499,6 +515,30 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#object-detection-with-yolov8" class="md-nav__link">
+    Object Detection with YOLOv8 🔎
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -682,6 +722,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#object-detection-with-yolov8" class="md-nav__link">
+    Object Detection with YOLOv8 🔎
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -705,8 +760,14 @@
 
   <h1>Object Detection Page</h1>
 
-<p>Example: YOLOv8 implementation</p>
+<h2 id="object-detection-with-yolov8">Object Detection with YOLOv8 🔎</h2>
+<p>We implemented object detection using the YOLOv8 Nano model by Ultralytics, selected for its balance of speed and accuracy on resource-constrained hardware like the Raspberry Pi. This model performs real-time object detection from the Oak-D camera feed and publishes annotated frames along with recognized object labels.</p>
 <p><a class="glightbox" href="https://github.com/user-attachments/assets/33f51c79-4182-433f-97ee-b8286003cb4a" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="1_HctUSTC6_-OSWmCtTwmdeQ" src="https://github.com/user-attachments/assets/33f51c79-4182-433f-97ee-b8286003cb4a" /></a></p>
+<p>The detection results are displayed live on our custom GUI, and the recognized labels are also logged and published to a ROS 2 topic for downstream decision-making. This enables both GUI-based visualization and voice-interactive robot behavior based on perceived objects.</p>
+<hr />
+<p>Some Object Dection Results:</p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/a072299d-599e-44fd-83af-57bc3d5076bb" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/a072299d-599e-44fd-83af-57bc3d5076bb" /></a></p>
+<p><a class="glightbox" href="https://github.com/user-attachments/assets/4d4f89b8-6199-4877-95b8-57b85510e366" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/4d4f89b8-6199-4877-95b8-57b85510e366" /></a></p>
 
 
 
