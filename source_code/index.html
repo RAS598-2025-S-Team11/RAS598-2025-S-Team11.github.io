@@ -29,7 +29,7 @@
 
     
       
-        <title>Source code - Intelligent TurtleBot - Voice Guided Navigation and Object Detection</title>
+        <title>Backend ROS2 Architecture & Code Walkthrough ⚙️ - Intelligent TurtleBot - Voice Guided Navigation and Object Detection</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#source-code-for-intelligent-turtlebot4-mycobot-voice-guided-mobile-manipulator" class="md-skip">
+        <a href="#backend-framework-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Source code
+              Backend ROS2 Architecture & Code Walkthrough ⚙️
             
           </span>
         </div>
@@ -311,7 +311,7 @@
   
     
   
-  Source code
+  Backend ROS2 Architecture & Code Walkthrough ⚙️
 
       </a>
     </li>
@@ -551,51 +551,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Source code
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Source code
+    Backend ROS2 Architecture & Code Walkthrough ⚙️
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#source-code-for-intelligent-turtlebot4-mycobot-voice-guided-mobile-manipulator" class="md-nav__link">
-    Source Code for Intelligent TurtleBot4 + MyCobot: Voice-Guided Mobile Manipulator
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -721,21 +688,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#source-code-for-intelligent-turtlebot4-mycobot-voice-guided-mobile-manipulator" class="md-nav__link">
-    Source Code for Intelligent TurtleBot4 + MyCobot: Voice-Guided Mobile Manipulator
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -758,9 +712,202 @@
   
 
 
-  <h1>Source code</h1>
+<h1 id="backend-framework-overview">Backend Framework Overview</h1>
+<p>This project features a modular, ROS 2-based architecture that turns the TurtleBot4 + MyCobot arm into an intelligent mobile manipulator. The system supports real-time sensor processing, voice-guided navigation, object detection, and GUI-based interaction using custom ROS 2 nodes.</p>
+<p>Key functionalities include:</p>
+<ul>
+<li>🎯 YOLOv8-based object detection</li>
+<li>🎤 Whisper.cpp-based speech transcription</li>
+<li>📡 LiDAR-based environment sensing</li>
+<li>📈 IMU-based robot state estimation</li>
+<li>🖥️ Custom-built PyQt5 GUI to display real-time data</li>
+<li>🤖 Integration-ready support for MyCobot arm manipulation</li>
+</ul>
+<hr />
+<h1 id="ros-2-nodes-their-responsibilities">ROS 2 Nodes &amp; Their Responsibilities</h1>
+<ol>
+<li>
+<p><code>mic_listener_node</code><br />
+Records a short 4-second audio clip every few seconds and uses Whisper.cpp for on-device transcription. Publishes transcribed text to <code>/voice_text</code>.</p>
+</li>
+<li>
+<p><code>command_parser_node</code><br />
+Parses the text received from <code>/voice_text</code> and matches it against a list of valid commands. Converts recognized speech to structured instructions published on <code>/voice_command</code>.</p>
+</li>
+<li>
+<p><code>movement_controller_node</code><br />
+Executes motion commands based on <code>/voice_command</code>, translating them into <code>geometry_msgs/Twist</code> messages sent to <code>/cmd_vel</code>.</p>
+</li>
+<li>
+<p><code>object_detector_node</code><br />
+Subscribes to camera feed (<code>/oakd/rgb/preview/image_raw</code>), runs YOLOv8 in real time, and publishes an annotated image to <code>/yolo_image_raw</code> and a string summary to <code>/detected_objects</code>.</p>
+</li>
+<li>
+<p><code>web_dashboard_node</code><br />
+    PyQt5 GUI-based node that visualizes:</p>
+<ul>
+<li>Camera feed</li>
+<li>Object detection results</li>
+<li>IMU acceleration and angular velocity plots</li>
+<li>LiDAR scan as a radar map</li>
+<li>Voice text, command log, and detected objects in live text feeds</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h1 id="topics-overview">🔁 Topics Overview</h1>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/voice_text</code></td>
+<td><code>std_msgs/String</code></td>
+<td>Transcribed text from mic</td>
+</tr>
+<tr>
+<td><code>/voice_command</code></td>
+<td><code>std_msgs/String</code></td>
+<td>Parsed structured command</td>
+</tr>
+<tr>
+<td><code>/cmd_vel</code></td>
+<td><code>geometry_msgs/Twist</code></td>
+<td>Velocity command to TurtleBot</td>
+</tr>
+<tr>
+<td><code>/oakd/rgb/preview/image_raw</code></td>
+<td><code>sensor_msgs/Image</code></td>
+<td>RGB camera feed</td>
+</tr>
+<tr>
+<td><code>/yolo_image_raw</code></td>
+<td><code>sensor_msgs/Image</code></td>
+<td>Annotated YOLO output image</td>
+</tr>
+<tr>
+<td><code>/detected_objects</code></td>
+<td><code>std_msgs/String</code></td>
+<td>Summary of objects seen</td>
+</tr>
+<tr>
+<td><code>/scan</code></td>
+<td><code>sensor_msgs/LaserScan</code></td>
+<td>LiDAR data used for obstacle proximity map</td>
+</tr>
+<tr>
+<td><code>/rpi_13/imu</code></td>
+<td><code>sensor_msgs/Imu</code></td>
+<td>IMU data for linear/angular tracking</td>
+</tr>
+<tr>
+<td><code>/rpi_13/dock_status</code></td>
+<td><code>irobot_create_msgs/DockStatus</code></td>
+<td>Docking state</td>
+</tr>
+<tr>
+<td><code>/rpi_13/battery_state</code></td>
+<td><code>sensor_msgs/BatteryState</code></td>
+<td>Live battery level info</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="launch-file">Launch File</h1>
+<p>All nodes are launched via the voice control launch file:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># voice_control.launch.py</span>
 
-<h2 id="source-code-for-intelligent-turtlebot4-mycobot-voice-guided-mobile-manipulator">Source Code for Intelligent TurtleBot4 + MyCobot: Voice-Guided Mobile Manipulator</h2>
+<span class="o">-</span> <span class="n">mic_listener_node</span>
+<span class="o">-</span> <span class="n">command_parser_node</span>
+<span class="o">-</span> <span class="n">movement_controller_node</span>
+<span class="o">-</span> <span class="n">object_detector_node</span>
+<span class="o">-</span> <span class="n">web_dashboard_node</span>
+</code></pre></div>
+<p>To run:</p>
+<div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>launch<span class="w"> </span>voice_controlled_turtlebot<span class="w"> </span>voice_control.launch.py
+</code></pre></div>
+<hr />
+<h1 id="gui-architecture">🌐 GUI Architecture</h1>
+<p>The <code>web_dashboard_node</code> is a custom PyQt5 GUI that displays:</p>
+<ul>
+<li>Three camera areas (camera feed, YOLO output, and placeholder)</li>
+<li>Voice transcription, command parser log, and live object detection string</li>
+<li>LiDAR radar-style scan with red dots and TurtleBot center in green</li>
+<li>IMU plots for linear (X/Y/Z) and angular (X/Y/Z) data over time</li>
+<li>Docking state and battery level (subscribed internally, display optional)</li>
+</ul>
+<hr />
+<h1 id="ros-2-data-flow-diagram-mermaid">🔄 ROS 2 Data Flow Diagram (Mermaid)</h1>
+<pre class="mermaid"><code>graph TD
+    MicListener --&gt;|/voice_text| CommandParser
+    CommandParser --&gt;|/voice_command| MovementController
+    MovementController --&gt;|/cmd_vel| TurtleBot
+
+    CameraFeed --&gt;|/oakd/rgb/preview/image_raw| ObjectDetector
+    ObjectDetector --&gt;|/yolo_image_raw| DashboardGUI
+    ObjectDetector --&gt;|/detected_objects| DashboardGUI
+
+    MicListener --&gt;|/voice_text| DashboardGUI
+    CommandParser --&gt;|/voice_command| DashboardGUI
+
+    IMUData --&gt;|/rpi_13/imu| DashboardGUI
+    LiDARData --&gt;|/scan| DashboardGUI
+    BatteryState --&gt;|/rpi_13/battery_state| DashboardGUI
+    DockStatus --&gt;|/rpi_13/dock_status| DashboardGUI</code></pre>
+<hr />
+<h1 id="source-code-installation">📁 Source Code &amp; Installation</h1>
+<p>The full codebase is available at:<br />
+➡️ <a href="https://github.com/anushka002/voice_controlled_turtlebot">GitHub: voice_controlled_turtlebot</a></p>
+<p>To install and build:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/anu_ws/src
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/voice_controlled_turtlebot.git
+<span class="nb">cd</span><span class="w"> </span>..
+colcon<span class="w"> </span>build
+<span class="nb">source</span><span class="w"> </span>install/setup.bash
+</code></pre></div>
+<p>To Run:
+<div class="highlight"><pre><span></span><code>ros2 launch voice_controlled_turtlebot voice_control.launch.py
+</code></pre></div></p>
+<hr />
+<h1 id="external-tools-used">📦 External Tools Used</h1>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Description</th>
+<th>Version / Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YOLOv8</td>
+<td>Real-time object detection</td>
+<td><a href="https://github.com/ultralytics/ultralytics">Ultralytics v8</a></td>
+</tr>
+<tr>
+<td>Whisper.cpp</td>
+<td>Lightweight CPU-based speech-to-text engine</td>
+<td><a href="https://github.com/ggerganov/whisper.cpp">whisper.cpp</a></td>
+</tr>
+<tr>
+<td>PyQt5</td>
+<td>GUI framework for Python</td>
+<td>PyQt5 (pip)</td>
+</tr>
+<tr>
+<td>OpenCV</td>
+<td>Image processing &amp; visualization</td>
+<td>OpenCV 4.x</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Let me know if you’d like this formatted as a new .md page or inserted into the main README!</p>
 
 
 
