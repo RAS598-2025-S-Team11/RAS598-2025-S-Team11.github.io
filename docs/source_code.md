@@ -1,5 +1,5 @@
 ---
-title: Backend ROS2 Architecture & Code Walkthrough ⚙️
+title: Backend Logic
 ---
 
 # Backend Framework Overview
