@@ -1,5 +1,5 @@
 ---
-title: TurtleBot4 Hardware Specifications
+title: Hardware Specs
 ---
 
 # TurtleBot4 Hardware
