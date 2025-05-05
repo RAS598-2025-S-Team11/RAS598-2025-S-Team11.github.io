@@ -1,58 +1,27 @@
 ---
-title: Demonstration Gallery
+title: Voice Control
 ---
 
-# Intelligent TurtleBot4 + MyCobot: Voice-Guided Mobile Manipulator Showcase 🎬
+We implemented speech recognition on the TurtleBot4 system using Whisper.cpp – a lightweight, high-performance C++ implementation of OpenAI’s Whisper model. 
+It enables voice-to-text transcription directly on-device, eliminating the need for cloud services and internet connectivity.
 
-This project began as an experiment in voice-guided navigation, but rapidly evolved into a full-stack robotics platform integrating vision, voice, LiDAR, and robotic manipulation. 
-Our system transformed from a basic ROS2-controlled TurtleBot4 into a multi-modal mobile manipulator equipped with the MyCobot arm, YOLOv8 object detection, Whisper-based voice transcription, and a custom-built GUI for real-time interaction and debugging.
+![Speech Recognition Whisper.cpp](https://github.com/user-attachments/assets/322549a8-430d-4813-ba16-4358e8d69257)
 
-Below is a curated collection of short demonstration videos that highlight key milestones from early testing to full-system deployment.
+### How It Works 💬 
 
----
+- The microphone on the host computer or external USB mic records a short audio clip (4 seconds).
+- The audio is saved temporarily as a `.wav` file.
+- Whisper.cpp processes this audio file using the `base.en` model to generate a transcription.
+- The transcribed text is published to the ROS 2 topic `/voice_text`.
 
-## Test 01: Object Detection + GUI Overlay 🎯 
+This node runs periodically and enables seamless integration of voice control into our ROS2 pipeline.
 
-[![Watch on YouTube](https://img.youtube.com/vi/hz7PwtZZgPg/0.jpg)](https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp)  
-*Real-time object detection using YOLOv8, with bounding boxes and confidence scores visualized on our PyQt5 GUI.*
+### 🛠️ Tradeoffs
 
----
+- We initially tried online Whisper APIs, but due to computational load and latency, we switched to Whisper.cpp for real-time inference.
+- Tiny model was fast but inaccurate for short commands. We upgraded to the base model for better transcription at the cost of minor latency.
 
-## Test 02: Controlling the Cobot Robotic Arm 🤖 
+### ROS 2 Topics Used
 
-[![Watch on YouTube](https://img.youtube.com/vi/DwuBvafB8k8/0.jpg)](https://youtube.com/shorts/DwuBvafB8k8?si=TU1XXYiRUYbrtGBi)  
-*A demonstration of precise control of the MyCobot arm. Commands were sent from the TurtleBot4’s voice pipeline using ROS2 topics.*
-
----
-
-## Test 03: Full Autonomy Simulation (Without GUI) 🚦 
-
-[![Watch on YouTube](https://img.youtube.com/vi/DtQAx4mQFKQ/0.jpg)](https://youtu.be/DtQAx4mQFKQ)  
-*A raw test of autonomous task execution where the system responded to voice commands and object detection in terminal-based feedback mode.*
-
----
-
-## Test 04: Live Demonstration with GUI 🧪 
-
-[![Live Demonstration Take 2](https://img.youtube.com/vi/EEqiLhgY0YM/0.jpg)](https://youtu.be/EEqiLhgY0YM)  
-*The GUI-enhanced version of our autonomy system in action — showcasing LiDAR scan mapping, IMU plots, voice interactions, and YOLOv8 detection feedback.*
-
----
-
-## Test 05: TurtleBot4 + MyCobot Integration (Mobile Manipulator) 🦾 
-
-[![Watch on YouTube](https://img.youtube.com/vi/K1KcAVdhhBg/0.jpg)](https://youtu.be/K1KcAVdhhBg)  
-*The MyCobot arm is fully mounted and functional — executing joint movements with our inverse kinematics solver. This video captures the precision and coordination between the base and manipulator.*
-
----
-
-# Final Project Demonstration 🏁 
-
-[![Watch on YouTube](https://img.youtube.com/vi/K1KcAVdhhBg/0.jpg)](https://youtu.be/K1KcAVdhhBg)  
-
-*A polished overview of our complete system: voice-activated navigation, camera vision, LiDAR awareness, and robotic arm manipulation — all brought together in a seamless ROS2 framework.*
-
----
-
-📌 All videos are hosted on YouTube and embedded here for easy access. For technical deep-dives, check out our [Code Walkthrough](./code.md) and [ROS Architecture](./ros_architecture.md) pages.
-
+- Subscribed: None
+- Published: `/voice_text` (std_msgs/msg/String)
