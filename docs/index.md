@@ -1,5 +1,5 @@
 ---
-title: Intelligent Mobile Manipulator 
+title: Introduction 
 tags:
 - Robotics
 - AI
