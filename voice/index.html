@@ -626,6 +626,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ros-2-topic-flow" class="md-nav__link">
+    ROS 2 Topic Flow 🧭
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -763,6 +770,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ros-2-topic-flow" class="md-nav__link">
+    ROS 2 Topic Flow 🧭
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -809,6 +823,18 @@ It enables voice-to-text transcription directly on-device, eliminating the need 
 <li>Subscribed: None</li>
 <li>Published: <code>/voice_text</code> (std_msgs/msg/String)</li>
 </ul>
+<h3 id="ros-2-topic-flow">ROS 2 Topic Flow 🧭</h3>
+<pre class="mermaid"><code>graph TD
+  mic_listener_node[mic_listener_node]
+  voice_text[/voice_text/]
+  command_parser_node[command_parser_node]
+  voice_cmd[/voice_command/]
+  movement_controller_node[movement_controller_node]
+
+  mic_listener_node --&gt; voice_text
+  voice_text --&gt; command_parser_node
+  command_parser_node --&gt; voice_cmd
+  voice_cmd --&gt; movement_controller_node</code></pre>
 
 
 
