@@ -11,17 +11,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://RAS598-2025-S-Team11.github.io/esp-32-table/</loc>
-         <lastmod>2025-05-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://RAS598-2025-S-Team11.github.io/hardware/</loc>
          <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://RAS598-2025-S-Team11.github.io/obj_detect/</loc>
+         <lastmod>2025-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://RAS598-2025-S-Team11.github.io/sensors_in_use/</loc>
          <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
