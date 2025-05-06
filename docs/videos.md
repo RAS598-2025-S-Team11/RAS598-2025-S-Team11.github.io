@@ -44,6 +44,9 @@ Below is a curated collection of short demonstration videos that highlight key m
 [![Watch on YouTube](https://img.youtube.com/vi/K1KcAVdhhBg/0.jpg)](https://youtu.be/K1KcAVdhhBg)  
 *The MyCobot arm is fully mounted and functional — executing joint movements with our inverse kinematics solver. This video captures the precision and coordination between the base and manipulator.*
 
+## Elevator Pitch Video _(Final Submission)_ 🤖
+
+[![Watch on YouTube](https://img.youtube.com/vi/9VTNSJJPrb4/0.jpg)](https://youtu.be/9VTNSJJPrb4)  
 ---
 
 # Final Project Demonstration 🏁 
