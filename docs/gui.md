@@ -2,12 +2,6 @@
 title: GUI Updates
 ---
 
-# GUI Modifications and walkthrough
-
----
-title: GUI Updates
----
-
 # GUI Modifications and Walkthrough
 
 Over the course of the project, the PyQt5-based GUI evolved significantly as we integrated new sensors, added voice command capabilities, and refined real-time feedback. This table summarizes the development timeline and features added to each version.
