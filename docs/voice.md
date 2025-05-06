@@ -21,6 +21,13 @@ This node runs periodically and enables seamless integration of voice control in
 - We initially tried online Whisper APIs, but due to computational load and latency, we switched to Whisper.cpp for real-time inference.
 - Tiny model was fast but inaccurate for short commands. We upgraded to the base model for better transcription at the cost of minor latency.
 
+### Live Demo 🧭
+
+![image](https://github.com/user-attachments/assets/0352d36e-0342-45ec-ae20-7a3a02cd2128)
+
+
+
+
 ### ROS 2 Topics Used
 
 - Subscribed: None
