@@ -157,4 +157,38 @@ ros2 launch voice_controlled_turtlebot voice_control.launch.py
 
 ---
 
-Let me know if you’d like this formatted as a new .md page or inserted into the main README!
+## MyCobot Robotic Arm Backend 
+
+**Robot Arm Listener for ArUco Marker Detection**
+
+This project uses a Python script to control a robotic arm by detecting ArUco markers in a camera feed. It leverages the ROS 2 framework and integrates with the `pymycobot` library to communicate with the robot arm.
+
+### Overview
+
+- **ROS 2**: The script subscribes to the `/camera_image_raw` topic, which streams live camera images.
+- **ArUco Marker Detection**: The script detects ArUco markers in the images, calculates the marker's position in pixels, and uses inverse kinematics (IK) to compute the necessary joint angles for the robot arm to reach the marker's coordinates.
+- **Robot Control**: The calculated joint angles are sent to the robot arm using the `pymycobot` library, which controls the physical movements of the robot arm.
+
+### Prerequisites
+
+Before running this code, ensure you have the following dependencies installed:
+
+1. **ROS2**
+2. **Python 3**
+3. **OpenCV**: For ArUco marker detection and image processing.
+4. **PyMyCobot**: Library to interface with the robotic arm.
+5. **cv_bridge**: ROS 2 package to convert ROS image messages to OpenCV images.
+6. **NumPy**: For mathematical computations.
+
+Install dependencies using pip:
+
+```bash
+pip install opencv-python numpy pymycobot
+```
+
+
+
+
+
+
+
