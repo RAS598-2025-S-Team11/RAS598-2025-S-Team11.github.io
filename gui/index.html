@@ -532,29 +532,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#42-gui-layout-design-concepts" class="md-nav__link">
-    4.2 GUI Layout &amp; Design Concepts
+  <a href="#title-gui-updates" class="md-nav__link">
+    title: GUI Updates
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#these-gui-designs-aim-to-present-important-real-time-system-data-in-an-intuitive-and-user-friendly-format-enabling-both-operator-awareness-and-effective-debugging" class="md-nav__link">
-    These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging.
-  </a>
-  
-    <nav class="md-nav" aria-label="These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#43-live-sensor-visualization-in-gui" class="md-nav__link">
-    4.3 Live Sensor Visualization in GUI
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -791,29 +771,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#42-gui-layout-design-concepts" class="md-nav__link">
-    4.2 GUI Layout &amp; Design Concepts
+  <a href="#title-gui-updates" class="md-nav__link">
+    title: GUI Updates
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#these-gui-designs-aim-to-present-important-real-time-system-data-in-an-intuitive-and-user-friendly-format-enabling-both-operator-awareness-and-effective-debugging" class="md-nav__link">
-    These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging.
-  </a>
-  
-    <nav class="md-nav" aria-label="These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#43-live-sensor-visualization-in-gui" class="md-nav__link">
-    4.3 Live Sensor Visualization in GUI
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -841,7 +801,56 @@
 
 
 <h1 id="gui-modifications-and-walkthrough">GUI Modifications and walkthrough</h1>
-<h4 id="42-gui-layout-design-concepts">4.2 GUI Layout &amp; Design Concepts</h4>
+<hr />
+<h2 id="title-gui-updates">title: GUI Updates</h2>
+<h1 id="gui-modifications-and-walkthrough_1">GUI Modifications and Walkthrough</h1>
+<p>Over the course of the project, the PyQt5-based GUI evolved significantly as we integrated new sensors, added voice command capabilities, and refined real-time feedback. This table summarizes the development timeline and features added to each version.</p>
+<hr />
+<h2 id="evolution-of-the-gui">Evolution of the GUI</h2>
+<table>
+<thead>
+<tr>
+<th><strong>GUI Version</strong></th>
+<th><strong>Screenshot</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🧪 Initial Mockup (Inkscape Plan)</td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/069d103c-103e-4c88-a693-fd7bdd21b459" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Mockup" src="https://github.com/user-attachments/assets/069d103c-103e-4c88-a693-fd7bdd21b459" /></a></td>
+<td>A visual sketch designed using Inkscape to decide the layout and component flow of the final GUI.</td>
+</tr>
+<tr>
+<td>📉 GUI with IMU Plotting</td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/b1b43848-33e1-435c-b1bd-480aac67d069" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IMU GUI" src="https://github.com/user-attachments/assets/b1b43848-33e1-435c-b1bd-480aac67d069" /></a></td>
+<td>Real-time IMU data plotting added using ROS2 <code>/rpi_13/imu</code>. Displays acceleration and angular velocity.</td>
+</tr>
+<tr>
+<td>🧭 GUI with LiDAR Integration</td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/cebbeee1-7b54-4118-8094-66bc6d0dcb0c" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LiDAR GUI" src="https://github.com/user-attachments/assets/cebbeee1-7b54-4118-8094-66bc6d0dcb0c" /></a></td>
+<td>LiDAR scan data shown in a circular radar-style map. Helps visualize obstacle proximity around TurtleBot4.</td>
+</tr>
+<tr>
+<td>🧠 Full System Integration GUI</td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/4707b81f-a5d7-4002-89ff-bbb62c0ab408" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Data GUI" src="https://github.com/user-attachments/assets/4707b81f-a5d7-4002-89ff-bbb62c0ab408" /></a></td>
+<td>Combined real-time image feed, object detection, IMU, LiDAR, voice transcription, and parsed commands.</td>
+</tr>
+<tr>
+<td>🎛️ Basic GUI (Test 1)</td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/0c15b374-2ac2-466d-816b-6da410848007" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Empty GUI" src="https://github.com/user-attachments/assets/0c15b374-2ac2-466d-816b-6da410848007" /></a></td>
+<td>First working version with raw image display and placeholder for object detection overlay. No sensor plots or interactivity.</td>
+</tr>
+<tr>
+<td>🎯 Final Professional GUI</td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/3e7af140-66c6-4675-96dc-92d3f298474b" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Final GUI" src="https://github.com/user-attachments/assets/3e7af140-66c6-4675-96dc-92d3f298474b" /></a></td>
+<td>Fully optimized layout with color-coded feedback, buttons for voice fallback, dock/undock integration, and live object list.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>This version-controlled design process helped us meet technical requirements while making the GUI intuitive and powerful for both debugging and live demonstration use.</p>
+<h4 id="gui-layout-design-concepts">GUI Layout &amp; Design Concepts</h4>
 <p><strong>Initial Mockup using Inkscape</strong><br />
 <a class="glightbox" href="https://github.com/user-attachments/assets/069d103c-103e-4c88-a693-fd7bdd21b459" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="GUI Mockup" src="https://github.com/user-attachments/assets/069d103c-103e-4c88-a693-fd7bdd21b459" /></a></p>
 <p><strong>Proposed Interactive GUI for ROS2 Integration</strong><br />
