@@ -1,5 +1,5 @@
 ---
-title: Object Detection Page
+title: Object Detection
 ---
 
 ## Object Detection with YOLOv8 🔎 
