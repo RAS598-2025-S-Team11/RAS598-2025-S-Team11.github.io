@@ -227,6 +227,11 @@ _For checking the progress and development of GUI, please check out [GUI Develop
 ---
 ## FINAL DEMONSTRATION - FULLY WORKING 
 
+This 1-minute elevator pitch highlights our final project for the course RAS 598: Experimentation and Deployment of Robotic Systems at Arizona State University (Spring 2025).
+
+[![Watch on YouTube](https://img.youtube.com/vi/9VTNSJJPrb4/0.jpg)](https://youtu.be/9VTNSJJPrb4)  
+
+
 ### 🌟 Innovation Showcase at Arizona State University | Spring 2025 🌟
 
 Watch on YouTube:
