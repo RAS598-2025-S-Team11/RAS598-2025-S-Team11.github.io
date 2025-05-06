@@ -2,7 +2,7 @@
 title: Backend Logic
 ---
 
-# Backend Framework Overview
+## BACKEND FRAMEWORK USING ROS2 
 
 This project features a modular, ROS 2-based architecture that turns the TurtleBot4 + MyCobot arm into an intelligent mobile manipulator. The system supports real-time sensor processing, voice-guided navigation, object detection, and GUI-based interaction using custom ROS 2 nodes.
 
@@ -17,7 +17,7 @@ Key functionalities include:
 
 ---
 
-# ROS 2 Nodes & Their Responsibilities
+## ROS 2 Nodes & Their Responsibilities
 
 1. `mic_listener_node`  
 Records a short 4-second audio clip every few seconds and uses Whisper.cpp for on-device transcription. Publishes transcribed text to `/voice_text`.
@@ -38,10 +38,20 @@ Subscribes to camera feed (`/oakd/rgb/preview/image_raw`), runs YOLOv8 in real t
     - IMU acceleration and angular velocity plots
     - LiDAR scan as a radar map
     - Voice text, command log, and detected objects in live text feeds
+6. Using ROS2 Actions:
+
+    **Docking and Undocking Actions**
+    
+    As part of the robot's mobility and autonomy framework, we integrated basic ROS 2 action-based behaviors for:
+    
+    - ✅ Docking: Sending a goal to the Create 3 base to autonomously return to its dock station for charging.
+    - 🔄 Undocking: Sending an undock goal to initiate departure from the charging dock and resume exploration.
+    
+    These actions were tested and triggered via GUI or voice commands. The docking state was also monitored using the /rpi_13/dock_status topic. This provides a critical capability for future long-duration missions where power management becomes essential.
 
 ---
 
-# 🔁 Topics Overview
+## 🔁 Topics Overview
 
 | Topic                        | Type                        | Description                                      |
 |-----------------------------|-----------------------------|--------------------------------------------------|
@@ -58,7 +68,7 @@ Subscribes to camera feed (`/oakd/rgb/preview/image_raw`), runs YOLOv8 in real t
 
 ---
 
-# Launch File
+## Launch File
 
 All nodes are launched via the voice control launch file:
 
@@ -80,7 +90,7 @@ ros2 launch voice_controlled_turtlebot voice_control.launch.py
 
 ---
 
-# 🌐 GUI Architecture
+## 🌐 GUI Architecture
 
 The `web_dashboard_node` is a custom PyQt5 GUI that displays:
 
@@ -92,7 +102,7 @@ The `web_dashboard_node` is a custom PyQt5 GUI that displays:
 
 ---
 
-# 🔄 ROS 2 Data Flow Diagram (Mermaid)
+## 🔄 ROS 2 Data Flow Diagram (Mermaid)
 
 ```mermaid
 graph TD
@@ -115,7 +125,7 @@ graph TD
 
 ---
 
-# 📁 Source Code & Installation
+## Source Code & Installation 📁 
 
 The full codebase is available at:  
 ➡️ [GitHub: voice_controlled_turtlebot](https://github.com/anushka002/voice_controlled_turtlebot)
@@ -136,7 +146,7 @@ ros2 launch voice_controlled_turtlebot voice_control.launch.py
 ```
 ---
 
-# 📦 External Tools Used
+## 📦 External Tools Used
 
 | Tool          | Description                                 | Version / Link                                |
 |---------------|---------------------------------------------|-----------------------------------------------|
