@@ -663,8 +663,88 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#future-work-concept-turtlebot4-with-mounted-cobot-arm" class="md-nav__link">
-    Future Work Concept: TurtleBot4 with Mounted Cobot Arm
+  <a href="#45-control-architecture-in-ros2" class="md-nav__link">
+    4.5 Control Architecture in ROS2
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Control Architecture in ROS2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topics-of-study-for-success" class="md-nav__link">
+    TOPICS OF STUDY FOR SUCCESS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-workflow" class="md-nav__link">
+    PROJECT WORKFLOW
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-td-astartbrturtlebot4-powered-on-bsensor-layerbroak-d-camera-imu-lidar-mic-csensor-databrpreprocessing-d1yolov8brobject-detection-d2voice-commandbrrecognition-edetected-object-info-fintent-or-goal-command-gdecision-making-node-hros2-navigation-stack-imovement-commandsbrvia-cmd_vel-jgui-updatebrobject-and-nav-info-kactuator-responsebrturtlebot-moves-luser-feedbackbrgui-visualization-mend-a-b-b-c-c-d1-c-d2-d1-e-d2-f-e-g-f-g-g-h-h-i-i-k-k-m-g-j-j-l-l-m-classdef-startend-fillf6e3f3strokec27ba0color000-classdef-sensing-filld0f0efstroke5bbdbbcolor000-classdef-processing-fille8eaf6stroke7986cbcolor000-classdef-decision-fillfce4ecstrokeec407acolor000-classdef-navctrl-fille0f7fastroke00838fcolor000-classdef-gui-fillede7f6stroke7e57c2color000-class-am-startend-class-b-sensing-class-cd1d2ef-processing-class-g-decision-class-hik-navctrl-class-jl-gui" class="md-nav__link">
+    
+    graph TD
+      A["Start:&lt;br/&gt;TurtleBot4 Powered On"]
+      B["Sensor Layer:&lt;br/&gt;Oak-D Camera, IMU, LiDAR, Mic"]
+      C["Sensor Data&lt;br/&gt;Preprocessing"]
+      D1["YOLOv8&lt;br/&gt;Object Detection"]
+      D2["Voice Command&lt;br/&gt;Recognition"]
+      E["Detected Object Info"]
+      F["Intent or Goal Command"]
+      G["Decision-Making Node"]
+      H["ROS2 Navigation Stack"]
+      I["Movement Commands&lt;br/&gt;via /cmd_vel"]
+      J["GUI Update:&lt;br/&gt;Object and Nav Info"]
+      K["Actuator Response:&lt;br/&gt;TurtleBot Moves"]
+      L["User Feedback:&lt;br/&gt;GUI Visualization"]
+      M["End"]
+
+      A --&gt; B
+      B --&gt; C
+      C --&gt; D1
+      C --&gt; D2
+      D1 --&gt; E
+      D2 --&gt; F
+      E --&gt; G
+      F --&gt; G
+      G --&gt; H
+      H --&gt; I
+      I --&gt; K
+      K --&gt; M
+      G --&gt; J
+      J --&gt; L
+      L --&gt; M
+
+      classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
+      classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
+      classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
+      classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
+      classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
+      classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
+
+      class A,M startend
+      class B sensing
+      class C,D1,D2,E,F processing
+      class G decision
+      class H,I,K navctrl
+      class J,L gui
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-manipulator-workflow-turtlebot4-with-mounted-cobot-arm" class="md-nav__link">
+    MOBILE MANIPULATOR WORKFLOW: TurtleBot4 with Mounted Cobot Arm
   </a>
   
 </li>
@@ -1071,8 +1151,88 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#future-work-concept-turtlebot4-with-mounted-cobot-arm" class="md-nav__link">
-    Future Work Concept: TurtleBot4 with Mounted Cobot Arm
+  <a href="#45-control-architecture-in-ros2" class="md-nav__link">
+    4.5 Control Architecture in ROS2
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Control Architecture in ROS2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topics-of-study-for-success" class="md-nav__link">
+    TOPICS OF STUDY FOR SUCCESS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-workflow" class="md-nav__link">
+    PROJECT WORKFLOW
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-td-astartbrturtlebot4-powered-on-bsensor-layerbroak-d-camera-imu-lidar-mic-csensor-databrpreprocessing-d1yolov8brobject-detection-d2voice-commandbrrecognition-edetected-object-info-fintent-or-goal-command-gdecision-making-node-hros2-navigation-stack-imovement-commandsbrvia-cmd_vel-jgui-updatebrobject-and-nav-info-kactuator-responsebrturtlebot-moves-luser-feedbackbrgui-visualization-mend-a-b-b-c-c-d1-c-d2-d1-e-d2-f-e-g-f-g-g-h-h-i-i-k-k-m-g-j-j-l-l-m-classdef-startend-fillf6e3f3strokec27ba0color000-classdef-sensing-filld0f0efstroke5bbdbbcolor000-classdef-processing-fille8eaf6stroke7986cbcolor000-classdef-decision-fillfce4ecstrokeec407acolor000-classdef-navctrl-fille0f7fastroke00838fcolor000-classdef-gui-fillede7f6stroke7e57c2color000-class-am-startend-class-b-sensing-class-cd1d2ef-processing-class-g-decision-class-hik-navctrl-class-jl-gui" class="md-nav__link">
+    
+    graph TD
+      A["Start:&lt;br/&gt;TurtleBot4 Powered On"]
+      B["Sensor Layer:&lt;br/&gt;Oak-D Camera, IMU, LiDAR, Mic"]
+      C["Sensor Data&lt;br/&gt;Preprocessing"]
+      D1["YOLOv8&lt;br/&gt;Object Detection"]
+      D2["Voice Command&lt;br/&gt;Recognition"]
+      E["Detected Object Info"]
+      F["Intent or Goal Command"]
+      G["Decision-Making Node"]
+      H["ROS2 Navigation Stack"]
+      I["Movement Commands&lt;br/&gt;via /cmd_vel"]
+      J["GUI Update:&lt;br/&gt;Object and Nav Info"]
+      K["Actuator Response:&lt;br/&gt;TurtleBot Moves"]
+      L["User Feedback:&lt;br/&gt;GUI Visualization"]
+      M["End"]
+
+      A --&gt; B
+      B --&gt; C
+      C --&gt; D1
+      C --&gt; D2
+      D1 --&gt; E
+      D2 --&gt; F
+      E --&gt; G
+      F --&gt; G
+      G --&gt; H
+      H --&gt; I
+      I --&gt; K
+      K --&gt; M
+      G --&gt; J
+      J --&gt; L
+      L --&gt; M
+
+      classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
+      classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
+      classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
+      classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
+      classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
+      classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
+
+      class A,M startend
+      class B sensing
+      class C,D1,D2,E,F processing
+      class G decision
+      class H,I,K navctrl
+      class J,L gui
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-manipulator-workflow-turtlebot4-with-mounted-cobot-arm" class="md-nav__link">
+    MOBILE MANIPULATOR WORKFLOW: TurtleBot4 with Mounted Cobot Arm
   </a>
   
 </li>
@@ -1302,14 +1462,159 @@
 
   %% Block-to-block flow
   SENSORS --&gt; PERCEPTION --&gt; HIGH_AUTO --&gt; LOW_AUTO --&gt; TBOT</code></pre></h2>
-<h2 id="future-work-concept-turtlebot4-with-mounted-cobot-arm">Future Work Concept: TurtleBot4 with Mounted Cobot Arm</h2>
-<p>This future work visual outlines the integration of a robotic arm on TurtleBot4. 
+<hr />
+<h2 id="45-control-architecture-in-ros2">4.5 Control Architecture in ROS2</h2>
+<p>The following flowchart summarizes the control pipeline, organized by data type and decision layer:</p>
+<pre class="mermaid"><code>%%{ init: { "theme": "default" } }%%
+graph TD
+
+  %% Subgraphs
+  subgraph SENSORS ["Sensor Inputs"]
+    CAM[Oak-D Camera]
+    MIC[Microphone]
+    LIDAR[IR / LiDAR Sensors]
+  end
+
+  subgraph PERCEPTION ["Perception Nodes"]
+    YOLO_NODE[Node: yolov8_processor]
+    VOICE_NODE[Node: voice_input_node]
+    DETECTIONS[/yolov8_detections/]
+    VOICE_RAW[/voice_input/]
+    CAM --&gt; YOLO_NODE --&gt; DETECTIONS
+    MIC --&gt; VOICE_NODE --&gt; VOICE_RAW
+  end
+
+  subgraph AUTONOMY ["High-Level Autonomy"]
+    VOICE_PARSER[Node: voice_command_parser]
+    VOICE_CMD[/voice_cmd/]
+    DECISION[Node: decision_maker_node]
+    ACT_CMD[/action_cmd/]
+    VOICE_RAW --&gt; VOICE_PARSER --&gt; VOICE_CMD
+    DETECTIONS --&gt; DECISION
+    VOICE_CMD --&gt; DECISION --&gt; ACT_CMD
+  end
+
+  subgraph CONTROL ["Low-Level Control"]
+    COLLISION[Node: collision_avoidance_node]
+    NAV[Node: navigation_controller]
+    CMD[/cmd_vel/]
+    LIDAR --&gt; COLLISION
+    ACT_CMD --&gt; COLLISION --&gt; NAV --&gt; CMD
+  end
+
+  CMD --&gt; MOVE[TurtleBot Movement]
+
+  %% Color classes
+  classDef sensors fill:#d0f0ef,stroke:#0097a7,color:#000
+  classDef perception fill:#e6e6fa,stroke:#7e57c2,color:#000
+  classDef autonomy fill:#ffe0e6,stroke:#e91e63,color:#000
+  classDef control fill:#d0f0ef,stroke:#0097a7,color:#000
+  classDef output fill:#eeeeee,stroke:#757575,color:#000
+
+  %% Assign classes
+  class CAM,MIC,LIDAR sensors
+  class YOLO_NODE,VOICE_NODE,DETECTIONS,VOICE_RAW perception
+  class VOICE_PARSER,VOICE_CMD,DECISION,ACT_CMD autonomy
+  class COLLISION,NAV,CMD control
+  class MOVE output
+</code></pre>
+<h3 id="topics-of-study-for-success">TOPICS OF STUDY FOR SUCCESS</h3>
+<pre class="mermaid"><code>graph TD
+  A[Preparation Needs]
+
+  A --&gt; B1[Object Detection]
+  A --&gt; B2[ROS2 Navigation]
+  A --&gt; B3[Speech Recognition]
+  A --&gt; B4[Hardware Control]
+
+  B1 --&gt; C1[YOLOv8]
+  B1 --&gt; C2[OpenCV]
+
+  B2 --&gt; C3[SLAM]
+  B2 --&gt; C4[Collision Avoidance]
+
+  B3 --&gt; C5[Microphone Input]
+  B3 --&gt; C6[Command Parsing]
+
+  B4 --&gt; C7[PC-Robot Communication]
+  B4 --&gt; C8[Predefined Actions]
+
+  %% Color styling
+  classDef detect fill:#ffe0e6,stroke:#e91e63,color:#000
+  classDef nav fill:#d0f0ef,stroke:#0097a7,color:#000
+  classDef speech fill:#e6e6fa,stroke:#7e57c2,color:#000
+  classDef hardware fill:#f9fbe7,stroke:#c0ca33,color:#000
+  classDef root fill:#f5f5f5,stroke:#9e9e9e,color:#000
+
+  class A root
+  class B1,C1,C2 detect
+  class B2,C3,C4 nav
+  class B3,C5,C6 speech
+  class B4,C7,C8 hardware
+
+</code></pre>
+<h2 id="project-workflow">PROJECT WORKFLOW</h2>
+<h2 id="graph-td-astartbrturtlebot4-powered-on-bsensor-layerbroak-d-camera-imu-lidar-mic-csensor-databrpreprocessing-d1yolov8brobject-detection-d2voice-commandbrrecognition-edetected-object-info-fintent-or-goal-command-gdecision-making-node-hros2-navigation-stack-imovement-commandsbrvia-cmd_vel-jgui-updatebrobject-and-nav-info-kactuator-responsebrturtlebot-moves-luser-feedbackbrgui-visualization-mend-a-b-b-c-c-d1-c-d2-d1-e-d2-f-e-g-f-g-g-h-h-i-i-k-k-m-g-j-j-l-l-m-classdef-startend-fillf6e3f3strokec27ba0color000-classdef-sensing-filld0f0efstroke5bbdbbcolor000-classdef-processing-fille8eaf6stroke7986cbcolor000-classdef-decision-fillfce4ecstrokeec407acolor000-classdef-navctrl-fille0f7fastroke00838fcolor000-classdef-gui-fillede7f6stroke7e57c2color000-class-am-startend-class-b-sensing-class-cd1d2ef-processing-class-g-decision-class-hik-navctrl-class-jl-gui"><pre class="mermaid"><code>
+    graph TD
+      A["Start:&lt;br/&gt;TurtleBot4 Powered On"]
+      B["Sensor Layer:&lt;br/&gt;Oak-D Camera, IMU, LiDAR, Mic"]
+      C["Sensor Data&lt;br/&gt;Preprocessing"]
+      D1["YOLOv8&lt;br/&gt;Object Detection"]
+      D2["Voice Command&lt;br/&gt;Recognition"]
+      E["Detected Object Info"]
+      F["Intent or Goal Command"]
+      G["Decision-Making Node"]
+      H["ROS2 Navigation Stack"]
+      I["Movement Commands&lt;br/&gt;via /cmd_vel"]
+      J["GUI Update:&lt;br/&gt;Object and Nav Info"]
+      K["Actuator Response:&lt;br/&gt;TurtleBot Moves"]
+      L["User Feedback:&lt;br/&gt;GUI Visualization"]
+      M["End"]
+
+      A --&gt; B
+      B --&gt; C
+      C --&gt; D1
+      C --&gt; D2
+      D1 --&gt; E
+      D2 --&gt; F
+      E --&gt; G
+      F --&gt; G
+      G --&gt; H
+      H --&gt; I
+      I --&gt; K
+      K --&gt; M
+      G --&gt; J
+      J --&gt; L
+      L --&gt; M
+
+      classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
+      classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
+      classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
+      classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
+      classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
+      classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
+
+      class A,M startend
+      class B sensing
+      class C,D1,D2,E,F processing
+      class G decision
+      class H,I,K navctrl
+      class J,L gui
+</code></pre></h2>
+<hr />
+<h2 id="mobile-manipulator-workflow-turtlebot4-with-mounted-cobot-arm">MOBILE MANIPULATOR WORKFLOW: TurtleBot4 with Mounted Cobot Arm</h2>
+<p>This work visual outlines the integration of a robotic arm on TurtleBot4. 
 The system uses object detection and coordinates from the perception pipeline to compute inverse kinematics and execute pick-and-place actions via a dedicated ROS2 control node.</p>
-<p>Goals to Capture Visually:
-- Addition of a robotic arm mounted on TurtleBot4
-- Use of ROS2 for communication with the arm
-- Performing pick-and-place tasks
-- Integration with existing perception (e.g., YOLOv8 object detection for picking targets)</p>
+<p>Goals Achieved:</p>
+<ul>
+<li>Addition of a robotic arm mounted on TurtleBot4</li>
+<li>Use of ROS2 for communication with the arm</li>
+<li>Performing pick-and-place tasks</li>
+</ul>
+<p>Future Scope:</p>
+<ul>
+<li>Integration with existing perception (e.g., YOLOv8 object detection for picking targets)</li>
+</ul>
 <pre class="mermaid"><code>graph TD
 
   %% Object Detection &amp; Localization
