@@ -29,7 +29,7 @@
 
     
       
-        <title>Sensors - Intelligent TurtleBot - Voice Guided Navigation and Object Detection</title>
+        <title>Sensors & Data Flow - Intelligent TurtleBot - Voice Guided Navigation and Object Detection</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#turtlebot-4-sensor-table" class="md-skip">
+        <a href="#sensors-real-time-data-flow" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sensors
+              Sensors & Data Flow
             
           </span>
         </div>
@@ -277,7 +277,7 @@
   
     
   
-  Sensors
+  Sensors & Data Flow
 
       </a>
     </li>
@@ -513,12 +513,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Sensors
+    Sensors & Data Flow
   </span>
   
 
@@ -529,7 +531,7 @@
         
   
   <span class="md-ellipsis">
-    Sensors
+    Sensors & Data Flow
   </span>
   
 
@@ -541,6 +543,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -549,9 +553,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sensor-modalities-data-interpretation" class="md-nav__link">
+    Sensor Modalities &amp; Data Interpretation 🔍
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensor Modalities & Data Interpretation 🔍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-depth-camera-oak-d-pro" class="md-nav__link">
+    1. Depth Camera (OAK-D Pro)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lidar-rplidar-a1m8" class="md-nav__link">
+    2. LiDAR (RPLIDAR A1M8)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-imu" class="md-nav__link">
+    3. IMU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-microphone-arecord" class="md-nav__link">
+    4. Microphone (arecord)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-data-visualization-pipeline" class="md-nav__link">
+    📈 Real-Time Data Visualization Pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-processing-pipeline-mermaid" class="md-nav__link">
+    🧠 Data Processing Pipeline (Mermaid)
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Data Processing Pipeline (Mermaid)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#turtlebot-4-sensor-table" class="md-nav__link">
     TurtleBot 4 Sensor Table
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turtlebot-4-sensor-table_1" class="md-nav__link">
+    TurtleBot 4 Sensor Table
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -721,6 +793,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -729,9 +803,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sensor-modalities-data-interpretation" class="md-nav__link">
+    Sensor Modalities &amp; Data Interpretation 🔍
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensor Modalities & Data Interpretation 🔍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-depth-camera-oak-d-pro" class="md-nav__link">
+    1. Depth Camera (OAK-D Pro)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lidar-rplidar-a1m8" class="md-nav__link">
+    2. LiDAR (RPLIDAR A1M8)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-imu" class="md-nav__link">
+    3. IMU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-microphone-arecord" class="md-nav__link">
+    4. Microphone (arecord)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-data-visualization-pipeline" class="md-nav__link">
+    📈 Real-Time Data Visualization Pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-processing-pipeline-mermaid" class="md-nav__link">
+    🧠 Data Processing Pipeline (Mermaid)
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Data Processing Pipeline (Mermaid)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#turtlebot-4-sensor-table" class="md-nav__link">
     TurtleBot 4 Sensor Table
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turtlebot-4-sensor-table_1" class="md-nav__link">
+    TurtleBot 4 Sensor Table
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -758,37 +900,102 @@
   
 
 
-  <h1>Sensors</h1>
+<h1 id="sensors-real-time-data-flow">Sensors &amp; Real-Time Data Flow</h1>
+<p>This project relies on a variety of onboard sensors to perceive and interact with its environment. 
+These sensors not only enable navigation and perception but also serve as core inputs to our real-time ROS2-based modular pipeline. 
+Each sensor stream is visualized and processed in our GUI dashboard, allowing the system to respond interactively to the surroundings.</p>
+<hr />
+<h2 id="sensor-modalities-data-interpretation">Sensor Modalities &amp; Data Interpretation 🔍</h2>
+<h3 id="1-depth-camera-oak-d-pro">1. Depth Camera (OAK-D Pro)</h3>
+<ul>
+<li>Captures RGB and depth images.</li>
+<li>Used in conjunction with the YOLOv8 object detector node to identify objects.</li>
+<li>The depth stream is used to estimate proximity to detected objects.</li>
+<li>Raw image topic: <code>/oakd/rgb/preview/image_raw</code></li>
+<li>Processed detections are visualized on the GUI and published to <code>/yolo_image_raw</code>.</li>
+</ul>
+<h3 id="2-lidar-rplidar-a1m8">2. LiDAR (RPLIDAR A1M8)</h3>
+<ul>
+<li>Used for 360° spatial awareness and obstacle mapping.</li>
+<li>LaserScan data is subscribed via <code>/scan</code> topic.</li>
+<li>GUI radar plot visualizes real-time obstacles.</li>
+<li>Helps verify if the robot has a clear path before executing commands.</li>
+</ul>
+<h3 id="3-imu">3. IMU</h3>
+<ul>
+<li>Provides linear acceleration and angular velocity in 3D.</li>
+<li>Subscribed from <code>/rpi_13/imu</code> topic.</li>
+<li>Plotted as two separate graphs (Linear Acceleration and Angular Velocity) in GUI.</li>
+<li>Used for analyzing movement behavior, identifying drifts or unexpected turns.</li>
+</ul>
+<h3 id="4-microphone-arecord">4. Microphone (arecord)</h3>
+<ul>
+<li>Records short audio bursts every 4 seconds.</li>
+<li>Whisper.cpp processes the waveform and outputs transcribed commands.</li>
+<li>Published to <code>/voice_text</code> and parsed by the <code>command_parser_node</code>.</li>
+</ul>
+<hr />
+<h2 id="real-time-data-visualization-pipeline">📈 Real-Time Data Visualization Pipeline</h2>
+<p>Each of the sensors has a corresponding ROS2 subscriber and is rendered in the GUI dashboard as follows:</p>
+<ul>
+<li>Camera feed: live RGB image view.</li>
+<li>YOLOv8: overlaid bounding boxes and object labels.</li>
+<li>LiDAR: dynamic radar-style polar plot.</li>
+<li>IMU: scrollable X, Y, Z plots for both linear and angular data.</li>
+<li>Microphone: displays latest transcription + parsed command.</li>
+</ul>
+<hr />
+<h2 id="data-processing-pipeline-mermaid">🧠 Data Processing Pipeline (Mermaid)</h2>
+<pre class="mermaid"><code>graph TD
+  subgraph Perception
+    CAM[OAK-D Camera RGB] --&gt; DET[YOLOv8 Detection Node]
+    DET --&gt;|/yolo_image_raw| GUI1[GUI Display]
+    MIC[Microphone Input] --&gt; WHISPER[Whisper cpp Transcriber]
+    WHISPER --&gt;|/voice_text| CMD_PARSER[Voice Command Parser]
+  end
 
+  subgraph State Feedback
+    IMU[IMU Data] --&gt;|/rpi_13/imu| GUI2[IMU Plotting]
+    LIDAR[RPLIDAR A1M8] --&gt;|/scan| GUI3[Lidar Plot]
+  end
+
+  CMD_PARSER --&gt;|/voice_command| ACTIONS[Action Trigger Node]
+  DET --&gt;|Detected Objects| GUI4[Object List Display]</code></pre>
 <h3 id="turtlebot-4-sensor-table"><strong>TurtleBot 4 Sensor Table</strong></h3>
+<h3 id="turtlebot-4-sensor-table_1"><strong>TurtleBot 4 Sensor Table</strong></h3>
 <table>
 <thead>
 <tr>
 <th><strong>Sensor</strong></th>
 <th><strong>Implementation</strong></th>
-<th><strong>Image</strong></th>
+<th><strong>Sensor Image</strong></th>
+<th><strong>Corresponding Plot</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Depth Camera- OAK-D-Pro)</strong></td>
+<td><strong>Depth Camera – OAK-D-Pro</strong></td>
 <td>Object detection and distance estimation</td>
 <td><a class="glightbox" href="https://github.com/user-attachments/assets/c8d24fc5-43ca-472e-8b87-457bf03e5386" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Depth Camera" src="https://github.com/user-attachments/assets/c8d24fc5-43ca-472e-8b87-457bf03e5386" /></a></td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/f6197cbe-517e-4a3b-9241-3d65ccb5c4ac" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Picture1" src="https://github.com/user-attachments/assets/f6197cbe-517e-4a3b-9241-3d65ccb5c4ac" /></a></td>
 </tr>
 <tr>
-<td><strong>LiDAR- RPLIDAR A1M8</strong></td>
-<td>SLAM-based navigation and obstacle detection</td>
+<td><strong>LiDAR – RPLIDAR A1M8</strong></td>
+<td>Environment mapping, object distance &amp; navigation</td>
 <td><a class="glightbox" href="https://github.com/user-attachments/assets/61bd3394-74c4-4f4c-b989-9d63fbd989a9" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LiDAR" src="https://github.com/user-attachments/assets/61bd3394-74c4-4f4c-b989-9d63fbd989a9" /></a></td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/493433f1-17ae-4e12-b67b-332163f545a4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/493433f1-17ae-4e12-b67b-332163f545a4" /></a></td>
 </tr>
 <tr>
 <td><strong>IMU</strong></td>
-<td>Enhancing motion stability and drift correction</td>
+<td>Motion state feedback and dynamic stabilization</td>
 <td><a class="glightbox" href="https://github.com/user-attachments/assets/3e5b5011-147c-44e6-b5ac-66b6b46a7fa6" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IMU" src="https://github.com/user-attachments/assets/3e5b5011-147c-44e6-b5ac-66b6b46a7fa6" /></a></td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/a533e9a3-0bf9-40f5-8d52-ab0f54c05c23" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/a533e9a3-0bf9-40f5-8d52-ab0f54c05c23" /></a></td>
 </tr>
 <tr>
 <td><strong>Microphone</strong></td>
-<td>Capturing voice commands</td>
-<td></td>
+<td>Capturing user speech for transcription</td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/7f51fb1c-d37c-4c93-96e5-7fd147a1d141" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="whispercpp" src="https://github.com/user-attachments/assets/7f51fb1c-d37c-4c93-96e5-7fd147a1d141" /></a></td>
+<td><a class="glightbox" href="https://github.com/user-attachments/assets/6daf667b-76c5-4b7f-abd9-2970b01dcfdc" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/user-attachments/assets/6daf667b-76c5-4b7f-abd9-2970b01dcfdc" /></a></td>
 </tr>
 </tbody>
 </table>
