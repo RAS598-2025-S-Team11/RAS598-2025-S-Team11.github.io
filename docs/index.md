@@ -6,23 +6,10 @@ tags:
 - Object Detection
 - Speech Recognition
 ---
-
-## Team Information
-
-- **Project Name:** Intelligent TurtleBot: Deep Learning-Based Object Detection and Voice-Guided Navigation
-- **Team Number:** 11
-- **Team Members:** Anushka Gangadhar Satav, Adithya Konda, Sameerjeet Singh Chhabra
-- **Semester:** Spring 2025
-- **University:** Arizona State University
-- **Class:** RAS 598 Experimentation and Deployment of Robots
-- **Professor:** Dr. Dan Aukes
-- **Email:** anushka.satav@asu.edu, akonda5@asu.edu, schhab18@asu.edu
-
----
 ## PROJECT DESCRIPTION 
 
 
-> Research Question 🔍:
+> **Research Question 🔍:**
 > 
 > _**How can a mobile robot effectively combine vision, speech, navigation, and manipulation to create a responsive and intelligent system for real-world environments?**_
 
@@ -37,7 +24,7 @@ We successfully installed the MyCobot arm on the TurtleBot4 and developed our ow
 
 ---
 
-## Project Goals Update 🎯 
+## PROJECT GOALS - UPDATE 
 
 1. At the start of the semester, our primary goal was to enable a TurtleBot4 robot to autonomously detect objects and navigate based on voice commands. As the project progressed, we expanded the scope to include real-time sensor integration (LiDAR, IMU), object detection using YOLOv8, and a custom GUI to visualize system performance.
 
@@ -49,58 +36,58 @@ This evolution in project scope reflects our team’s ambition to build a versat
 
 ---
 
-## Project Plan 📌 
+## PROJECT FINALIZED PLAN 
 
-**Concept Overview:**  
-
-This project investigates the design and development of a modular, intelligent robotic system built on the TurtleBot4 platform, enhanced with the MyCobot robotic arm. Our objective is to enable seamless integration of perception, voice interaction, navigation, and manipulation through ROS 2.
-
-The key functionalities implemented include:
-
-- **Real-Time Object Detection:** 🔍   
-  Integration of **YOLOv8** with live camera feeds enables robust object classification and visual awareness in dynamic environments.
-
-- **Voice Command Interaction:** 🗣️ 
-  **Whisper**-based transcription allows natural human-robot interaction, enabling the robot to respond to spoken commands and queries.
-
-- **Sensor-Based State Awareness:** 📊  
-  LiDAR data is visualized in a radar-style map to display detected obstacles, while IMU data is plotted to reflect the robot’s real-time motion and stability.
-
-- **Robotic Arm Integration and Control:** 🦾  
-  The MyCobot arm was mounted and controlled using a custom inverse kinematics solver for precise motion. Future work includes extending this to support voice-guided manipulation tasks.
-
-- **System Robustness and Fallback Mechanisms:** 🧩 
-  The architecture includes modular nodes for fallback behaviors in case of sensor failure, unstable commands, or loss of feedback—ensuring continuity of operation.
-
-Together, these capabilities aim to demonstrate a cohesive and extensible mobile manipulator platform capable of real-time, human-guided autonomy.
+  **Concept Overview:**  
+  
+  This project investigates the design and development of a modular, intelligent robotic system built on the TurtleBot4 platform, enhanced with the MyCobot robotic arm. Our objective is to enable seamless integration of perception, voice interaction, navigation, and manipulation through ROS 2.
+  
+  The key functionalities implemented include:
+  
+  - **Real-Time Object Detection:** 🔍   
+    Integration of **YOLOv8** with live camera feeds enables robust object classification and visual awareness in dynamic environments.
+  
+  - **Voice Command Interaction:** 🗣️ 
+    **Whisper**-based transcription allows natural human-robot interaction, enabling the robot to respond to spoken commands and queries.
+  
+  - **Sensor-Based State Awareness:** 📊  
+    LiDAR data is visualized in a radar-style map to display detected obstacles, while IMU data is plotted to reflect the robot’s real-time motion and stability.
+  
+  - **Robotic Arm Integration and Control:** 🦾  
+    The MyCobot arm was mounted and controlled using a custom inverse kinematics solver for precise motion. Future work includes extending this to support voice-guided manipulation tasks.
+  
+  - **System Robustness and Fallback Mechanisms:** 🧩 
+    The architecture includes modular nodes for fallback behaviors in case of sensor failure, unstable commands, or loss of feedback—ensuring continuity of operation.
+  
+  Together, these capabilities aim to demonstrate a cohesive and extensible mobile manipulator platform capable of real-time, human-guided autonomy.
 
 
 ---
-## Work and Discussions 🧠
+## WORKFLOW AND DISCUSSIONS
 
-### 1. Sensor Fusion and Real-Time Awareness
-
-The Intelligent TurtleBot4 system fuses data from multiple sensory modalities — vision (camera), audio (microphone), and proximity (LiDAR + IMU) — to understand its environment and respond accordingly. 
-While we do not implement full navigation or motion planning, the system builds _**rich situational awareness using ROS2 and real-time data visualization**_.
-
-### 2. Sensor Inputs
-
-- 📷 **Oak-D Camera:** Provides RGB image streams for visual object detection using YOLOv8.
-- 🎤 **Microphone:** Captures user voice input for natural language interaction.
-- 📡 **LiDAR:** Streams distance measurements for environmental awareness, visualized in a radar-style plot.
-- 🧭 **IMU:** Reports linear acceleration and angular velocity, plotted live to assess robot stability and motion.
-
-Each of these sensors publishes to separate ROS2 topics and is handled by dedicated subscriber nodes for processing and visualization.
-
-### 3. Perception and Processing Nodes
-
-- 🧠 `object_detector_node`: Subscribes to `/oakd/rgb/preview/image_raw`, runs real-time object detection, and publishes annotated images and detected labels.
-- 🗣️ `mic_listener_node`: Captures and transcribes voice using Whisper.cpp, publishing text to `/voice_text`.
-- 📑 `voice_command_parser`: Parses text input into discrete commands and publishes to `/voice_command`.
-
-### 4. GUI Node
-
-- 📊 `web_dashboard_node`: This node powers the real-time graphical user interface (GUI) for monitoring and interacting with the robot. Built using PyQt5, the GUI displays live camera feeds, YOLOv8-detected objects, incoming voice commands, and transcribed text. It also visualizes LiDAR scans around the TurtleBot4, and plots IMU data (linear acceleration and angular velocity) in real-time. 
+  ### 1. Sensor Fusion and Real-Time Awareness
+  
+  The Intelligent TurtleBot4 system fuses data from multiple sensory modalities — vision (camera), audio (microphone), and proximity (LiDAR + IMU) — to understand its environment and respond accordingly. 
+  While we do not implement full navigation or motion planning, the system builds _**rich situational awareness using ROS2 and real-time data visualization**_.
+  
+  ### 2. Sensor Inputs
+  
+  - 📷 **Oak-D Camera:** Provides RGB image streams for visual object detection using YOLOv8.
+  - 🎤 **Microphone:** Captures user voice input for natural language interaction.
+  - 📡 **LiDAR:** Streams distance measurements for environmental awareness, visualized in a radar-style plot.
+  - 🧭 **IMU:** Reports linear acceleration and angular velocity, plotted live to assess robot stability and motion.
+  
+  Each of these sensors publishes to separate ROS2 topics and is handled by dedicated subscriber nodes for processing and visualization [Go to Sensors and Data Visualization Page](sensors-in-use.md).
+  
+  ### 3. Perception and Processing Nodes
+  
+  - 🧠 `object_detector_node`: Subscribes to `/oakd/rgb/preview/image_raw`, runs real-time object detection, and publishes annotated images and detected labels.
+  - 🗣️ `mic_listener_node`: Captures and transcribes voice using Whisper.cpp, publishing text to `/voice_text`.
+  - 📑 `voice_command_parser`: Parses text input into discrete commands and publishes to `/voice_command`.
+  
+  ### 4. GUI Node
+  
+  - 📊 `web_dashboard_node`: This node powers the real-time graphical user interface (GUI) for monitoring and interacting with the robot. Built using PyQt5, the GUI displays live camera feeds, YOLOv8-detected objects, incoming voice commands, and transcribed text. It also visualizes LiDAR scans around the TurtleBot4, and plots IMU data (linear acceleration and angular velocity) in real-time. 
 
 ---
 
@@ -137,12 +124,13 @@ The following voice trigger phrases were recognized and mapped to robot behavior
 | `wave_emote`        | Executes a waving gesture using the robotic arm. 👋                         |
 | `grasp`             | Activates the gripper to grasp an object (on detection). ✊                |
 
-This command vocabulary enables natural interaction with the robot across multiple modes — navigation, perception, and manipulation.
+This command vocabulary enables natural interaction with the robot across multiple modes — navigation, perception, and manipulation [Go to Voice To Text Conversion Page](voice.md).
 
 
 #### 🔍 Object Detection with YOLOv8
 
 YOLOv8 Nano, integrated via Python and Ultralytics API, detects objects in real-time from camera streams. Detected labels are annotated on image frames and published to ROS topics. The modular object detector also logs the types of objects seen and supports a placeholder for future task planning.
+[Go to Objec tDetection Page](obj_detect.md)
 
 ---
 
@@ -193,8 +181,7 @@ Over the course of the project, several goals evolved and practical trade-offs h
 - IMU and LiDAR data were initially unused, but were later added for feedback visualization on GUI to assist debugging and showcase real-time sensing. 📡
 
 ---
-
-## 📡 ROS2 Nodes and Topics
+## ROS2 FRAMEWORK 
 
 The following nodes form the backbone of our system, each responsible for a key capability:
 
@@ -212,14 +199,6 @@ As part of the robot's mobility and autonomy framework, we integrated basic ROS 
 - 🔄 Undocking: Sending an undock goal to initiate departure from the charging dock and resume exploration.
 
 These actions were tested and triggered via GUI or voice commands. The docking state was also monitored using the /rpi_13/dock_status topic. This provides a critical capability for future long-duration missions where power management becomes essential.
-
-
-
-
-
-
-
-
 
 **RQT_GRAPH:** 
 
@@ -265,50 +244,44 @@ This dashboard complements voice control by offering a manual fallback method fo
 ![image](https://github.com/user-attachments/assets/4707b81f-a5d7-4002-89ff-bbb62c0ab408)
 
 ---
+## 🌟 Innovation Showcase at Arizona State University | Spring 2025 🌟
 
-#### Demonstration Videos 🖥️
-
-**Test 01: Object Detection + GUI Overlay**
-
-[![Watch on YouTube](https://img.youtube.com/vi/hz7PwtZZgPg/0.jpg)](https://youtube.com/shorts/hz7PwtZZgPg?si=9SIvASX0w476p8vp)  
-*Real-time object detection using YOLOv8 with GUI overlay showing detected objects and confidence scores.*
-
----
-
-#### _Additional Demonstration Videos_
-
-**Test 02: Controlling the Cobot Robotic Arm**
-
-[![Watch on YouTube](https://img.youtube.com/vi/DwuBvafB8k8/0.jpg)](https://youtube.com/shorts/DwuBvafB8k8?si=TU1XXYiRUYbrtGBi)  
-
-_A short demo showcasing voice-command-based control of TurtleBot4 in a dynamic environment._
-
-
-**Test 03: Full Autonomy Simulation *(Without GUI)***
-
-[![Watch on YouTube](https://img.youtube.com/vi/DtQAx4mQFKQ/0.jpg)](https://youtu.be/DtQAx4mQFKQ) 
-
-
-**Test 04: Live Demonstration Test 2 *(With GUI)***
-
-[![Live Demostration Take 2](https://img.youtube.com/vi/EEqiLhgY0YM/0.jpg)](https://youtu.be/EEqiLhgY0YM) 
-
-
-
-**Test 05: Turtlebot4 Autonomy with MyCobot *(Mobile Manipulator)***
+Watch on YouTube:
 
 [![Watch on YouTube](https://img.youtube.com/vi/K1KcAVdhhBg/0.jpg)](https://youtu.be/K1KcAVdhhBg)  
 
+We presented "Intelligent Voice-Guided Mobile Manipulator: Real-Time Object Detection and Autonomous Navigation Using TurtleBot4 and MyCobot Robot Arm" at the Innovation Showcase hosted at ASU - The Polytechnic School! 
+This was our final project for the course RAS 598: Experimentation and Deployment of Robots, led by Professor Dan Aukes.
 
-## **🖥️ Final Project Demonstration 🖥️**
-
-[![Watch on YouTube](https://img.youtube.com/vi/K1KcAVdhhBg/0.jpg)](https://youtu.be/K1KcAVdhhBg)  
-
-_A future test combining voice input, object detection, and autonomous navigation on real hardware._
-
-
+💡Our project featured a live demo and poster presentation of an autonomous, voice-guided robot that combines real-time speech interaction, object detection, and navigation — built on TurtleBot4 and enhanced with a MyCobot arm. 
 
 ---
+
+
+## TEAM INFORMATION
+
+- **Project Name:** Intelligent TurtleBot: Deep Learning-Based Object Detection and Voice-Guided Navigation
+- **Team Number:** 11
+- **Team Members:** Anushka Gangadhar Satav, Adithya Konda, Sameerjeet Singh Chhabra
+- **Semester:** Spring 2025
+- **University:** Arizona State University
+- **Class:** RAS 598 Experimentation and Deployment of Robots
+- **Professor:** Dr. Dan Aukes
+- **Email:** anushka.satav@asu.edu, akonda5@asu.edu, schhab18@asu.edu
+---
+
+## ADVISING & RESOURCES
+
+### Project Advisor
+
+- **Dr. Daniel Aukes** 
+- **Resource Needs**: Hardware support, mentorship on TurtleBot4 Hardware integration with ROS2.
+
+---
+---
+
+
+
 
 ---
 
@@ -447,196 +420,7 @@ _A short demo showcasing voice-command-based control of TurtleBot4 in a dynamic 
 _A future test combining voice input, object detection, and autonomous navigation on real hardware._
 
 ---
-## 4.5 Control Architecture in ROS2
-
-The following flowchart summarizes the control pipeline, organized by data type and decision layer:
-
-```mermaid
-%%{ init: { "theme": "default" } }%%
-graph TD
-
-  %% Subgraphs
-  subgraph SENSORS ["Sensor Inputs"]
-    CAM[Oak-D Camera]
-    MIC[Microphone]
-    LIDAR[IR / LiDAR Sensors]
-  end
-
-  subgraph PERCEPTION ["Perception Nodes"]
-    YOLO_NODE[Node: yolov8_processor]
-    VOICE_NODE[Node: voice_input_node]
-    DETECTIONS[/yolov8_detections/]
-    VOICE_RAW[/voice_input/]
-    CAM --> YOLO_NODE --> DETECTIONS
-    MIC --> VOICE_NODE --> VOICE_RAW
-  end
-
-  subgraph AUTONOMY ["High-Level Autonomy"]
-    VOICE_PARSER[Node: voice_command_parser]
-    VOICE_CMD[/voice_cmd/]
-    DECISION[Node: decision_maker_node]
-    ACT_CMD[/action_cmd/]
-    VOICE_RAW --> VOICE_PARSER --> VOICE_CMD
-    DETECTIONS --> DECISION
-    VOICE_CMD --> DECISION --> ACT_CMD
-  end
-
-  subgraph CONTROL ["Low-Level Control"]
-    COLLISION[Node: collision_avoidance_node]
-    NAV[Node: navigation_controller]
-    CMD[/cmd_vel/]
-    LIDAR --> COLLISION
-    ACT_CMD --> COLLISION --> NAV --> CMD
-  end
-
-  CMD --> MOVE[TurtleBot Movement]
-
-  %% Color classes
-  classDef sensors fill:#d0f0ef,stroke:#0097a7,color:#000
-  classDef perception fill:#e6e6fa,stroke:#7e57c2,color:#000
-  classDef autonomy fill:#ffe0e6,stroke:#e91e63,color:#000
-  classDef control fill:#d0f0ef,stroke:#0097a7,color:#000
-  classDef output fill:#eeeeee,stroke:#757575,color:#000
-
-  %% Assign classes
-  class CAM,MIC,LIDAR sensors
-  class YOLO_NODE,VOICE_NODE,DETECTIONS,VOICE_RAW perception
-  class VOICE_PARSER,VOICE_CMD,DECISION,ACT_CMD autonomy
-  class COLLISION,NAV,CMD control
-  class MOVE output
-
-```
-
-## Interaction Mechanism
-
-**Behavioral Influence & Interfaces**
-
-- **Voice Command API**: Users instruct the robot using predefined phrases.
-- **ROS2 RQT GUI/Web Dashboard**: For remote monitoring.
-
-*(Include a professional-looking UI sketch showing how users will interact with the system.)*
-
-
----
-## Preparation Needs
-
-### Required Knowledge & Topics for Success
-```mermaid
-graph TD
-  A[Preparation Needs]
-
-  A --> B1[Object Detection]
-  A --> B2[ROS2 Navigation]
-  A --> B3[Speech Recognition]
-  A --> B4[Hardware Control]
-
-  B1 --> C1[YOLOv8]
-  B1 --> C2[OpenCV]
-
-  B2 --> C3[SLAM]
-  B2 --> C4[Collision Avoidance]
-
-  B3 --> C5[Microphone Input]
-  B3 --> C6[Command Parsing]
-
-  B4 --> C7[PC-Robot Communication]
-  B4 --> C8[Predefined Actions]
-
-  %% Color styling
-  classDef detect fill:#ffe0e6,stroke:#e91e63,color:#000
-  classDef nav fill:#d0f0ef,stroke:#0097a7,color:#000
-  classDef speech fill:#e6e6fa,stroke:#7e57c2,color:#000
-  classDef hardware fill:#f9fbe7,stroke:#c0ca33,color:#000
-  classDef root fill:#f5f5f5,stroke:#9e9e9e,color:#000
-
-  class A root
-  class B1,C1,C2 detect
-  class B2,C3,C4 nav
-  class B3,C5,C6 speech
-  class B4,C7,C8 hardware
-
-
-```
-
-## Project Workflow
-
-The system operates by capturing data from multiple sensors, interpreting user commands, and performing autonomous navigation and feedback. The diagram below outlines the overall data and control flow of the TurtleBot4 system.
-
-```mermaid
-
-    graph TD
-      A["Start:<br/>TurtleBot4 Powered On"]
-      B["Sensor Layer:<br/>Oak-D Camera, IMU, LiDAR, Mic"]
-      C["Sensor Data<br/>Preprocessing"]
-      D1["YOLOv8<br/>Object Detection"]
-      D2["Voice Command<br/>Recognition"]
-      E["Detected Object Info"]
-      F["Intent or Goal Command"]
-      G["Decision-Making Node"]
-      H["ROS2 Navigation Stack"]
-      I["Movement Commands<br/>via /cmd_vel"]
-      J["GUI Update:<br/>Object and Nav Info"]
-      K["Actuator Response:<br/>TurtleBot Moves"]
-      L["User Feedback:<br/>GUI Visualization"]
-      M["End"]
-    
-      A --> B
-      B --> C
-      C --> D1
-      C --> D2
-      D1 --> E
-      D2 --> F
-      E --> G
-      F --> G
-      G --> H
-      H --> I
-      I --> K
-      K --> M
-      G --> J
-      J --> L
-      L --> M
-    
-      classDef startend fill:#f6e3f3,stroke:#c27ba0,color:#000
-      classDef sensing fill:#d0f0ef,stroke:#5bbdbb,color:#000
-      classDef processing fill:#e8eaf6,stroke:#7986cb,color:#000
-      classDef decision fill:#fce4ec,stroke:#ec407a,color:#000
-      classDef navctrl fill:#e0f7fa,stroke:#00838f,color:#000
-      classDef gui fill:#ede7f6,stroke:#7e57c2,color:#000
-    
-      class A,M startend
-      class B sensing
-      class C,D1,D2,E,F processing
-      class G decision
-      class H,I,K navctrl
-      class J,L gui
-
-```
----
-
-
----
-## Final Demonstration Plan
-
-### Setup & Execution
-
-- **Classroom Resources**: Open space for navigation demo.
-- **Demonstration Steps**: The robot will identify objects, respond to user queries, navigate obstacles, and execute spoken commands.
-
-### Handling Environmental Variability (future scope)
-
-- **Adaptive Algorithms**: Adjust object detection thresholds dynamically.
-- **Fallback Modes**: If detection fails, switch to manual control or alternative recognition models.
-
-### Testing & Evaluation Plan
-
-- **Simulated Testing in Gazebo** before real-world deployment.
-- **Comparison Metrics**:
-  - Object recognition accuracy.
-  - Speech command response time.
-  - Navigation success rate.
-
----
-## Impact
+## FUTURE SCOPE & IMPACT
 
 This project will:
 
@@ -676,13 +460,6 @@ Here is the generated image of a cobot mounted on a TurtleBot4 using CHATGPT 4o
 4. Turtlebot4 Mapping Resource: https://turtlebot.github.io/turtlebot4-user-manual/tutorials/generate_map.html
 5. Mapping, Localizing, Path planning packages for Turtlebot4: https://turtlebot.github.io/turtlebot4-user-manual/tutorials/turtlebot4_navigator.html
 
----
-## Advising & Resources
-
-### Project Advisor
-
-- **Dr. Daniel Aukes** 
-- **Resource Needs**: Hardware support, mentorship on TurtleBot4 Hardware integration with ROS2.
 
 ---
 # Weekly Milestones (Weeks 7-16)
@@ -698,9 +475,9 @@ Here is the generated image of a cobot mounted on a TurtleBot4 using CHATGPT 4o
 | **Week 11**| Mar 24, 2025     | GUI development and voice-based system control.                         | ✅ Completed       |
 | **Week 12**| Mar 31, 2025     | ROS2 node integration and layered autonomy testing.                     | ✅ Completed       |
 | **Week 13**| Apr 7, 2025      | TurtleBot testing with full pipeline and live demos.                    |  ✅ Completed     |
-| **Week 14**| Apr 14, 2025     | Final debugging, fallback strategies, and performance evaluation.       | 🔄 In Progress     |
-| **Week 15**| Apr 21, 2025     | Documentation, GUI improvements, and final video preparation.           | 🔄 In Progress        |
-| **Week 16**| Apr 28, 2025     | 🚀 **Final Demonstration & Submission**                                 | 🔄 In Progress        |
+| **Week 14**| Apr 14, 2025     | Final debugging, fallback strategies, and performance evaluation.       | ✅ Completed     |
+| **Week 15**| Apr 21, 2025     | Documentation, GUI improvements, and final video preparation.           | ✅ Completed        |
+| **Week 16**| Apr 28, 2025     | 🚀 **Final Demonstration & Submission**                                 |  ✅ Completed        |
 
 ---
 ## Gantt Chart Representation 
@@ -718,26 +495,14 @@ gantt
     ROS2 Setup                :active,milestone2, 2025-03-03, 7d
     GUI Development           :active,milestone3, 2025-03-10, 7d
     YOLOv8 + Oak-D            :active,milestone4, 2025-03-17, 7d
-    Voice Command             :crit,milestone5, 2025-03-24, 7d
-    ROS2 Integration          :crit,milestone6, 2025-03-31, 10d
+    Voice Command             :active,milestone5, 2025-03-24, 7d
+    ROS2 Integration          :active,milestone6, 2025-03-31, 10d
 
     section Testing & Deployment
-    TurtleBot Testing         :crit,milestone7, 2025-04-10, 7d
-    Final Debug               :milestone8, 2025-04-17, 5d
-    Docs & Video              :milestone9, 2025-04-22, 5d
-    Final Demo                :milestone10, 2025-04-28, 6d
+    TurtleBot Testing         :active,milestone7, 2025-04-10, 7d
+    Final Debug               :active,milestone8, 2025-04-17, 5d
+    Docs & Video              :active,milestone9, 2025-04-22, 5d
+    Final Demo                :active,milestone10, 2025-04-28, 6d
 ```
 
----
-## 🌟 Innovation Showcase at Arizona State University | Spring 2025 🌟
 
-Watch on YouTube:
-
-[![Watch on YouTube](https://img.youtube.com/vi/K1KcAVdhhBg/0.jpg)](https://youtu.be/K1KcAVdhhBg)  
-
-We presented "Intelligent Voice-Guided Mobile Manipulator: Real-Time Object Detection and Autonomous Navigation Using TurtleBot4 and MyCobot Robot Arm" at the Innovation Showcase hosted at ASU - The Polytechnic School! 
-This was our final project for the course RAS 598: Experimentation and Deployment of Robots, led by Professor Dan Aukes.
-
-💡Our project featured a live demo and poster presentation of an autonomous, voice-guided robot that combines real-time speech interaction, object detection, and navigation — built on TurtleBot4 and enhanced with a MyCobot arm. 
-
----
