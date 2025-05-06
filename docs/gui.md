@@ -13,76 +13,15 @@ Over the course of the project, the PyQt5-based GUI evolved significantly as we 
 | **GUI Version**                        | **Screenshot**                                                                                                                                                      | **Description** |
 |----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
 | 🧪 Initial Mockup (Inkscape Plan)       | ![Mockup](https://github.com/user-attachments/assets/069d103c-103e-4c88-a693-fd7bdd21b459)                                                                           | A visual sketch designed using Inkscape to decide the layout and component flow of the final GUI. |
+| 🎛️ First Working GUI Based on Mockup       | ![Proposed GUI](https://github.com/user-attachments/assets/fb130357-8975-4d73-b05b-b7d9f37f7a61)                                                                           | The first Interactive GUI for manual keyboard control and object detection  |
 | 📉 GUI with IMU Plotting               | ![IMU GUI](https://github.com/user-attachments/assets/b1b43848-33e1-435c-b1bd-480aac67d069)                                                                           | Real-time IMU data plotting added using ROS2 `/rpi_13/imu`. Displays acceleration and angular velocity. |
 | 🧭 GUI with LiDAR Integration          | ![LiDAR GUI](https://github.com/user-attachments/assets/cebbeee1-7b54-4118-8094-66bc6d0dcb0c)                                                                         | LiDAR scan data shown in a circular radar-style map. Helps visualize obstacle proximity around TurtleBot4. |
-| 🧠 Full System Integration GUI         | ![Data GUI](https://github.com/user-attachments/assets/4707b81f-a5d7-4002-89ff-bbb62c0ab408)                                                                         | Combined real-time image feed, object detection, IMU, LiDAR, voice transcription, and parsed commands. |
+| 🧪 First Fully Integrated GUI          | ![MYU FINAL GUI](https://github.com/user-attachments/assets/8a287965-9850-4afe-82e7-7ecfd774a1b3)                                                                       | Combined real-time image feed, object detection, IMU, LiDAR, voice transcription, and parsed commands. |
+| 🧠 Full System Integration GUI         | ![Final GUI](https://github.com/user-attachments/assets/3e7af140-66c6-4675-96dc-92d3f298474b)                                                                         | Combined real-time image feed, object detection, IMU, LiDAR, voice transcription, and parsed commands. |
 | 🎛️ Basic GUI (Test 1)                  | ![Empty GUI](https://github.com/user-attachments/assets/0c15b374-2ac2-466d-816b-6da410848007)                                                                        | First working version with raw image display and placeholder for object detection overlay. No sensor plots or interactivity. |
-| 🎯 Final Professional GUI              | ![Final GUI](https://github.com/user-attachments/assets/3e7af140-66c6-4675-96dc-92d3f298474b)                                                                         | Fully optimized layout with color-coded feedback, buttons for voice fallback, dock/undock integration, and live object list. |
+| 🎯 Final Professional GUI              |  ![Data GUI](https://github.com/user-attachments/assets/4707b81f-a5d7-4002-89ff-bbb62c0ab408)                                                              | Fully optimized layout with color-coded feedback, buttons for voice fallback, dock/undock integration, and live object list. |
 
 ---
 
 This version-controlled design process helped us meet technical requirements while making the GUI intuitive and powerful for both debugging and live demonstration use.
 
-
-
-
-
-
-
-#### GUI Layout & Design Concepts
-
-**Initial Mockup using Inkscape**  
-![GUI Mockup](https://github.com/user-attachments/assets/069d103c-103e-4c88-a693-fd7bdd21b459)
-
-**Proposed Interactive GUI for ROS2 Integration**  
-![Proposed GUI](https://github.com/user-attachments/assets/fb130357-8975-4d73-b05b-b7d9f37f7a61)
-
-**Test 1: GUI Working on Real-time Data**
-- Faced issue with camera (not fixed)
-- IMU
-- LiDAR
-
-1. **GUI Updating IMU Data Live:**
-
-![image](https://github.com/user-attachments/assets/b1b43848-33e1-435c-b1bd-480aac67d069)
-
-2. **GUI Updating LiDAR Data Live:**
-
-![image](https://github.com/user-attachments/assets/cebbeee1-7b54-4118-8094-66bc6d0dcb0c)
-
-
-**3. GUI Updating Camera Data Live:**
-
-![image](https://github.com/user-attachments/assets/07bd7b57-199c-46f4-9020-029c12635dd9)
-
-
-_These GUI designs aim to present important real-time system data in an intuitive and user-friendly format, enabling both operator awareness and effective debugging._
----
-
-#### 4.3 Live Sensor Visualization in GUI
-
-The GUI aggregates multiple sensor streams into a unified dashboard. Key visualized components:
-
-- **Object Detection Feed:**  
-  Annotated Oak-D camera frames showing bounding boxes and labels.
-  
-- **Voice Command Status:**  
-  Display of the latest interpreted command and its mapped action.
-  
-- **Navigation Planner View:**  
-  Real-time trajectory paths generated by the navigation stack.
-  
-- **Sensor Diagnostics:**  
-  Live data from LiDAR, IMU, and hazard modules.
-
-
-**GUI With Live Sensor Data**
-
-![MYU FINAL GUI](https://github.com/user-attachments/assets/8a287965-9850-4afe-82e7-7ecfd774a1b3)
-
-
-**GUI WITH ACTUAL DATA:**
-
-![FINALLLLLLLGUI](https://github.com/user-attachments/assets/3e7af140-66c6-4675-96dc-92d3f298474b)
-
----
