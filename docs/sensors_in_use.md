@@ -50,7 +50,7 @@ Each of the sensors has a corresponding ROS2 subscriber and is rendered in the G
 
 ---
 
-## 🧠 Data Processing Pipeline (Mermaid)
+## Data Processing Pipeline
 
 ```mermaid
 graph TD
