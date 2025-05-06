@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#backend-framework-overview" class="md-skip">
+        <a href="#backend-framework-using-ros2" class="md-skip">
           Skip to content
         </a>
       
@@ -568,8 +568,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Backend Logic
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -580,6 +589,79 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backend-framework-using-ros2" class="md-nav__link">
+    BACKEND FRAMEWORK USING ROS2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-2-nodes-their-responsibilities" class="md-nav__link">
+    ROS 2 Nodes &amp; Their Responsibilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topics-overview" class="md-nav__link">
+    🔁 Topics Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-file" class="md-nav__link">
+    Launch File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui-architecture" class="md-nav__link">
+    🌐 GUI Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-2-data-flow-diagram-mermaid" class="md-nav__link">
+    🔄 ROS 2 Data Flow Diagram (Mermaid)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code-installation" class="md-nav__link">
+    Source Code &amp; Installation 📁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-tools-used" class="md-nav__link">
+    📦 External Tools Used
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -724,8 +806,70 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backend-framework-using-ros2" class="md-nav__link">
+    BACKEND FRAMEWORK USING ROS2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-2-nodes-their-responsibilities" class="md-nav__link">
+    ROS 2 Nodes &amp; Their Responsibilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topics-overview" class="md-nav__link">
+    🔁 Topics Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-file" class="md-nav__link">
+    Launch File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui-architecture" class="md-nav__link">
+    🌐 GUI Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-2-data-flow-diagram-mermaid" class="md-nav__link">
+    🔄 ROS 2 Data Flow Diagram (Mermaid)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code-installation" class="md-nav__link">
+    Source Code &amp; Installation 📁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-tools-used" class="md-nav__link">
+    📦 External Tools Used
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -748,7 +892,9 @@
   
 
 
-<h1 id="backend-framework-overview">Backend Framework Overview</h1>
+  <h1>Backend Logic</h1>
+
+<h2 id="backend-framework-using-ros2">BACKEND FRAMEWORK USING ROS2</h2>
 <p>This project features a modular, ROS 2-based architecture that turns the TurtleBot4 + MyCobot arm into an intelligent mobile manipulator. The system supports real-time sensor processing, voice-guided navigation, object detection, and GUI-based interaction using custom ROS 2 nodes.</p>
 <p>Key functionalities include:</p>
 <ul>
@@ -760,7 +906,7 @@
 <li>🤖 Integration-ready support for MyCobot arm manipulation</li>
 </ul>
 <hr />
-<h1 id="ros-2-nodes-their-responsibilities">ROS 2 Nodes &amp; Their Responsibilities</h1>
+<h2 id="ros-2-nodes-their-responsibilities">ROS 2 Nodes &amp; Their Responsibilities</h2>
 <ol>
 <li>
 <p><code>mic_listener_node</code><br />
@@ -789,9 +935,19 @@ Subscribes to camera feed (<code>/oakd/rgb/preview/image_raw</code>), runs YOLOv
 <li>Voice text, command log, and detected objects in live text feeds</li>
 </ul>
 </li>
+<li>
+<p>Using ROS2 Actions:</p>
+<p><strong>Docking and Undocking Actions</strong></p>
+<p>As part of the robot's mobility and autonomy framework, we integrated basic ROS 2 action-based behaviors for:</p>
+<ul>
+<li>✅ Docking: Sending a goal to the Create 3 base to autonomously return to its dock station for charging.</li>
+<li>🔄 Undocking: Sending an undock goal to initiate departure from the charging dock and resume exploration.</li>
+</ul>
+<p>These actions were tested and triggered via GUI or voice commands. The docking state was also monitored using the /rpi_13/dock_status topic. This provides a critical capability for future long-duration missions where power management becomes essential.</p>
+</li>
 </ol>
 <hr />
-<h1 id="topics-overview">🔁 Topics Overview</h1>
+<h2 id="topics-overview">🔁 Topics Overview</h2>
 <table>
 <thead>
 <tr>
@@ -854,7 +1010,7 @@ Subscribes to camera feed (<code>/oakd/rgb/preview/image_raw</code>), runs YOLOv
 </tbody>
 </table>
 <hr />
-<h1 id="launch-file">Launch File</h1>
+<h2 id="launch-file">Launch File</h2>
 <p>All nodes are launched via the voice control launch file:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># voice_control.launch.py</span>
 
@@ -868,7 +1024,7 @@ Subscribes to camera feed (<code>/oakd/rgb/preview/image_raw</code>), runs YOLOv
 <div class="highlight"><pre><span></span><code>ros2<span class="w"> </span>launch<span class="w"> </span>voice_controlled_turtlebot<span class="w"> </span>voice_control.launch.py
 </code></pre></div>
 <hr />
-<h1 id="gui-architecture">🌐 GUI Architecture</h1>
+<h2 id="gui-architecture">🌐 GUI Architecture</h2>
 <p>The <code>web_dashboard_node</code> is a custom PyQt5 GUI that displays:</p>
 <ul>
 <li>Three camera areas (camera feed, YOLO output, and placeholder)</li>
@@ -878,7 +1034,7 @@ Subscribes to camera feed (<code>/oakd/rgb/preview/image_raw</code>), runs YOLOv
 <li>Docking state and battery level (subscribed internally, display optional)</li>
 </ul>
 <hr />
-<h1 id="ros-2-data-flow-diagram-mermaid">🔄 ROS 2 Data Flow Diagram (Mermaid)</h1>
+<h2 id="ros-2-data-flow-diagram-mermaid">🔄 ROS 2 Data Flow Diagram (Mermaid)</h2>
 <pre class="mermaid"><code>graph TD
     MicListener --&gt;|/voice_text| CommandParser
     CommandParser --&gt;|/voice_command| MovementController
@@ -896,7 +1052,7 @@ Subscribes to camera feed (<code>/oakd/rgb/preview/image_raw</code>), runs YOLOv
     BatteryState --&gt;|/rpi_13/battery_state| DashboardGUI
     DockStatus --&gt;|/rpi_13/dock_status| DashboardGUI</code></pre>
 <hr />
-<h1 id="source-code-installation">📁 Source Code &amp; Installation</h1>
+<h2 id="source-code-installation">Source Code &amp; Installation 📁</h2>
 <p>The full codebase is available at:<br />
 ➡️ <a href="https://github.com/anushka002/voice_controlled_turtlebot">GitHub: voice_controlled_turtlebot</a></p>
 <p>To install and build:</p>
@@ -910,7 +1066,7 @@ colcon<span class="w"> </span>build
 <div class="highlight"><pre><span></span><code>ros2 launch voice_controlled_turtlebot voice_control.launch.py
 </code></pre></div></p>
 <hr />
-<h1 id="external-tools-used">📦 External Tools Used</h1>
+<h2 id="external-tools-used">📦 External Tools Used</h2>
 <table>
 <thead>
 <tr>
