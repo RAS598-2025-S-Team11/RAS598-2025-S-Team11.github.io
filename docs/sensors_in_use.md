@@ -38,7 +38,7 @@ Each sensor stream is visualized and processed in our GUI dashboard, allowing th
 
 ---
 
-## 📈 Real-Time Data Visualization Pipeline
+## Real-Time Data Visualization Pipeline 📈 
 
 Each of the sensors has a corresponding ROS2 subscriber and is rendered in the GUI dashboard as follows:
 
@@ -69,11 +69,6 @@ graph TD
   CMD_PARSER -->|/voice_command| ACTIONS[Action Trigger Node]
   DET -->|Detected Objects| GUI4[Object List Display]
 ```
-
-
-
-
-### **TurtleBot 4 Sensor Table**  
 
 ### **TurtleBot 4 Sensor Table**
 
