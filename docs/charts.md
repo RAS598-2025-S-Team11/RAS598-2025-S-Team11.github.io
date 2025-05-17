@@ -32,11 +32,6 @@ flowchart LR
     J --> K[Mark as Collected]
     K --> L[Realign to Nearest Waypoint]
     L --> B
-
-
-
-
-
 ```
 
 
