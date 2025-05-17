@@ -10,6 +10,36 @@
 
 
 
+
+
+``` mermaid
+
+flowchart LR
+    A[Boustrophedon Survey] --> B[Navigate to Next Waypoint]
+    B --> C[Capture RGB Camera Frame]
+    C --> D[Run Object Detection]
+    D --> E[Trash Detected?]
+    
+    E -->|No| B
+    E -->|Yes| F[Check Bounding Box Centroid]
+    F --> G[Vertical: 10-40%?]
+    G -->|No| B
+    G -->|Yes| H[Horizontal: Left or Right Edge?]
+    H -->|No| B
+    H -->|Yes| I[Initiate Detour]
+    
+    I --> J[Approach and Intercept Target]
+    J --> K[Mark as Collected]
+    K --> L[Realign to Nearest Waypoint]
+    L --> B
+
+
+
+
+
+```
+
+
 ## Gantt Chart – Project Timeline Overview
 
 ```mermaid
